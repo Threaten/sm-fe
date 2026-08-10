@@ -1,0 +1,1 @@
+export function Sticker({children,tone="pink",className=""}:{children:React.ReactNode;tone?:"pink"|"lime"|"orange"|"blue";className?:string}){return <span className={`sticker sticker-${tone} ${className}`}>{children}</span>}
