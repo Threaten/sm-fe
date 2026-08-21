@@ -1,13 +1,13 @@
 import { StaffMember } from "@/lib/data";
 import { StaffAchievements } from "./StaffAchievements";
 
-export function StaffProfile({ person }: { person: StaffMember }) {
+export function StaffProfile({ person, content }: { person: StaffMember; content: any }) {
   return (
     <>
       <section className="staff-profile-story">
         <div className="staff-profile-label">
           <span>01</span>
-          <p>Behind the apron</p>
+          <p>{content.bioLabel}</p>
         </div>
         <div className="staff-profile-bio">
           {person.bio.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
@@ -19,12 +19,12 @@ export function StaffProfile({ person }: { person: StaffMember }) {
         <blockquote>{person.quote}</blockquote>
       </section>
 
-      <StaffAchievements person={person} />
+      <StaffAchievements person={person} content={content} />
 
       <section className="staff-practice">
         <div className="staff-practice-heading">
-          <p className="eyebrow">At the workbench</p>
-          <h2>What {person.shortName} teaches.</h2>
+          <p className="eyebrow">{content.practiceEyebrow}</p>
+          <h2>{content.practiceTitle.replace("{name}", person.shortName)}</h2>
           <p>{person.teachingFocus}</p>
         </div>
         <div className="staff-specialties">
@@ -35,8 +35,8 @@ export function StaffProfile({ person }: { person: StaffMember }) {
             </div>
           ))}
           <div className="favorite-pour">
-            <span>Off duty</span>
-            <p>Favorite pour:</p>
+            <span>{content.offDutyLabel}</span>
+            <p>{content.favoritePourLabel}</p>
             <strong>{person.favoritePour}</strong>
           </div>
         </div>

@@ -3,8 +3,6 @@
 import { FormEvent, useEffect, useState } from "react";
 import type { Course } from "@/lib/data";
 
-const payloadUrl = process.env.NEXT_PUBLIC_PAYLOAD_URL?.replace(/\/$/, "") ?? "";
-
 export function ContactForm({ courses }: { courses: Course[] }) {
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
@@ -60,14 +58,12 @@ export function ContactForm({ courses }: { courses: Course[] }) {
     };
 
     try {
-      if (payloadUrl) {
-        const response = await fetch(`${payloadUrl}/api/contact-submissions`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(body),
-        });
-        if (!response.ok) throw new Error("Submission failed");
-      }
+      const response = await fetch("/api/contact-submissions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      if (!response.ok) throw new Error("Submission failed");
       form.reset();
       setSelectedCourses([]);
       setSent(true);

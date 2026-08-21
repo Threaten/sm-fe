@@ -1,13 +1,13 @@
 import Link from "next/link";
 import type { Course } from "@/lib/data";
 
-export function FeaturedCourses({ courses }: { courses: Course[] }) {
+export function FeaturedCourses({ courses, content }: { courses: Course[]; content: { eyebrow: string; title: string; linkLabel: string } }) {
   return (
     <section className="featured-courses">
       <div className="section-heading">
-        <p className="eyebrow">Choose your poison</p>
-        <h2>Pick your lane.</h2>
-        <Link href="/courses">View all courses ↗</Link>
+        <p className="eyebrow">{content.eyebrow}</p>
+        <h2>{content.title}</h2>
+        <Link href="/courses">{content.linkLabel}</Link>
       </div>
       <div className="course-stack">
         {courses.map((course) => (

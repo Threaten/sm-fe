@@ -5,8 +5,14 @@ export type Course = {
   level: string;
   duration: string;
   price: string;
+  classSize: string;
+  nextIntake: string;
+  schedule: string;
+  location: string;
   summary: string;
   image: string;
+  imageAlt: string;
+  imageCaption: string;
   tone: string;
   syllabus: string[];
 };
@@ -19,8 +25,10 @@ export const courses: Course[] = [
     level: "No experience needed",
     duration: "4 weeks",
     price: "$480",
+    classSize: "12 students", nextIntake: "September 14", schedule: "Tuesday evenings\n6:30 to 9:00", location: "Ho Chi Minh City",
     summary: "Build proper technique, train your palate, and make twelve classics without hiding behind a recipe.",
     image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=1400&q=88",
+    imageAlt: "Shake the Basics class in progress", imageCaption: "Skill & Mix / Ho Chi Minh City",
     tone: "var(--accent)",
     syllabus: ["Balance & dilution", "Shaking and stirring", "Classic families", "Home bar setup"],
   },
@@ -31,8 +39,10 @@ export const courses: Course[] = [
     level: "Working bartenders",
     duration: "2 weekends",
     price: "$620",
+    classSize: "12 students", nextIntake: "September 14", schedule: "Tuesday evenings\n6:30 to 9:00", location: "Ho Chi Minh City",
     summary: "Move faster, cleaner, and calmer. A service lab for bartenders who want their best shift to become normal.",
     image: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1400&q=88",
+    imageAlt: "Service Under Fire class in progress", imageCaption: "Skill & Mix / Ho Chi Minh City",
     tone: "var(--cobalt)",
     syllabus: ["Station architecture", "Batching systems", "Guest reading", "High-volume drills"],
   },
@@ -43,8 +53,10 @@ export const courses: Course[] = [
     level: "Intermediate",
     duration: "6 weeks",
     price: "$790",
+    classSize: "12 students", nextIntake: "September 14", schedule: "Tuesday evenings\n6:30 to 9:00", location: "Ho Chi Minh City",
     summary: "Turn ideas into original drinks through flavor mapping, modern prep, iteration, and honest critique.",
     image: "https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=1400&q=88",
+    imageAlt: "Liquid Invention class in progress", imageCaption: "Skill & Mix / Ho Chi Minh City",
     tone: "var(--acid)",
     syllabus: ["Flavor architecture", "Infusions & acids", "Menu storytelling", "R&D critique"],
   },
@@ -55,8 +67,10 @@ export const courses: Course[] = [
     level: "All levels",
     duration: "3 weeks",
     price: "$390",
+    classSize: "12 students", nextIntake: "September 14", schedule: "Tuesday evenings\n6:30 to 9:00", location: "Ho Chi Minh City",
     summary: "Build alcohol-free drinks with structure, texture, aroma, and enough character to stand beside any classic.",
     image: "https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?auto=format&fit=crop&w=1400&q=88",
+    imageAlt: "Zero Proof, Full Flavor class in progress", imageCaption: "Skill & Mix / Ho Chi Minh City",
     tone: "var(--accent)",
     syllabus: ["Zero-proof structure", "Tea & botanical extraction", "Texture without spirits", "Service-ready recipes"],
   },
@@ -67,8 +81,10 @@ export const courses: Course[] = [
     level: "Beginner to intermediate",
     duration: "4 weekends",
     price: "$560",
+    classSize: "12 students", nextIntake: "September 14", schedule: "Tuesday evenings\n6:30 to 9:00", location: "Ho Chi Minh City",
     summary: "Taste across the major spirit families and learn how production choices become flavor in the glass.",
     image: "https://images.unsplash.com/photo-1556855810-ac404aa91e85?auto=format&fit=crop&w=1400&q=88",
+    imageAlt: "Inside the Spirit class in progress", imageCaption: "Skill & Mix / Ho Chi Minh City",
     tone: "var(--cobalt)",
     syllabus: ["Distillation basics", "Agave & cane", "Whisky & grain", "Guided comparative tasting"],
   },
@@ -79,8 +95,10 @@ export const courses: Course[] = [
     level: "Experienced bartenders",
     duration: "5 weeks",
     price: "$850",
+    classSize: "12 students", nextIntake: "September 14", schedule: "Tuesday evenings\n6:30 to 9:00", location: "Ho Chi Minh City",
     summary: "A working leadership course covering training, costing, culture, menu systems, and the decisions nobody sees.",
     image: "https://images.unsplash.com/photo-1436076863939-06870fe779c2?auto=format&fit=crop&w=1400&q=88",
+    imageAlt: "Lead the Bar class in progress", imageCaption: "Skill & Mix / Ho Chi Minh City",
     tone: "var(--acid)",
     syllabus: ["Coaching a team", "Costing & controls", "Menu operations", "Culture under pressure"],
   },

@@ -12,9 +12,9 @@ export default async function HomePage() {
   return (
     <>
       <HomeHero content={content.homeHero} />
-      <Marquee text="Shake / Stir / Taste / Repeat" />
+      <Marquee text={content.marquees.home} />
       <HomeManifesto content={content.homeManifesto} />
-      <FeaturedCourses courses={courses} />
+      <FeaturedCourses courses={courses} content={content.featuredCourses} />
       <HomeQuote content={content.homeQuote} />
     </>
   );

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getStaff, getStaffBySlug } from "@/lib/cms";
+import { getSiteContent, getStaff, getStaffBySlug } from "@/lib/cms";
 import { StaffDetailFooter } from "./_components/StaffDetailFooter";
 import { StaffDetailHero } from "./_components/StaffDetailHero";
 import { StaffProfile } from "./_components/StaffProfile";
@@ -32,7 +32,7 @@ export default async function StaffDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const list = await getStaff();
+  const [list, content] = await Promise.all([getStaff(), getSiteContent()]);
   const index = list.findIndex((member) => member.slug === slug);
   if (index === -1) notFound();
 
@@ -41,9 +41,9 @@ export default async function StaffDetailPage({
 
   return (
     <>
-      <StaffDetailHero person={person} index={index} />
-      <StaffProfile person={person} />
-      <StaffDetailFooter nextPerson={nextPerson} />
+      <StaffDetailHero person={person} index={index} content={content.staffDetail} />
+      <StaffProfile person={person} content={content.staffDetail} />
+      <StaffDetailFooter nextPerson={nextPerson} content={content.staffDetail} />
     </>
   );
 }

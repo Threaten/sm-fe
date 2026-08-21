@@ -1,11 +1,11 @@
 import { StaffMember } from "@/lib/data";
 
-export function StaffAchievements({ person }: { person: StaffMember }) {
+export function StaffAchievements({ person, content }: { person: StaffMember; content: any }) {
   return (
     <section className="staff-achievements">
       <div className="achievement-heading">
-        <p className="eyebrow">Awards &amp; achievements</p>
-        <h2>A few things worth raising a glass to.</h2>
+        <p className="eyebrow">{content.achievementsEyebrow}</p>
+        <h2>{content.achievementsTitle}</h2>
       </div>
       <div className="achievement-list">
         {person.achievements.map((achievement, index) => (

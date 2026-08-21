@@ -1,5 +1,6 @@
 import type { Course, StaffMember } from "./data";
 import { courses, galleryImages, staff } from "./data";
+import { backendUrl } from "./backend";
 
 export type SiteNavigationItem = { label: string; href: string };
 export type SiteTheme = {
@@ -14,6 +15,13 @@ export type SiteFooter = {
   address: string;
   email: string;
   phone: string;
+  headline: string;
+  ctaLabel: string;
+  addressLabel: string;
+  contactLabel: string;
+  linksLabel: string;
+  copyright: string;
+  links: SiteNavigationItem[];
 };
 export type SiteSettings = {
   navigation: SiteNavigationItem[];
@@ -30,6 +38,13 @@ export type ServiceItem = {
 };
 
 export type SiteContent = {
+  pageIntros: { page: string; index: string; eyebrow: string; title: string; intro: string; accent: "coral" | "cobalt" }[];
+  marquees: { home: string; about: string; courses: string };
+  featuredCourses: { eyebrow: string; title: string; linkLabel: string };
+  courseHelp: { eyebrow: string; title: string; linkLabel: string };
+  staffNote: { eyebrow: string; title: string; copy: string; linkLabel: string };
+  courseDetail: { backLabel: string; durationLabel: string; tuitionLabel: string; classSizeLabel: string; reserveLabel: string; syllabusEyebrow: string; syllabusTitle: string; syllabusCopy: string; firstLessonCopy: string; lessonCopy: string; intakeLabel: string };
+  staffDetail: { backLabel: string; profileLabel: string; stamp: string; bioLabel: string; achievementsEyebrow: string; achievementsTitle: string; practiceEyebrow: string; practiceTitle: string; offDutyLabel: string; favoritePourLabel: string; nextLabel: string };
   homeHero: {
     kickerLeft: string;
     kickerRight: string;
@@ -83,7 +98,6 @@ export type SiteContent = {
   gallerySocial: { copy: string; handle: string; href: string };
 };
 
-const payloadUrl = process.env.PAYLOAD_URL?.replace(/\/$/, "") ?? "";
 const galleryCaptions = [
   "After class",
   "Acid test",
@@ -136,6 +150,17 @@ const siteSettingsFallback: SiteSettings = {
     address: "643 Nguyen Kiem Street\nDuc Nhuan Ward, Ho Chi Minh City",
     email: "hello@skillandmix.com",
     phone: "+84 28 3822 0148",
+    headline: "Practice makes delicious.",
+    ctaLabel: "Let's talk",
+    addressLabel: "Find us",
+    contactLabel: "Talk to us",
+    linksLabel: "Explore",
+    copyright: "© 2026 Skill & Mix. Practice responsibly.",
+    links: [
+      { label: "Courses", href: "/courses" },
+      { label: "Instagram", href: "/gallery" },
+      { label: "Visit", href: "/contact-us" },
+    ],
   },
   theme: {
     background: "var(--paper)",
@@ -147,6 +172,20 @@ const siteSettingsFallback: SiteSettings = {
 };
 
 const siteContentFallback: SiteContent = {
+  pageIntros: [
+    { page: "about", index: "01", eyebrow: "Inside Skill & Mix", title: "A SCHOOL FOR THIRSTY MINDS.", intro: "We built the class we wished existed: practical, demanding, generous, and a little bit chaotic.", accent: "coral" },
+    { page: "staffs", index: "02", eyebrow: "The people behind the bar", title: "GOOD HANDS. SHARP TONGUES.", intro: "Working bartenders, obsessive teachers, and generous critics. Meet the people who will make your next drink better.", accent: "cobalt" },
+    { page: "services", index: "03", eyebrow: "Beyond the classroom", title: "WE BRING THE BAR TO THE BRIEF.", intro: "Private workshops, sharper menus, stronger teams. Tell us what needs mixing.", accent: "coral" },
+    { page: "courses", index: "04", eyebrow: "The current menu", title: "PICK YOUR NEXT OBSESSION.", intro: "Small classes, real tools, working instructors, and enough repetition to turn knowledge into instinct.", accent: "coral" },
+    { page: "gallery", index: "05", eyebrow: "Inside the lab", title: "MESSY HANDS. CLEAN DRINKS.", intro: "Classes, experiments, guest shifts, bad ideas that became good ideas, and the occasional perfect lemon peel.", accent: "cobalt" },
+    { page: "contact", index: "06", eyebrow: "Say hello", title: "QUESTIONS? GOOD.", intro: "Ask about a course, plan a private class, bring us a strange brief, or just come see the room.", accent: "coral" },
+  ],
+  marquees: { home: "Shake / Stir / Taste / Repeat", about: "Palate first / Ego last", courses: "Small class / Big practice" },
+  featuredCourses: { eyebrow: "Choose your poison", title: "Pick your lane.", linkLabel: "View all courses ↗" },
+  courseHelp: { eyebrow: "Can't choose?", title: "Tell us what you can make now. We'll tell you what comes next.", linkLabel: "Ask a human" },
+  staffNote: { eyebrow: "Guest teachers, too", title: "The team changes with the season.", copy: "Distillers, bar owners, ceramicists, chefs, and the occasional deeply opinionated ice sculptor join selected classes.", linkLabel: "Teach with us" },
+  courseDetail: { backLabel: "Course library", durationLabel: "Duration", tuitionLabel: "Tuition", classSizeLabel: "Class size", reserveLabel: "Reserve a seat", syllabusEyebrow: "Course structure", syllabusTitle: "What you will practice", syllabusCopy: "Each session combines demonstration, guided drills, independent work, and direct feedback.", firstLessonCopy: "Learn it, taste it, and repeat it until the movement feels obvious.", lessonCopy: "See the technique, understand why it works, then build dependable muscle memory.", intakeLabel: "Next intake" },
+  staffDetail: { backLabel: "All staff", profileLabel: "Profile", stamp: "Skill\n& Mix\nfaculty", bioLabel: "Behind the apron", achievementsEyebrow: "Awards & achievements", achievementsTitle: "A few things worth raising a glass to.", practiceEyebrow: "At the workbench", practiceTitle: "What {name} teaches.", offDutyLabel: "Off duty", favoritePourLabel: "Favorite pour:", nextLabel: "Next behind the bar" },
   homeHero: {
     kickerLeft: "Ho Chi Minh City / Since 2026",
     kickerRight: "Classes now mixing",
@@ -253,9 +292,9 @@ const siteContentFallback: SiteContent = {
 };
 
 async function requestJSON<T>(path: string, fallback: T): Promise<T> {
-  if (!payloadUrl) return fallback;
+  if (!backendUrl) return fallback;
   try {
-    const response = await fetch(`${payloadUrl}${path}`, {
+    const response = await fetch(`${backendUrl}${path}`, {
       next: { revalidate: 60 },
     });
     if (!response.ok) return fallback;
@@ -266,7 +305,9 @@ async function requestJSON<T>(path: string, fallback: T): Promise<T> {
 }
 
 function normalizeCourse(course: any): Course {
+  const fallback = courses.find((item) => item.slug === course?.slug) ?? courses[0];
   return {
+    ...fallback,
     ...course,
     syllabus: Array.isArray(course?.syllabus)
       ? course.syllabus
@@ -324,11 +365,34 @@ export async function getGalleryItems() {
 }
 
 export async function getSiteSettings() {
-  return requestJSON("/api/globals/site-settings", siteSettingsFallback);
+  const value = await requestJSON<Partial<SiteSettings>>("/api/globals/site-settings", siteSettingsFallback);
+  return {
+    ...siteSettingsFallback,
+    ...value,
+    navigation: value.navigation?.length ? value.navigation : siteSettingsFallback.navigation,
+    footer: { ...siteSettingsFallback.footer, ...value.footer, links: value.footer?.links?.length ? value.footer.links : siteSettingsFallback.footer.links },
+    theme: { ...siteSettingsFallback.theme, ...value.theme },
+  };
 }
 
 export async function getSiteContent() {
-  return requestJSON("/api/globals/site-content", siteContentFallback);
+  const value = await requestJSON<Partial<SiteContent>>("/api/globals/site-content", siteContentFallback);
+  return {
+    ...siteContentFallback,
+    ...value,
+    pageIntros: value.pageIntros?.length ? value.pageIntros : siteContentFallback.pageIntros,
+    marquees: { ...siteContentFallback.marquees, ...value.marquees },
+    featuredCourses: { ...siteContentFallback.featuredCourses, ...value.featuredCourses },
+    courseHelp: { ...siteContentFallback.courseHelp, ...value.courseHelp },
+    staffNote: { ...siteContentFallback.staffNote, ...value.staffNote },
+    courseDetail: { ...siteContentFallback.courseDetail, ...value.courseDetail },
+    staffDetail: { ...siteContentFallback.staffDetail, ...value.staffDetail },
+  };
+}
+
+export function getPageIntro(content: SiteContent, page: string) {
+  return content.pageIntros.find((intro) => intro.page === page) ??
+    siteContentFallback.pageIntros.find((intro) => intro.page === page)!;
 }
 
 export async function getServices() {

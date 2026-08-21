@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getCourseBySlug, getCourses } from "@/lib/cms";
+import { getCourseBySlug, getCourses, getSiteContent } from "@/lib/cms";
 import { CourseHero } from "./_components/CourseHero";
 import { CourseSyllabus } from "./_components/CourseSyllabus";
 import { EnrollmentPanel } from "./_components/EnrollmentPanel";
@@ -27,14 +27,14 @@ export default async function CourseDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const course = await getCourseBySlug(slug);
+  const [course, content] = await Promise.all([getCourseBySlug(slug), getSiteContent()]);
   if (!course) notFound();
 
   return (
     <>
-      <CourseHero course={course} />
-      <CourseSyllabus course={course} />
-      <EnrollmentPanel course={course} />
+      <CourseHero course={course} content={content.courseDetail} />
+      <CourseSyllabus course={course} content={content.courseDetail} />
+      <EnrollmentPanel course={course} content={content.courseDetail} />
     </>
   );
 }
