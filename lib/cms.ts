@@ -304,11 +304,23 @@ async function requestJSON<T>(path: string, fallback: T): Promise<T> {
   }
 }
 
+function mediaUrl(value: unknown, fallback = ""): string {
+  const url = typeof value === "string"
+    ? value
+    : value && typeof value === "object" && "url" in value
+      ? String((value as { url?: string }).url ?? "")
+      : "";
+  if (!url) return fallback;
+  if (/^https?:\/\//.test(url)) return url;
+  return backendUrl ? `${backendUrl}${url.startsWith("/") ? "" : "/"}${url}` : url;
+}
+
 function normalizeCourse(course: any): Course {
   const fallback = courses.find((item) => item.slug === course?.slug) ?? courses[0];
   return {
     ...fallback,
     ...course,
+    image: mediaUrl(course?.image, fallback.image),
     syllabus: Array.isArray(course?.syllabus)
       ? course.syllabus
           .map((item: any) => (typeof item === "string" ? item : item?.item))
@@ -318,8 +330,11 @@ function normalizeCourse(course: any): Course {
 }
 
 function normalizeStaffMember(person: any): StaffMember {
+  const fallback = staff.find((item) => item.slug === person?.slug) ?? staff[0];
   return {
+    ...fallback,
     ...person,
+    image: mediaUrl(person?.image, fallback.image),
     bio: Array.isArray(person?.bio)
       ? person.bio
           .map((item: any) => (typeof item === "string" ? item : item?.paragraph))
@@ -361,7 +376,10 @@ export async function getGalleryItems() {
       image,
       caption: galleryCaptions[index],
     })),
-  }).then((result) => result.docs ?? []);
+  }).then((result) => (result.docs ?? []).map((item: any, index: number) => ({
+    ...item,
+    image: mediaUrl(item.image, galleryImages[index] ?? ""),
+  })));
 }
 
 export async function getSiteSettings() {
@@ -377,7 +395,7 @@ export async function getSiteSettings() {
 
 export async function getSiteContent() {
   const value = await requestJSON<Partial<SiteContent>>("/api/globals/site-content", siteContentFallback);
-  return {
+  const merged = {
     ...siteContentFallback,
     ...value,
     pageIntros: value.pageIntros?.length ? value.pageIntros : siteContentFallback.pageIntros,
@@ -387,6 +405,26 @@ export async function getSiteContent() {
     staffNote: { ...siteContentFallback.staffNote, ...value.staffNote },
     courseDetail: { ...siteContentFallback.courseDetail, ...value.courseDetail },
     staffDetail: { ...siteContentFallback.staffDetail, ...value.staffDetail },
+  };
+  return {
+    ...merged,
+    homeHero: {
+      ...siteContentFallback.homeHero,
+      ...value.homeHero,
+      imageLeft: mediaUrl(value.homeHero?.imageLeft, siteContentFallback.homeHero.imageLeft),
+      imageRight: mediaUrl(value.homeHero?.imageRight, siteContentFallback.homeHero.imageRight),
+    },
+    homeManifesto: {
+      ...siteContentFallback.homeManifesto,
+      ...value.homeManifesto,
+      image: mediaUrl(value.homeManifesto?.image, siteContentFallback.homeManifesto.image),
+    },
+    story: {
+      ...siteContentFallback.story,
+      ...value.story,
+      imageOne: mediaUrl(value.story?.imageOne, siteContentFallback.story.imageOne),
+      imageTwo: mediaUrl(value.story?.imageTwo, siteContentFallback.story.imageTwo),
+    },
   };
 }
 
@@ -398,5 +436,8 @@ export function getPageIntro(content: SiteContent, page: string) {
 export async function getServices() {
   return requestJSON("/api/services?limit=100", {
     docs: servicesFallback,
-  }).then((result) => result.docs ?? servicesFallback);
+  }).then((result) => (result.docs ?? servicesFallback).map((service: any, index: number) => ({
+    ...service,
+    image: mediaUrl(service.image, servicesFallback[index]?.image ?? ""),
+  })));
 }

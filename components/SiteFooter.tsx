@@ -27,7 +27,7 @@ export function SiteFooter({ footer }: { footer: FooterData }) {
         </Link>
       </div>
       <div className="footer-bottom">
-        <BrandMark />
+        <BrandMark inverse />
         <div className="footer-detail">
           <p className="footer-meta-label">{footer.addressLabel}</p>
           <p>
