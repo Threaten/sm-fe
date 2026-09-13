@@ -12,9 +12,7 @@ export default async function StaffsPage() {
 
   return (
     <>
-      <PageIntro
-        {...intro}
-      />
+      <PageIntro {...intro} />
       <StaffGrid staff={staff} />
       <StaffNote content={content.staffNote} />
     </>

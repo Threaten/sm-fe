@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Course } from "@/lib/data";
+import { formatCoursePrice } from "@/lib/price";
 
 export function CourseHero({ course, content }: { course: Course; content: any }) {
   return (
@@ -10,7 +11,19 @@ export function CourseHero({ course, content }: { course: Course; content: any }
         <p className="course-editorial-summary">{course.summary}</p>
         <dl className="course-editorial-facts">
           <div><dt>{content.durationLabel}</dt><dd>{course.duration}</dd></div>
-          <div><dt>{content.tuitionLabel}</dt><dd>{course.price}</dd></div>
+          <div>
+            <dt>{content.tuitionLabel}</dt>
+            <dd className="course-price course-price-compact">
+              {course.promotionPrice ? (
+                <>
+                  <del>{formatCoursePrice(course.price)}</del>
+                  <strong>{formatCoursePrice(course.promotionPrice)}</strong>
+                </>
+              ) : (
+                <strong>{formatCoursePrice(course.price)}</strong>
+              )}
+            </dd>
+          </div>
           <div><dt>{content.classSizeLabel}</dt><dd>{course.classSize}</dd></div>
         </dl>
         <Link className="course-editorial-cta" href={`/contact-us?course=${course.slug}`}>{content.reserveLabel} <span>↗</span></Link>

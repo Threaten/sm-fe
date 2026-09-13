@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Course } from "@/lib/data";
+import { formatCoursePrice } from "@/lib/price";
 
 export function CourseCatalog({ courses }: { courses: Course[] }) {
   return (
@@ -36,7 +37,16 @@ export function CourseCatalog({ courses }: { courses: Course[] }) {
             <h2>{course.title}</h2>
             <p>{course.summary}</p>
             <div className="catalog-action">
-              <strong>{course.price}</strong>
+              <div className="course-price">
+                {course.promotionPrice ? (
+                  <>
+                    <del>{formatCoursePrice(course.price)}</del>
+                    <strong>{formatCoursePrice(course.promotionPrice)}</strong>
+                  </>
+                ) : (
+                  <strong>{formatCoursePrice(course.price)}</strong>
+                )}
+              </div>
               <Link href={`/courses/${course.slug}`}>
                 View course <b>↗</b>
               </Link>

@@ -27,7 +27,7 @@ export function HomeManifesto({ content }: { content: HomeManifestoContent }) {
         <p className="eyebrow">{content.eyebrow}</p>
         <h2>{content.title}</h2>
         <p>{content.copy}</p>
-        <ArrowLink href="/about">Meet the academy</ArrowLink>
+        <ArrowLink href="/about">Xem Thêm Về Chúng Tôi</ArrowLink>
       </div>
     </section>
   );

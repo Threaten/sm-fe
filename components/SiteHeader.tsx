@@ -4,10 +4,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BrandMark } from "./BrandMark";
+import type { SiteAnnouncementBar } from "@/lib/cms";
 
 type NavigationItem = { label: string; href: string };
 
-export function SiteHeader({ navigation }: { navigation: NavigationItem[] }) {
+export function SiteHeader({
+  announcementBar,
+  navigation,
+}: {
+  announcementBar: SiteAnnouncementBar;
+  navigation: NavigationItem[];
+}) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
@@ -28,42 +35,58 @@ export function SiteHeader({ navigation }: { navigation: NavigationItem[] }) {
   }, [open]);
 
   return (
-    <header className="site-header">
-      <BrandMark />
-      <nav className="desktop-nav" aria-label="Primary navigation">
-        {navigation.map(({ label, href }) => (
-          <Link
-            key={href}
-            href={href}
-            className={pathname === href ? "active" : ""}
-            aria-current={pathname === href ? "page" : undefined}
-          >
-            {label === "Staffs" ? "Team" : label}
-          </Link>
-        ))}
-      </nav>
-      <Link href="/contact-us" className="header-cta">
-        Book a class <span>↗</span>
-      </Link>
-      <button
-        className="menu-button"
-        onClick={() => setOpen(!open)}
-        aria-expanded={open}
-        aria-controls="mobile-navigation"
-        aria-label="Toggle menu"
-      >
-        {open ? "Close" : "Menu"}
-      </button>
-      {open && (
-        <nav id="mobile-navigation" className="mobile-menu" aria-label="Mobile navigation">
-          {navigation.map(({ label, href }, index) => (
-            <Link key={href} href={href} onClick={() => setOpen(false)}>
-              <span>0{index + 1}</span>
+    <>
+      {announcementBar.enabled && announcementBar.message ? (
+        <aside className="site-topbar" aria-label="Thông báo">
+          <span>{announcementBar.message}</span>
+          {announcementBar.linkHref && announcementBar.linkLabel ? (
+            <Link href={announcementBar.linkHref}>
+              {announcementBar.linkLabel} <b aria-hidden="true">↗</b>
+            </Link>
+          ) : null}
+        </aside>
+      ) : null}
+      <header className="site-header">
+        <BrandMark />
+        <nav className="desktop-nav" aria-label="Primary navigation">
+          {navigation.map(({ label, href }) => (
+            <Link
+              key={href}
+              href={href}
+              className={pathname === href ? "active" : ""}
+              aria-current={pathname === href ? "page" : undefined}
+            >
               {label === "Staffs" ? "Team" : label}
             </Link>
           ))}
         </nav>
-      )}
-    </header>
+        <Link href="/contact-us" className="header-cta">
+          Đăng Ký Ngay <span>↗</span>
+        </Link>
+        <button
+          className="menu-button"
+          onClick={() => setOpen(!open)}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+          aria-label="Toggle menu"
+        >
+          {open ? "Close" : "Menu"}
+        </button>
+        {open && (
+          <nav
+            id="mobile-navigation"
+            className="mobile-menu"
+            aria-label="Mobile navigation"
+          >
+            {navigation.map(({ label, href }, index) => (
+              <Link key={href} href={href} onClick={() => setOpen(false)}>
+                <span>0{index + 1}</span>
+                {label === "Staffs" ? "Team" : label}
+              </Link>
+            ))}
+          </nav>
+        )}
+      </header>
+    </>
   );
 }
