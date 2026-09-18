@@ -22,7 +22,7 @@ export function FeaturedCourses({ courses, content }: { courses: Course[]; conte
             </div>
             <h3>{course.title}</h3>
             <p>{course.level}</p>
-            <b>↗</b>
+            <b className="icon icon-arrow-up-right" aria-hidden="true" />
           </Link>
         ))}
       </div>

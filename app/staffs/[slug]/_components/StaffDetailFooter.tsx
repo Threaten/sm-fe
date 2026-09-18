@@ -7,7 +7,7 @@ export function StaffDetailFooter({ nextPerson, content }: { nextPerson: StaffMe
       <p className="eyebrow">{content.nextLabel}</p>
       <Link href={`/staffs/${nextPerson.slug}`}>
         <span>{nextPerson.name}</span>
-        <b>↗</b>
+        <b className="icon icon-arrow-up-right" aria-hidden="true" />
       </Link>
     </section>
   );

@@ -21,7 +21,7 @@ export function StaffGrid({ staff }: { staff: StaffMember[] }) {
             <h2>{person.name}</h2>
             <p className="staff-role">{person.role}</p>
             <p>{person.note}</p>
-            <b className="staff-card-arrow">Meet {person.shortName} ↗</b>
+            <b className="staff-card-arrow">Meet {person.shortName} <span className="icon icon-arrow-up-right" aria-hidden="true" /></b>
           </Link>
         </article>
       ))}

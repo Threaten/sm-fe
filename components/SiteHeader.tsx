@@ -41,7 +41,7 @@ export function SiteHeader({
           <span>{announcementBar.message}</span>
           {announcementBar.linkHref && announcementBar.linkLabel ? (
             <Link href={announcementBar.linkHref}>
-              {announcementBar.linkLabel} <b aria-hidden="true">↗</b>
+              {announcementBar.linkLabel} <b className="icon icon-arrow-up-right" aria-hidden="true" />
             </Link>
           ) : null}
         </aside>
@@ -61,7 +61,7 @@ export function SiteHeader({
           ))}
         </nav>
         <Link href="/contact-us" className="header-cta">
-          Đăng Ký Ngay <span>↗</span>
+          Đăng Ký Ngay <span className="icon icon-arrow-up-right" aria-hidden="true" />
         </Link>
         <button
           className="menu-button"

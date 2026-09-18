@@ -70,14 +70,14 @@ export function HomeTestimonials({
             onClick={() => move(-1)}
             aria-label="Feedback trước"
           >
-            ←
+            <span className="icon icon-arrow-left" aria-hidden="true" />
           </button>
           <button
             type="button"
             onClick={() => move(1)}
             aria-label="Feedback tiếp theo"
           >
-            →
+            <span className="icon icon-arrow-right" aria-hidden="true" />
           </button>
         </div>
         <div className="testimonial-dots" aria-label="Chọn feedback">

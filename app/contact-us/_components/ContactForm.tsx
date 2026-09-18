@@ -82,7 +82,7 @@ export function ContactForm({ courses }: { courses: Course[] }) {
       </div>
       {sent ? (
         <div className="form-success">
-          <span>✓</span>
+          <span className="icon icon-check" aria-hidden="true" />
           <h3>Message mixed.</h3>
           <p>We&apos;ll get back to you shortly.</p>
           <button onClick={() => setSent(false)}>Send another</button>
@@ -128,9 +128,7 @@ export function ContactForm({ courses }: { courses: Course[] }) {
                     checked={selectedCourses.includes(course.slug)}
                     onChange={() => toggleCourse(course.slug)}
                   />
-                  <span aria-hidden="true" className="course-check">
-                    ✓
-                  </span>
+                  <span aria-hidden="true" className="course-check icon icon-check" />
                   <b>{course.index}</b>
                   <strong>{course.title}</strong>
                   <small>
@@ -155,7 +153,7 @@ export function ContactForm({ courses }: { courses: Course[] }) {
             />
           </label>
           <button type="submit" disabled={sending} aria-busy={sending}>
-            {sending ? "Mixing your message..." : "Send it"} <span>{sending ? "···" : "↗"}</span>
+            {sending ? "Mixing your message..." : "Send it"} <span className={sending ? undefined : "icon icon-arrow-up-right"}>{sending ? "..." : null}</span>
           </button>
         </form>
       )}

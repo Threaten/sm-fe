@@ -10,7 +10,7 @@ export function EnrollmentPanel({ course, content }: { course: Course; content: 
         <span>{course.duration}</span>
         <span>{course.classSize}</span>
       </div>
-      <Link href={`/contact-us?course=${course.slug}`}>{content.reserveLabel} <span>↗</span></Link>
+      <Link href={`/contact-us?course=${course.slug}`}>{content.reserveLabel} <span className="icon icon-arrow-up-right" aria-hidden="true" /></Link>
     </section>
   );
 }

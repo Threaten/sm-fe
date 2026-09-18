@@ -36,7 +36,7 @@ export function FeaturedInstructor({
           ))}
         </div>
         <Link className="arrow-link" href={`/staffs/${person.slug}`}>
-          {content.linkLabel} <b aria-hidden="true">↗</b>
+          {content.linkLabel} <b className="icon icon-arrow-up-right" aria-hidden="true" />
         </Link>
       </div>
     </section>

@@ -187,13 +187,34 @@ img {
 
 .brand-mark-star {
   position: relative;
+  display: inline-block;
   top: 0.38em;
   margin-left: 0.06em;
+  width: 0.54em;
+  height: 0.54em;
   font-family: var(--body);
   font-size: 0.54em;
   font-weight: 900;
   letter-spacing: 0;
   line-height: 0.62;
+  background: linear-gradient(currentColor, currentColor) center / 0.1em 100% no-repeat;
+  transform: rotate(30deg);
+}
+
+.brand-mark-star::before,
+.brand-mark-star::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(currentColor, currentColor) center / 0.1em 100% no-repeat;
+  content: "";
+}
+
+.brand-mark-star::before {
+  transform: rotate(60deg);
+}
+
+.brand-mark-star::after {
+  transform: rotate(120deg);
 }
 
 .brand-mark-school {
@@ -672,7 +693,31 @@ img {
 }
 
 .marquee b {
+  position: relative;
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
   color: var(--accent);
+  background:
+    linear-gradient(currentColor, currentColor) center / 0.12em 100% no-repeat,
+    linear-gradient(currentColor, currentColor) center / 100% 0.12em no-repeat;
+  transform: rotate(45deg);
+}
+
+.marquee-mark::before,
+.marquee-mark::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(currentColor, currentColor) center / 0.12em 100% no-repeat;
+  content: "";
+}
+
+.marquee-mark::before {
+  transform: rotate(45deg);
+}
+
+.marquee-mark::after {
+  transform: rotate(90deg);
 }
 
 .marquee-dark {
@@ -5695,13 +5740,116 @@ img {
   filter: saturate(0.9) contrast(1.04);
 }
 
+.icon {
+  position: relative;
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.12em;
+}
+
+.icon-arrow-up-right::before,
+.icon-arrow-right::before,
+.icon-arrow-left::before {
+  position: absolute;
+  top: 50%;
+  width: 0.72em;
+  height: 0.72em;
+  border-top: 0.1em solid currentColor;
+  border-right: 0.1em solid currentColor;
+  content: "";
+}
+
+.icon-arrow-up-right::before {
+  right: 0.05em;
+  transform: translateY(-50%) rotate(-0deg);
+}
+
+.icon-arrow-up-right::after,
+.icon-arrow-right::after,
+.icon-arrow-left::after {
+  position: absolute;
+  top: 50%;
+  width: 0.9em;
+  height: 0.1em;
+  background: currentColor;
+  content: "";
+  transform-origin: center;
+}
+
+.icon-arrow-up-right::after {
+  right: 0.08em;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.icon-arrow-right::before {
+  right: 0.02em;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.icon-arrow-right::after {
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.icon-arrow-left::before {
+  left: 0.02em;
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+.icon-arrow-left::after {
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.icon-check::before {
+  position: absolute;
+  top: 0.18em;
+  left: 0.12em;
+  width: 0.72em;
+  height: 0.4em;
+  border-bottom: 0.12em solid currentColor;
+  border-left: 0.12em solid currentColor;
+  content: "";
+  transform: rotate(-45deg);
+}
+
+.icon-close::before,
+.icon-close::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1em;
+  height: 0.1em;
+  background: currentColor;
+  content: "";
+}
+
+.icon-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.icon-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
 .eyebrow {
   font-size: 0.68rem;
   letter-spacing: 0.16em;
   line-height: 1.2;
 }
 .eyebrow::before {
-  content: "●";
+  display: inline-block;
+  width: 0.55em;
+  height: 0.55em;
+  border-radius: 50%;
+  background: currentColor;
+  content: "";
+  vertical-align: 0.05em;
+}
+
+.eyebrow::before {
   margin-right: 0.55rem;
   color: currentColor;
   opacity: 0.58;
@@ -6496,12 +6644,16 @@ img {
 }
 .footer-links a::after {
   margin-left: 0.4rem;
-  content: "↗";
+  width: 0.8em;
+  height: 0.8em;
+  border-top: 0.1em solid currentColor;
+  border-right: 0.1em solid currentColor;
+  content: "";
   opacity: 0;
   transition:
     opacity 180ms ease,
     transform 240ms var(--ease-out);
-  transform: translate(-0.25rem, 0.25rem);
+  transform: translate(-0.25rem, 0.25rem) rotate(-45deg);
 }
 .footer-links a:hover::after {
   opacity: 1;

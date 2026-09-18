@@ -69,7 +69,7 @@ export function EntryPopup({ content }: { content: EntryPopupContent }) {
           onClick={dismiss}
           aria-label="Đóng thông báo"
         >
-          ×
+          <span className="icon icon-close" aria-hidden="true" />
         </button>
         {content.image && (
           <figure>
@@ -82,7 +82,7 @@ export function EntryPopup({ content }: { content: EntryPopupContent }) {
           <p id="entry-popup-copy">{content.copy}</p>
           <div className="entry-popup-actions">
             <Link href={content.ctaHref} onClick={dismiss}>
-              {content.ctaLabel} <span aria-hidden="true">↗</span>
+              {content.ctaLabel} <span className="icon icon-arrow-up-right" aria-hidden="true" />
             </Link>
             <button type="button" onClick={dismiss}>
               {content.dismissLabel}

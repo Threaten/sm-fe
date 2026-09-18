@@ -317,7 +317,7 @@ const siteContentFallback: SiteContent = {
   featuredCourses: {
     eyebrow: "Khoá học nổi bật",
     title: "Các Khoá Học Tại Skill & Mix",
-    linkLabel: "Xem Chi Tiết ↗",
+    linkLabel: "Xem Chi Tiết",
   },
   featuredInstructor: {
     eyebrow: "Giảng viên nổi bật",
@@ -526,7 +526,7 @@ const siteContentFallback: SiteContent = {
       number: "01",
       title: "Come by",
       href: "https://www.google.com/maps/search/?api=1&query=643+Nguyen+Kiem+Street+Duc+Nhuan+Ward+Ho+Chi+Minh+City",
-      linkText: "Open maps ↗",
+      linkText: "Open maps",
       copy: "643 Nguyen Kiem Street\nDuc Nhuan Ward, Ho Chi Minh City",
     },
     {
@@ -551,7 +551,7 @@ const siteContentFallback: SiteContent = {
   },
   gallerySocial: {
     copy: "More spills, drills, and questionable garnishes:",
-    handle: "@skillandmix ↗",
+    handle: "@skillandmix",
     href: "https://instagram.com",
   },
 };

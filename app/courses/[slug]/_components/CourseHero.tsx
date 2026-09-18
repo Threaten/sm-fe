@@ -6,7 +6,7 @@ export function CourseHero({ course, content }: { course: Course; content: any }
   return (
     <section className="course-editorial" style={{ "--course-accent": course.tone } as React.CSSProperties}>
       <div className="course-editorial-copy">
-        <div className="course-editorial-nav"><Link href="/courses">← {content.backLabel}</Link><span>{course.index}</span></div>
+        <div className="course-editorial-nav"><Link href="/courses"><span className="icon icon-arrow-left" aria-hidden="true" /> {content.backLabel}</Link><span>{course.index}</span></div>
         <div className="course-editorial-title"><p>{course.level}</p><h1>{course.title}</h1></div>
         <p className="course-editorial-summary">{course.summary}</p>
         <dl className="course-editorial-facts">
@@ -26,7 +26,7 @@ export function CourseHero({ course, content }: { course: Course; content: any }
           </div>
           <div><dt>{content.classSizeLabel}</dt><dd>{course.classSize}</dd></div>
         </dl>
-        <Link className="course-editorial-cta" href={`/contact-us?course=${course.slug}`}>{content.reserveLabel} <span>↗</span></Link>
+        <Link className="course-editorial-cta" href={`/contact-us?course=${course.slug}`}>{content.reserveLabel} <span className="icon icon-arrow-up-right" aria-hidden="true" /></Link>
       </div>
       <figure className="course-editorial-image"><img src={course.image} alt={course.imageAlt} /><figcaption>{course.imageCaption}</figcaption></figure>
     </section>

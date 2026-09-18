@@ -48,7 +48,7 @@ export function CourseCatalog({ courses }: { courses: Course[] }) {
                 )}
               </div>
               <Link href={`/courses/${course.slug}`}>
-                View course <b>↗</b>
+                View course <b className="icon icon-arrow-up-right" aria-hidden="true" />
               </Link>
             </div>
           </div>

@@ -23,7 +23,7 @@ export function SiteFooter({ footer }: { footer: FooterData }) {
           href="/contact-us"
         >
           <span>{footer.ctaLabel}</span>
-          <b aria-hidden="true">↗</b>
+          <b className="icon icon-arrow-up-right" aria-hidden="true" />
         </Link>
       </div>
       <div className="footer-bottom">

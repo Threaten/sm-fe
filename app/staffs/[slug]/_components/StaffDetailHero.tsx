@@ -5,7 +5,7 @@ export function StaffDetailHero({ person, index, content }: { person: StaffMembe
   return (
     <section className="staff-detail-hero">
       <div className="staff-detail-topline">
-        <Link href="/staffs">← {content.backLabel}</Link>
+        <Link href="/staffs"><span className="icon icon-arrow-left" aria-hidden="true" /> {content.backLabel}</Link>
         <span>{content.profileLabel} / 0{index + 1}</span>
       </div>
       <div className="staff-detail-title">
