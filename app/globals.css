@@ -4984,6 +4984,7 @@ img {
 .course-editorial-copy {
   display: flex;
   flex-direction: column;
+  min-width: 0;
   padding: clamp(1.5rem, 3vw, 3rem) clamp(1.5rem, 4vw, 4.5rem)
     clamp(2rem, 4vw, 4rem);
 }
@@ -5120,6 +5121,7 @@ img {
   background: oklch(93% 0.02 80);
 }
 .course-lessons-intro {
+  min-width: 0;
   align-self: start;
 }
 .course-lessons-intro h2 {
@@ -5138,6 +5140,7 @@ img {
   font-size: 1.05rem;
 }
 .course-lesson-list {
+  min-width: 0;
   border-top: 1px solid;
 }
 .course-lesson-list details {
@@ -5160,10 +5163,12 @@ img {
   font-weight: 800;
 }
 .course-lesson-list h3 {
+  min-width: 0;
   margin: 0;
   font-size: clamp(1.7rem, 3vw, 3.4rem);
   font-weight: 700;
   letter-spacing: -0.04em;
+  overflow-wrap: anywhere;
 }
 .course-lesson-list summary b {
   font-size: 1.7rem;
@@ -5189,6 +5194,7 @@ img {
   }
 }
 .course-enroll-strip {
+  min-width: 0;
   display: grid;
   grid-template-columns: 1.25fr 0.65fr 0.55fr 1fr;
   align-items: end;
@@ -5206,6 +5212,7 @@ img {
   text-transform: uppercase;
 }
 .course-enroll-strip > p {
+  min-width: 0;
   margin: 0;
   line-height: 1.45;
 }
@@ -5268,7 +5275,10 @@ img {
     margin: 5rem 0 2.5rem;
   }
   .course-editorial-title h1 {
-    font-size: 18vw;
+    width: 100%;
+    max-width: none;
+    font-size: clamp(3rem, 14vw, 7rem);
+    overflow-wrap: anywhere;
   }
   .course-editorial-facts {
     grid-template-columns: 1fr;
@@ -5276,6 +5286,7 @@ img {
   .course-editorial-facts div {
     display: flex;
     justify-content: space-between;
+    gap: 1rem;
     border-right: 0;
     border-bottom: 1px solid;
   }
