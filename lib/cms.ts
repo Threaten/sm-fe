@@ -62,13 +62,6 @@ const upload = (media: unknown) => {
   return image.url ? image : null;
 };
 
-/** Logos use the CMS's trimmed "logo" size, so padding around the artwork does not shrink it. */
-const logoImage = (media: unknown) => {
-  const image = upload(media);
-  const trimmed = (media as Doc | null)?.sizes?.logo?.url;
-  return image && trimmed ? { ...image, url: absoluteUrl(trimmed) } : image;
-};
-
 /** A page's SEO group with its share image resolved. */
 const toSeo = (value: unknown): Seo | undefined =>
   value && typeof value === "object" ? { ...(value as Seo), image: upload((value as Doc).image) } : undefined;
@@ -176,7 +169,7 @@ export async function getSiteSettings(): Promise<SiteSettings> {
   return {
     ...value,
     theme,
-    logo: { image: logoImage(logo.image), imageOnDark: logoImage(logo.imageOnDark) },
+    logo: { image: upload(logo.image), imageOnDark: upload(logo.imageOnDark) },
     seo: {
       ...value.seo,
       shareImage: toImage(value.seo.shareImage, fallback.siteSettings.seo.shareImage),
