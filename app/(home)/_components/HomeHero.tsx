@@ -1,66 +1,43 @@
 import { ArrowLink } from "@/components/ArrowLink";
+import { Lines } from "@/components/Lines";
 import { Scribble } from "@/components/Scribble";
 import { Starburst } from "@/components/Starburst";
+import type { HomePage } from "@/lib/types";
 
-type HomeHeroContent = {
-  kickerLeft: string;
-  kickerRight: string;
-  titleLineOne: string;
-  titleWord: string;
-  titleEmphasis: string;
-  titleLineThree: string;
-  summary: string;
-  buttonLabel: string;
-  imageLeft: string;
-  imageRight: string;
-  burstTop: string;
-  burstBottom: string;
-  noteLineOne: string;
-  noteLineTwo: string;
-};
-
-export function HomeHero({ content }: { content: HomeHeroContent }) {
+export function HomeHero({ content }: { content: HomePage["hero"] }) {
   return (
     <section className="home-hero">
-      <div className="hero-kicker">
+      <div className="hero-kicker label">
         <span>{content.kickerLeft}</span>
         <span>{content.kickerRight}</span>
       </div>
-      <div className="hero-body">
-        <div className="hero-copy">
-          <h1>
-            <span>{content.titleLineOne}</span>
-            <span className="hero-word">
-              {content.titleWord} <i>{content.titleEmphasis}</i>
-            </span>
-            <span>{content.titleLineThree}</span>
-          </h1>
-          <p className="hero-summary">{content.summary}</p>
-          <div className="hero-actions">
-            <ArrowLink href="/courses">{content.buttonLabel}</ArrowLink>
-          </div>
-        </div>
-        <div className="hero-stage" aria-hidden="true">
-          <div className="hero-photo hero-photo-left">
-            <img src={content.imageLeft} alt="" />
-          </div>
-          <div className="hero-photo hero-photo-right">
-            <img src={content.imageRight} alt="" />
-          </div>
-          <Starburst className="hero-burst">
-            {content.burstTop}
-            <br />
-            {content.burstBottom}
-          </Starburst>
-          <div className="hero-note">
-            <Scribble />
-            <p>
-              {content.noteLineOne}
-              <br />
-              {content.noteLineTwo}
-            </p>
-          </div>
-        </div>
+      <h1 className="hero-title">
+        <span className="hero-line">{content.titleLineOne}</span>
+        <span className="hero-line hero-line-big">
+          {content.titleWord} <em>{content.titleEmphasis}</em>
+        </span>
+        <span className="hero-line">{content.titleLineThree}</span>
+      </h1>
+      <div className="hero-stage">
+        <figure className="hero-photo hero-photo-left tape">
+          <img src={content.imageLeft.url} alt={content.imageLeft.alt} />
+        </figure>
+        <figure className="hero-photo hero-photo-right tape">
+          <img src={content.imageRight.url} alt={content.imageRight.alt} />
+        </figure>
+        <Starburst text={content.burst} className="hero-burst" />
+      </div>
+      <div className="hero-foot">
+        <p className="hero-summary">{content.summary}</p>
+        <ArrowLink href="/courses" tone="red">
+          {content.buttonLabel}
+        </ArrowLink>
+        <p className="hero-note">
+          <Scribble />
+          <span>
+            <Lines text={content.note} />
+          </span>
+        </p>
       </div>
     </section>
   );

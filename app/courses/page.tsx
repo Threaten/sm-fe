@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Marquee } from "@/components/Marquee";
 import { PageIntro } from "@/components/PageIntro";
-import { getCourses, getPageIntro, getSiteContent } from "@/lib/cms";
+import { getCourses, getCoursesPage, getSiteSettings, pageNumber } from "@/lib/cms";
 import { CourseCatalog } from "./_components/CourseCatalog";
 import { CourseFaq } from "./_components/CourseFaq";
 import { CourseHelp } from "./_components/CourseHelp";
@@ -9,19 +9,15 @@ import { CourseHelp } from "./_components/CourseHelp";
 export const metadata: Metadata = { title: "Courses" };
 
 export default async function CoursesPage() {
-  const [courses, content] = await Promise.all([
-    getCourses(),
-    getSiteContent(),
-  ]);
-  const intro = getPageIntro(content, "courses");
+  const [courses, page, settings] = await Promise.all([getCourses(), getCoursesPage(), getSiteSettings()]);
 
   return (
     <>
-      <PageIntro {...intro} />
-      <CourseCatalog courses={courses} />
-      <Marquee text={content.marquees.courses} />
-      <CourseFaq content={content.courseFaq} />
-      <CourseHelp content={content.courseHelp} />
+      <PageIntro intro={page.intro} number={pageNumber(settings.navigation, "/courses")} />
+      <CourseCatalog courses={courses} catalog={page.catalog} labels={page.detail} />
+      <Marquee text={page.marquee} />
+      <CourseFaq content={page.faq} />
+      <CourseHelp content={page.help} />
     </>
   );
 }

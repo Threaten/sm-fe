@@ -1,23 +1,19 @@
 import type { Metadata } from "next";
 import { PageIntro } from "@/components/PageIntro";
-import { getCourses, getPageIntro, getSiteContent } from "@/lib/cms";
+import { getContactPage, getCourses, getSiteSettings, pageNumber } from "@/lib/cms";
 import { ContactDetails } from "./_components/ContactDetails";
 import { ContactForm } from "./_components/ContactForm";
 
 export const metadata: Metadata = { title: "Contact Us" };
 
 export default async function ContactPage() {
-  const courses = await getCourses();
-  const content = await getSiteContent();
-  const intro = getPageIntro(content, "contact");
+  const [courses, page, settings] = await Promise.all([getCourses(), getContactPage(), getSiteSettings()]);
 
   return (
     <>
-      <PageIntro
-        {...intro}
-      />
-      <ContactDetails panels={content.contactDetails} />
-      <ContactForm courses={courses} />
+      <PageIntro intro={page.intro} number={pageNumber(settings.navigation, "/contact-us")} />
+      <ContactDetails panels={page.panels} contact={settings.contact} />
+      <ContactForm courses={courses} content={page.form} />
     </>
   );
 }

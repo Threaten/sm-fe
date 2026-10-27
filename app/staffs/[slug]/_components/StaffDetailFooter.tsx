@@ -1,13 +1,14 @@
 import Link from "next/link";
-import { StaffMember } from "@/lib/data";
+import type { StaffMember, TeamPage } from "@/lib/types";
 
-export function StaffDetailFooter({ nextPerson, content }: { nextPerson: StaffMember; content: any }) {
+export function StaffDetailFooter({ nextPerson, labels }: { nextPerson: StaffMember; labels: TeamPage["profile"] }) {
   return (
-    <section className="staff-detail-footer">
-      <p className="eyebrow">{content.nextLabel}</p>
+    <section className="next-up">
+      <p className="label">{labels.nextLabel}</p>
       <Link href={`/staffs/${nextPerson.slug}`}>
+        <img src={nextPerson.image.url} alt="" />
         <span>{nextPerson.name}</span>
-        <b className="icon icon-arrow-up-right" aria-hidden="true" />
+        <b className="icon icon-arrow" aria-hidden="true" />
       </Link>
     </section>
   );

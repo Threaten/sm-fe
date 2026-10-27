@@ -1,22 +1,37 @@
 import Link from "next/link";
-import { StaffMember } from "@/lib/data";
+import { Lines } from "@/components/Lines";
+import type { StaffMember, TeamPage } from "@/lib/types";
 
-export function StaffDetailHero({ person, index, content }: { person: StaffMember; index: number; content: any }) {
+export function StaffDetailHero({
+  person,
+  number,
+  labels,
+}: {
+  person: StaffMember;
+  number: number;
+  labels: TeamPage["profile"];
+}) {
   return (
-    <section className="staff-detail-hero">
-      <div className="staff-detail-topline">
-        <Link href="/staffs"><span className="icon icon-arrow-left" aria-hidden="true" /> {content.backLabel}</Link>
-        <span>{content.profileLabel} / 0{index + 1}</span>
-      </div>
-      <div className="staff-detail-title">
-        <p>{person.role}</p>
+    <section className="profile-hero">
+      <nav className="crumb">
+        <Link href="/staffs">
+          <span className="icon icon-arrow-left" aria-hidden="true" /> {labels.backLabel}
+        </Link>
+        <span>
+          {labels.profileLabel} / {String(number).padStart(2, "0")}
+        </span>
+      </nav>
+      <div className="profile-hero-title">
+        <p className="label">{person.role}</p>
         <h1>{person.name}</h1>
       </div>
-      <figure className="staff-detail-portrait">
-        <img src={person.image} alt={`${person.name}, ${person.role}`} />
+      <figure className="profile-hero-portrait tape">
+        <img src={person.image.url} alt={person.image.alt} />
         <figcaption>{person.note}</figcaption>
       </figure>
-      <div className="staff-detail-stamp">{content.stamp.split("\n").map((line: string) => <span key={line}>{line}<br /></span>)}</div>
+      <p className="stamp profile-hero-stamp" aria-hidden="true">
+        <Lines text={labels.stamp} />
+      </p>
     </section>
   );
 }

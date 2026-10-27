@@ -1,25 +1,34 @@
-type ContactPanel = {
-  number: string;
-  title: string;
-  href: string;
-  linkText: string;
-  copy: string;
-};
+import { Lines } from "@/components/Lines";
+import type { ContactPage, SiteSettings } from "@/lib/types";
 
-export function ContactDetails({ panels }: { panels: ContactPanel[] }) {
+export function ContactDetails({
+  panels,
+  contact,
+}: {
+  panels: ContactPage["panels"];
+  contact: SiteSettings["contact"];
+}) {
+  const items = [
+    { title: panels.visitTitle, copy: contact.address, href: contact.mapUrl, link: panels.visitLinkLabel },
+    { title: panels.emailTitle, copy: panels.emailNote, href: `mailto:${contact.email}`, link: contact.email },
+    { title: panels.phoneTitle, copy: contact.hours, href: `tel:${contact.phone.replace(/\s/g, "")}`, link: contact.phone },
+  ];
+
   return (
-    <section className="contact-details">
-      {panels.map((panel) => (
-        <div key={panel.number}>
-          <span>{panel.number}</span>
-          <h2>{panel.title}</h2>
-          <p>{panel.copy}</p>
+    <section className="contact-panels">
+      {items.map((item, index) => (
+        <div key={item.title}>
+          <span>{String(index + 1).padStart(2, "0")}</span>
+          <h2>{item.title}</h2>
+          <p>
+            <Lines text={item.copy} />
+          </p>
           <a
-            href={panel.href}
-            target={panel.href.startsWith("http") ? "_blank" : undefined}
-            rel={panel.href.startsWith("http") ? "noreferrer" : undefined}
+            href={item.href}
+            target={item.href.startsWith("http") ? "_blank" : undefined}
+            rel={item.href.startsWith("http") ? "noreferrer" : undefined}
           >
-            {panel.linkText}
+            {item.link} <span className="icon icon-arrow" aria-hidden="true" />
           </a>
         </div>
       ))}

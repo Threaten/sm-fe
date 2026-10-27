@@ -1,5 +1,5 @@
 import { Marquee } from "@/components/Marquee";
-import { getCourses, getSiteContent, getStaff } from "@/lib/cms";
+import { getCourses, getCoursesPage, getHomePage, getTestimonials } from "@/lib/cms";
 import { FeaturedCourses } from "./_components/FeaturedCourses";
 import { FeaturedInstructor } from "./_components/FeaturedInstructor";
 import { HomeHero } from "./_components/HomeHero";
@@ -7,23 +7,23 @@ import { HomeManifesto } from "./_components/HomeManifesto";
 import { HomeTestimonials } from "./_components/HomeTestimonials";
 
 export default async function HomePage() {
-  const [courses, staff, content] = await Promise.all([
+  const [home, courses, coursesPage, testimonials] = await Promise.all([
+    getHomePage(),
     getCourses(),
-    getStaff(),
-    getSiteContent(),
+    getCoursesPage(),
+    getTestimonials(),
   ]);
 
   return (
     <>
-      <HomeHero content={content.homeHero} />
-      <Marquee text={content.marquees.home} />
-      <HomeManifesto content={content.homeManifesto} />
-      <FeaturedInstructor
-        content={content.featuredInstructor}
-        person={content.featuredInstructor.person ?? staff[0]}
-      />
-      <FeaturedCourses courses={courses} content={content.featuredCourses} />
-      <HomeTestimonials testimonials={content.homeTestimonials} />
+      <HomeHero content={home.hero} />
+      <Marquee text={home.marquee} />
+      <HomeManifesto content={home.manifesto} />
+      {home.featuredPerson ? (
+        <FeaturedInstructor content={home.featuredInstructor} person={home.featuredPerson} />
+      ) : null}
+      <FeaturedCourses courses={courses} content={home.featuredCourses} labels={coursesPage.detail} />
+      <HomeTestimonials eyebrow={home.testimonials.eyebrow} testimonials={testimonials} />
     </>
   );
 }

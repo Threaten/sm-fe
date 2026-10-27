@@ -1,38 +1,22 @@
 import { Starburst } from "@/components/Starburst";
+import type { AboutPage } from "@/lib/types";
 
-type StoryContent = {
-  eyebrow: string;
-  title: string;
-  copy: string;
-  imageOne: string;
-  imageOneAlt: string;
-  imageOneCaption: string;
-  imageTwo: string;
-  imageTwoAlt: string;
-  stampTop: string;
-  stampBottom: string;
-};
-
-export function StoryCollage({ content }: { content: StoryContent }) {
+export function StoryCollage({ content }: { content: AboutPage["story"] }) {
   return (
-    <section className="story-collage">
+    <section className="story">
       <div className="story-lead">
-        <p className="eyebrow">{content.eyebrow}</p>
+        <p className="label">{content.eyebrow}</p>
         <h2>{content.title}</h2>
         <p>{content.copy}</p>
       </div>
-      <figure className="story-image story-image-one">
-        <img src={content.imageOne} alt={content.imageOneAlt} />
+      <figure className="story-photo story-photo-one tape">
+        <img src={content.imageOne.url} alt={content.imageOne.alt} />
         <figcaption>{content.imageOneCaption}</figcaption>
       </figure>
-      <figure className="story-image story-image-two">
-        <img src={content.imageTwo} alt={content.imageTwoAlt} />
+      <figure className="story-photo story-photo-two tape">
+        <img src={content.imageTwo.url} alt={content.imageTwo.alt} />
       </figure>
-      <Starburst>
-        {content.stampTop}
-        <br />
-        {content.stampBottom}
-      </Starburst>
+      <Starburst text={content.stamp} className="story-burst" />
     </section>
   );
 }

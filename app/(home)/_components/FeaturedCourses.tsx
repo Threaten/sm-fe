@@ -1,31 +1,50 @@
 import Link from "next/link";
-import type { Course } from "@/lib/data";
+import { Price } from "@/components/Price";
+import type { Course, CoursesPage, HomePage } from "@/lib/types";
 
-export function FeaturedCourses({ courses, content }: { courses: Course[]; content: { eyebrow: string; title: string; linkLabel: string } }) {
+export function FeaturedCourses({
+  courses,
+  content,
+  labels,
+}: {
+  courses: Course[];
+  content: HomePage["featuredCourses"];
+  labels: CoursesPage["detail"];
+}) {
   return (
     <section className="featured-courses">
-      <div className="section-heading">
-        <p className="eyebrow">{content.eyebrow}</p>
+      <div className="section-head">
+        <p className="label">{content.eyebrow}</p>
         <h2>{content.title}</h2>
-        <Link href="/courses">{content.linkLabel}</Link>
+        <Link className="text-link" href="/courses">
+          {content.linkLabel} <b className="icon icon-arrow" aria-hidden="true" />
+        </Link>
       </div>
-      <div className="course-stack">
-        {courses.map((course) => (
-          <Link
-            key={course.slug}
-            href={`/courses/${course.slug}`}
-            className="course-row"
-          >
-            <span className="course-index">{course.index}</span>
-            <div className="course-thumb">
-              <img src={course.image} alt="" />
-            </div>
-            <h3>{course.title}</h3>
-            <p>{course.level}</p>
-            <b className="icon icon-arrow-up-right" aria-hidden="true" />
-          </Link>
+      <ol className="course-index">
+        {courses.map((course, index) => (
+          <li key={course.slug} className={`accent-${course.accent}`}>
+            <Link href={`/courses/${course.slug}`}>
+              <span className="course-index-number">{String(index + 1).padStart(2, "0")}</span>
+              <span className="course-index-thumb">
+                <img src={course.image.url} alt={course.image.alt} />
+              </span>
+              <span className="course-index-title">
+                <strong>{course.title}</strong>
+                <small>{course.level}</small>
+              </span>
+              <span className="course-index-meta">
+                <small>{labels.durationLabel}</small>
+                {course.duration}
+              </span>
+              <span className="course-index-meta">
+                <small>{labels.tuitionLabel}</small>
+                <Price price={course.price} promotionPrice={course.promotionPrice} />
+              </span>
+              <b className="icon icon-arrow" aria-hidden="true" />
+            </Link>
+          </li>
         ))}
-      </div>
+      </ol>
     </section>
   );
 }

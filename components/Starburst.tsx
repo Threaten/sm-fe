@@ -1,3 +1,11 @@
-export function Starburst({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <div className={`starburst ${className}`}><span>{children}</span></div>;
+import { Lines } from "./Lines";
+
+export function Starburst({ text, className = "" }: { text: string; className?: string }) {
+  return (
+    <div className={`starburst ${className}`} aria-hidden="true">
+      <span>
+        <Lines text={text} />
+      </span>
+    </div>
+  );
 }

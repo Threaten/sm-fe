@@ -1,11 +1,11 @@
-type GallerySocialContent = { copy: string; handle: string; href: string };
+import type { SiteSettings } from "@/lib/types";
 
-export function GallerySocial({ content }: { content: GallerySocialContent }) {
+export function GallerySocial({ copy, social }: { copy: string; social: SiteSettings["social"] }) {
   return (
     <section className="gallery-social">
-      <p>{content.copy}</p>
-      <a href={content.href} target="_blank" rel="noreferrer">
-        {content.handle}
+      <p>{copy}</p>
+      <a href={social.url} target="_blank" rel="noreferrer">
+        {social.handle} <span className="icon icon-arrow" aria-hidden="true" />
       </a>
     </section>
   );

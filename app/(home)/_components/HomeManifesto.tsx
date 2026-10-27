@@ -1,33 +1,21 @@
 import { ArrowLink } from "@/components/ArrowLink";
+import { Lines } from "@/components/Lines";
+import type { HomePage } from "@/lib/types";
 
-type HomeManifestoContent = {
-  eyebrow: string;
-  title: string;
-  copy: string;
-  image: string;
-  stampTop: string;
-  stampBottom: string;
-};
-
-export function HomeManifesto({ content }: { content: HomeManifestoContent }) {
+export function HomeManifesto({ content }: { content: HomePage["manifesto"] }) {
   return (
-    <section className="home-manifesto">
-      <div className="manifesto-photo">
-        <img
-          src={content.image}
-          alt="Friends raising cocktails around a lively table"
-        />
-        <span className="photo-stamp">
-          {content.stampTop}
-          <br />
-          {content.stampBottom}
+    <section className="manifesto">
+      <figure className="manifesto-photo">
+        <img src={content.image.url} alt={content.image.alt} />
+        <span className="stamp" aria-hidden="true">
+          <Lines text={content.stamp} />
         </span>
-      </div>
+      </figure>
       <div className="manifesto-copy">
-        <p className="eyebrow">{content.eyebrow}</p>
+        <p className="label">{content.eyebrow}</p>
         <h2>{content.title}</h2>
         <p>{content.copy}</p>
-        <ArrowLink href="/about">Xem Thêm Về Chúng Tôi</ArrowLink>
+        <ArrowLink href="/about">{content.linkLabel}</ArrowLink>
       </div>
     </section>
   );

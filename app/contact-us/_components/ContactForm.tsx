@@ -1,60 +1,40 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
-import type { Course } from "@/lib/data";
+import type { ContactPage, Course } from "@/lib/types";
 
-export function ContactForm({ courses }: { courses: Course[] }) {
+export function ContactForm({ courses, content }: { courses: Course[]; content: ContactPage["form"] }) {
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
-  const [selectedCourses, setSelectedCourses] = useState<string[]>([]);
-  const [courseError, setCourseError] = useState("");
+  const [selected, setSelected] = useState<string[]>([]);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    const requestedCourse = new URLSearchParams(window.location.search).get(
-      "course",
-    );
-    if (
-      requestedCourse &&
-      courses.some((course) => course.slug === requestedCourse)
-    ) {
-      setSelectedCourses([requestedCourse]);
-    }
-  }, []);
+    const requested = new URLSearchParams(window.location.search).get("course");
+    if (requested && courses.some((course) => course.slug === requested)) setSelected([requested]);
+  }, [courses]);
 
   function toggleCourse(slug: string) {
-    setCourseError("");
-    setSelectedCourses((current) =>
-      current.includes(slug)
-        ? current.filter((course) => course !== slug)
-        : [...current, slug],
-    );
-  }
-
-  function toggleAllCourses() {
-    setCourseError("");
-    setSelectedCourses((current) =>
-      current.length === courses.length
-        ? []
-        : courses.map((course) => course.slug),
-    );
+    setError("");
+    setSelected((current) => (current.includes(slug) ? current.filter((item) => item !== slug) : [...current, slug]));
   }
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (selectedCourses.length === 0) {
-      setCourseError("Choose at least one course.");
+    if (selected.length === 0) {
+      setError("Chọn ít nhất một khoá học.");
       return;
     }
 
     setSending(true);
-    setCourseError("");
+    setError("");
     const form = event.currentTarget;
     const formData = new FormData(form);
     const body = {
       name: String(formData.get("name") ?? ""),
       phone: String(formData.get("phone") ?? ""),
       message: String(formData.get("message") ?? ""),
-      courses: selectedCourses.map((slug) => ({ slug })),
+      courses: courses.filter((course) => selected.includes(course.slug)).map((course) => course.id),
     };
 
     try {
@@ -65,95 +45,74 @@ export function ContactForm({ courses }: { courses: Course[] }) {
       });
       if (!response.ok) throw new Error("Submission failed");
       form.reset();
-      setSelectedCourses([]);
+      setSelected([]);
       setSent(true);
     } catch {
-      setCourseError("We could not send that. Check your connection and try again.");
+      setError("Chưa gửi được. Kiểm tra kết nối và thử lại nhé.");
     } finally {
       setSending(false);
     }
   }
 
   return (
-    <section className="contact-form-section">
-      <div className="contact-form-title">
-        <p className="eyebrow">What&apos;s on your mind?</p>
-        <h2>Drop us a line.</h2>
+    <section className="contact-form">
+      <div className="contact-form-head">
+        <p className="label">{content.eyebrow}</p>
+        <h2>{content.title}</h2>
       </div>
       {sent ? (
-        <div className="form-success">
+        <div className="form-success" role="status">
           <span className="icon icon-check" aria-hidden="true" />
-          <h3>Message mixed.</h3>
-          <p>We&apos;ll get back to you shortly.</p>
-          <button onClick={() => setSent(false)}>Send another</button>
+          <h3>{content.successTitle}</h3>
+          <p>{content.successCopy}</p>
+          <button type="button" onClick={() => setSent(false)}>
+            ↺
+            <span className="sr-only">Gửi tin nhắn khác</span>
+          </button>
         </div>
       ) : (
         <form onSubmit={submit}>
           <label>
-            Name
-            <input name="name" required placeholder="Your name" />
+            {content.nameLabel}
+            <input name="name" required autoComplete="name" />
           </label>
           <label>
-            Phone
-            <input
-              name="phone"
-              type="tel"
-              required
-              placeholder="+84 90 123 4567"
-              autoComplete="tel"
-            />
+            {content.phoneLabel}
+            <input name="phone" type="tel" required autoComplete="tel" placeholder="+84 90 123 4567" />
           </label>
-          <fieldset className="course-fieldset">
-            <legend>Course</legend>
-            <input
-              type="hidden"
-              name="courses"
-              value={selectedCourses.join(",")}
-            />
-            <div className="course-selector-meta">
+          <fieldset>
+            <legend>
+              {content.coursesLabel}
               <span aria-live="polite">
-                {selectedCourses.length} of {courses.length} selected
+                {selected.length}/{courses.length}
               </span>
-              <button type="button" onClick={toggleAllCourses}>
-                {selectedCourses.length === courses.length
-                  ? "Clear all"
-                  : "Select all"}
-              </button>
-            </div>
+            </legend>
             <div className="course-options">
-              {courses.map((course) => (
-                <label className="course-option" key={course.slug}>
+              {courses.map((course, index) => (
+                <label key={course.slug} className={`course-option accent-${course.accent}`}>
                   <input
                     type="checkbox"
-                    checked={selectedCourses.includes(course.slug)}
+                    checked={selected.includes(course.slug)}
                     onChange={() => toggleCourse(course.slug)}
                   />
-                  <span aria-hidden="true" className="course-check icon icon-check" />
-                  <b>{course.index}</b>
+                  <b>{String(index + 1).padStart(2, "0")}</b>
                   <strong>{course.title}</strong>
-                  <small>
-                    {course.duration} / {course.level}
-                  </small>
+                  <small>{course.duration}</small>
                 </label>
               ))}
             </div>
-            {courseError && (
+            {error ? (
               <p className="form-error" role="alert">
-                {courseError}
+                {error}
               </p>
-            )}
+            ) : null}
           </fieldset>
-          <label className="form-message">
-            Message
-            <textarea
-              name="message"
-              required
-              placeholder="Tell us everything..."
-              rows={5}
-            />
+          <label className="form-wide">
+            {content.messageLabel}
+            <textarea name="message" required rows={5} placeholder={content.messagePlaceholder} />
           </label>
-          <button type="submit" disabled={sending} aria-busy={sending}>
-            {sending ? "Mixing your message..." : "Send it"} <span className={sending ? undefined : "icon icon-arrow-up-right"}>{sending ? "..." : null}</span>
+          <button type="submit" className="button-solid" disabled={sending} aria-busy={sending}>
+            {content.submitLabel} <b className={sending ? "spinner" : "icon icon-arrow"} aria-hidden="true" />
           </button>
         </form>
       )}

@@ -2,93 +2,33 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import type { EntryPopup as EntryPopupContent, Image } from "@/lib/types";
 
-export type EntryPopupContent = {
-  enabled: boolean;
-  promotionActive: boolean;
-  eyebrow: string;
-  title: string;
-  copy: string;
-  image?: string;
-  ctaLabel: string;
-  ctaHref: string;
-  dismissLabel: string;
-  additionalSlides: {
-    active: boolean;
-    displayMode: "image" | "video";
-    eyebrow?: string;
-    title?: string;
-    copy?: string;
-    image?: string;
-    imageAlt?: string;
-    videoUrl?: string;
-    ctaLabel?: string;
-    ctaHref?: string;
-  }[];
-};
-
-type PopupSlide =
-  | {
-      kind: "promotion";
-      eyebrow: string;
-      title: string;
-      copy: string;
-      image?: string;
-      ctaLabel: string;
-      ctaHref: string;
-      dismissLabel: string;
-    }
+type Slide =
   | {
       kind: "image";
-      image: string;
-      imageAlt?: string;
-      eyebrow?: string;
-      title?: string;
-      copy?: string;
-      ctaLabel?: string;
-      ctaHref?: string;
+      title: string;
+      image?: Image | null;
+      eyebrow?: string | null;
+      copy?: string | null;
+      ctaLabel?: string | null;
+      ctaHref?: string | null;
     }
-  | {
-      kind: "video";
-      videoSrc: string;
-      orientation: "portrait" | "landscape";
-      title?: string;
-    };
+  | { kind: "video"; videoSrc: string; orientation: "portrait" | "landscape"; title: string };
 
 export function EntryPopup({ content }: { content: EntryPopupContent }) {
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const closeButton = useRef<HTMLButtonElement>(null);
 
-  const slides: PopupSlide[] = [];
-  if (content.promotionActive) {
-    slides.push({
-      kind: "promotion",
-      eyebrow: content.eyebrow,
-      title: content.title,
-      copy: content.copy,
-      image: content.image,
-      ctaLabel: content.ctaLabel,
-      ctaHref: content.ctaHref,
-      dismissLabel: content.dismissLabel,
-    });
-  }
-  for (const item of content.additionalSlides ?? []) {
+  const slides: Slide[] = [];
+  for (const item of content.slides) {
     if (!item.active) continue;
     if (item.displayMode === "video") {
-      const videoEmbed = getVideoEmbed(item.videoUrl);
-      if (videoEmbed) slides.push({ kind: "video", ...videoEmbed, title: item.title });
-    } else if (item.image) {
-      slides.push({
-        kind: "image",
-        image: item.image,
-        imageAlt: item.imageAlt,
-        eyebrow: item.eyebrow,
-        title: item.title,
-        copy: item.copy,
-        ctaLabel: item.ctaLabel,
-        ctaHref: item.ctaHref,
-      });
+      const embed = getVideoEmbed(item.videoUrl ?? undefined);
+      if (embed) slides.push({ kind: "video", ...embed, title: item.title });
+    } else {
+      slides.push({ kind: "image", ...item });
     }
   }
 
@@ -178,12 +118,11 @@ export function EntryPopup({ content }: { content: EntryPopupContent }) {
       }}
     >
       <section
-        className={`entry-popup ${((currentSlide.kind === "promotion" && currentSlide.image) || currentSlide.kind === "image") ? "entry-popup-with-image" : ""} ${currentSlide.kind === "video" ? `entry-popup-full-media entry-popup-full-media-${currentSlide.orientation}` : ""}`}
+        className={`entry-popup ${currentSlide.kind === "image" && currentSlide.image ? "entry-popup-with-image" : ""} ${currentSlide.kind === "video" ? `entry-popup-video-slide entry-popup-${currentSlide.orientation}` : ""}`}
         role="dialog"
         aria-modal="true"
-        aria-labelledby={currentSlide.kind === "promotion" ? "entry-popup-title" : undefined}
-        aria-label={currentSlide.kind !== "promotion" ? currentSlide.title || "Skill & Mix" : undefined}
-        aria-describedby={currentSlide.kind === "promotion" ? "entry-popup-copy" : undefined}
+        aria-labelledby={currentSlide.kind === "image" ? "entry-popup-title" : undefined}
+        aria-label={currentSlide.kind === "video" ? currentSlide.title : undefined}
       >
         <button
           ref={closeButton}
@@ -192,54 +131,36 @@ export function EntryPopup({ content }: { content: EntryPopupContent }) {
           onClick={dismiss}
           aria-label="Đóng thông báo"
         >
-          <span className="icon icon-close" aria-hidden="true" />
+          <span aria-hidden="true">×</span>
         </button>
         {currentSlide.kind === "video" && (
           <iframe
             className="entry-popup-video"
             src={currentSlide.videoSrc}
-            title={currentSlide.title || "Embedded video"}
+            title={currentSlide.title}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           />
         )}
         {currentSlide.kind === "image" && (
           <>
-            <figure>
-              <img src={currentSlide.image} alt={currentSlide.imageAlt ?? ""} />
-            </figure>
-            <div className="entry-popup-content">
-              {currentSlide.eyebrow && <p className="eyebrow">{currentSlide.eyebrow}</p>}
-              {currentSlide.title && <h2>{currentSlide.title}</h2>}
-              {currentSlide.copy && <p>{currentSlide.copy}</p>}
-              {currentSlide.ctaLabel && currentSlide.ctaHref && (
-                <div className="entry-popup-actions">
-                  <Link href={currentSlide.ctaHref} onClick={dismiss}>
-                    {currentSlide.ctaLabel} <span className="icon icon-arrow-up-right" aria-hidden="true" />
-                  </Link>
-                </div>
-              )}
-              {carouselControls}
-            </div>
-          </>
-        )}
-        {currentSlide.kind === "promotion" && (
-          <>
-            {currentSlide.image && (
+            {currentSlide.image ? (
               <figure>
-                <img src={currentSlide.image} alt="" />
+                <img src={currentSlide.image.url} alt={currentSlide.image.alt} />
               </figure>
-            )}
+            ) : null}
             <div className="entry-popup-content">
-              <p className="eyebrow">{currentSlide.eyebrow}</p>
+              {currentSlide.eyebrow ? <p className="label">{currentSlide.eyebrow}</p> : null}
               <h2 id="entry-popup-title">{currentSlide.title}</h2>
-              <p id="entry-popup-copy">{currentSlide.copy}</p>
+              {currentSlide.copy ? <p>{currentSlide.copy}</p> : null}
               <div className="entry-popup-actions">
-                <Link href={currentSlide.ctaHref} onClick={dismiss}>
-                  {currentSlide.ctaLabel} <span className="icon icon-arrow-up-right" aria-hidden="true" />
-                </Link>
+                {currentSlide.ctaLabel && currentSlide.ctaHref ? (
+                  <Link className="button-solid" href={currentSlide.ctaHref} onClick={dismiss}>
+                    {currentSlide.ctaLabel} <span className="icon icon-arrow" aria-hidden="true" />
+                  </Link>
+                ) : null}
                 <button type="button" onClick={dismiss}>
-                  {currentSlide.dismissLabel}
+                  {content.dismissLabel}
                 </button>
               </div>
               {carouselControls}

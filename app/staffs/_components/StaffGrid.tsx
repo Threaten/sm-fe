@@ -1,27 +1,22 @@
 import Link from "next/link";
-import type { StaffMember } from "@/lib/data";
+import type { StaffMember } from "@/lib/types";
 
-export function StaffGrid({ staff }: { staff: StaffMember[] }) {
+export function StaffGrid({ staff, cardLinkLabel }: { staff: StaffMember[]; cardLinkLabel: string }) {
   return (
     <section className="staff-grid">
       {staff.map((person, index) => (
-        <article
-          key={person.name}
-          className={`staff-card staff-card-${index + 1}`}
-        >
-          <Link
-            href={`/staffs/${person.slug}`}
-            className="staff-card-link"
-            aria-label={`Meet ${person.name}`}
-          >
-            <div className="staff-photo">
-              <img src={person.image} alt={`${person.name}, ${person.role}`} />
-              <span>0{index + 1}</span>
-            </div>
+        <article key={person.slug} className="staff-card">
+          <Link href={`/staffs/${person.slug}`}>
+            <figure className="staff-card-photo">
+              <img src={person.image.url} alt={person.image.alt} />
+              <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+            </figure>
+            <p className="label">{person.role}</p>
             <h2>{person.name}</h2>
-            <p className="staff-role">{person.role}</p>
             <p>{person.note}</p>
-            <b className="staff-card-arrow">Meet {person.shortName} <span className="icon icon-arrow-up-right" aria-hidden="true" /></b>
+            <b className="staff-card-cta">
+              {cardLinkLabel} {person.shortName} <span className="icon icon-arrow" aria-hidden="true" />
+            </b>
           </Link>
         </article>
       ))}

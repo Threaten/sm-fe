@@ -1,55 +1,52 @@
 import Link from "next/link";
+import type { SiteSettings } from "@/lib/types";
 import { BrandMark } from "./BrandMark";
+import { Lines } from "./Lines";
 
-type FooterData = {
-  tagline: string;
-  address: string;
-  email: string;
-  phone: string;
-  headline: string; ctaLabel: string; addressLabel: string; contactLabel: string;
-  linksLabel: string; copyright: string; links: { label: string; href: string }[];
-};
-
-export function SiteFooter({ footer }: { footer: FooterData }) {
-  const addressLines = footer.address.split("\n");
+export function SiteFooter({ settings }: { settings: SiteSettings }) {
+  const { footer, contact, social, navigation, headerCta } = settings;
 
   return (
     <footer className="site-footer">
-      <div className="footer-top">
-        <p className="eyebrow">{footer.tagline}</p>
+      <div className="footer-call">
+        <p className="label">{footer.tagline}</p>
         <h2>{footer.headline}</h2>
-        <Link
-          className="circle-link"
-          href="/contact-us"
-        >
+        <Link className="footer-cta" href={headerCta.href}>
           <span>{footer.ctaLabel}</span>
-          <b className="icon icon-arrow-up-right" aria-hidden="true" />
+          <b className="icon icon-arrow" aria-hidden="true" />
         </Link>
       </div>
-      <div className="footer-bottom">
-        <BrandMark inverse />
-        <div className="footer-detail">
-          <p className="footer-meta-label">{footer.addressLabel}</p>
+      <div className="footer-grid">
+        <div>
+          <p className="label">{footer.addressLabel}</p>
           <p>
-            {addressLines.map((line) => (
-              <span key={line}>
-                {line}
-                <br />
-              </span>
-            ))}
+            <Lines text={contact.address} />
+          </p>
+          <p className="footer-hours">
+            <Lines text={contact.hours} />
           </p>
         </div>
-        <div className="footer-detail">
-          <p className="footer-meta-label">{footer.contactLabel}</p>
-          <Link href={`mailto:${footer.email}`}>{footer.email}</Link>
-          <p><a href={`tel:${footer.phone.replace(/\s/g, "")}`}>{footer.phone}</a></p>
+        <div>
+          <p className="label">{footer.contactLabel}</p>
+          <a href={`mailto:${contact.email}`}>{contact.email}</a>
+          <a href={`tel:${contact.phone.replace(/\s/g, "")}`}>{contact.phone}</a>
+          <a href={social.url} target="_blank" rel="noreferrer">
+            {social.handle}
+          </a>
         </div>
-        <nav className="footer-links" aria-label="Footer navigation">
-          <p className="footer-meta-label">{footer.linksLabel}</p>
-          {footer.links.map((link) => <Link key={link.href} href={link.href}>{link.label}</Link>)}
+        <nav aria-label="Footer navigation">
+          <p className="label">{footer.linksLabel}</p>
+          {navigation.map((link) => (
+            <Link key={link.href} href={link.href}>
+              {link.label}
+            </Link>
+          ))}
         </nav>
       </div>
-      <p className="copyright">{footer.copyright}</p>
+      <div className="footer-base">
+        <BrandMark inverse />
+        <p>{footer.copyright}</p>
+      </div>
     </footer>
   );
 }

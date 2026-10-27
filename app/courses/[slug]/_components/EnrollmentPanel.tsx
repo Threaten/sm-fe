@@ -1,16 +1,30 @@
 import Link from "next/link";
-import { Course } from "@/lib/data";
+import { Lines } from "@/components/Lines";
+import { Price } from "@/components/Price";
+import type { Course, CoursesPage } from "@/lib/types";
 
-export function EnrollmentPanel({ course, content }: { course: Course; content: any }) {
+export function EnrollmentPanel({ course, labels }: { course: Course; labels: CoursesPage["detail"] }) {
   return (
-    <section className="course-enroll-strip" style={{ "--course-accent": course.tone } as React.CSSProperties}>
-      <div><p className="eyebrow">{content.intakeLabel}</p><h2>{course.nextIntake}</h2></div>
-      <p>{course.schedule.split("\n").map((line) => <span key={line}>{line}<br /></span>)}{course.location}</p>
-      <div className="course-enroll-meta">
-        <span>{course.duration}</span>
-        <span>{course.classSize}</span>
+    <section className="enroll">
+      <div className="enroll-intake">
+        <p className="label">{labels.intakeLabel}</p>
+        <h2>{course.nextIntake}</h2>
       </div>
-      <Link href={`/contact-us?course=${course.slug}`}>{content.reserveLabel} <span className="icon icon-arrow-up-right" aria-hidden="true" /></Link>
+      <p className="enroll-schedule">
+        <Lines text={course.schedule} />
+        <br />
+        <strong>{course.location}</strong>
+      </p>
+      <ul className="enroll-meta">
+        <li>{course.duration}</li>
+        <li>{course.classSize}</li>
+        <li>
+          <Price price={course.price} promotionPrice={course.promotionPrice} />
+        </li>
+      </ul>
+      <Link className="button-solid" href={`/contact-us?course=${course.slug}`}>
+        {labels.reserveLabel} <b className="icon icon-arrow" aria-hidden="true" />
+      </Link>
     </section>
   );
 }

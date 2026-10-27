@@ -3,6 +3,5 @@ const configuredBackendUrl =
 
 export const backendUrl = (
   configuredBackendUrl ??
-  (process.env.NODE_ENV === "development" ? "http://localhost:3002" : "")
+  (process.env.NODE_ENV === "development" ? "http://admin.skillandmix.com" : "")
 ).replace(/\/$/, "");
-

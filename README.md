@@ -14,7 +14,7 @@ npm run dev:be
 npm run dev
 ```
 
-In development the frontend defaults to `http://localhost:3002`. For deployed
+In development the frontend defaults to `http://admin.skillandmix.com`. For deployed
 environments, set the server-only variable below on the frontend deployment:
 
 ```bash

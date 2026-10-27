@@ -1,26 +1,20 @@
-export function GalleryWall({
-  items,
-}: {
-  items: { image: string; caption: string }[];
-}) {
+import { Lines } from "@/components/Lines";
+import type { GalleryItem } from "@/lib/types";
+
+export function GalleryWall({ items, graffiti }: { items: GalleryItem[]; graffiti: string }) {
   return (
-    <section className="gallery-wall">
+    <section className="gallery">
       {items.map((item, index) => (
-        <figure
-          key={item.image}
-          className={`gallery-item gallery-item-${index + 1}`}
-        >
-          <img src={item.image} alt={item.caption} />
+        <figure key={`${item.image.url}-${index}`} className="gallery-item">
+          <img src={item.image.url} alt={item.image.alt} loading={index > 3 ? "lazy" : undefined} />
           <figcaption>
-            <span>0{index + 1}</span>
+            <span>{String(index + 1).padStart(2, "0")}</span>
             {item.caption}
           </figcaption>
         </figure>
       ))}
-      <p className="gallery-graffiti">
-        proof of
-        <br />
-        practice
+      <p className="gallery-graffiti" aria-hidden="true">
+        <Lines text={graffiti} />
       </p>
     </section>
   );

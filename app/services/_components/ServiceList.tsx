@@ -1,30 +1,22 @@
 import { ArrowLink } from "@/components/ArrowLink";
+import type { Service } from "@/lib/types";
 
-type ServiceItem = {
-  number: string;
-  title: string;
-  label: string;
-  copy: string;
-  image: string;
-};
-
-export function ServiceList({ services }: { services: ServiceItem[] }) {
+export function ServiceList({ services, linkLabel }: { services: Service[]; linkLabel: string }) {
   return (
-    <section className="service-list">
+    <section className="services">
       {services.map((service, index) => (
-        <article
-          key={service.number}
-          className={index % 2 ? "service-reverse" : ""}
-        >
-          <div className="service-image">
-            <img src={service.image} alt="" />
-            <span>{service.number}</span>
-          </div>
+        <article key={service.title} className="service">
+          <figure className="service-image">
+            <img src={service.image.url} alt={service.image.alt} />
+          </figure>
+          <span className="service-number" aria-hidden="true">
+            {String(index + 1).padStart(2, "0")}
+          </span>
           <div className="service-copy">
-            <p className="eyebrow">{service.label}</p>
+            <p className="label">{service.label}</p>
             <h2>{service.title}</h2>
             <p>{service.copy}</p>
-            <ArrowLink href="/contact-us">Start a conversation</ArrowLink>
+            <ArrowLink href="/contact-us">{linkLabel}</ArrowLink>
           </div>
         </article>
       ))}

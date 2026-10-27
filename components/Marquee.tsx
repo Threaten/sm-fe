@@ -1,8 +1,23 @@
-export function Marquee({ text, dark = false }: { text: string; dark?: boolean }) {
+export function Marquee({ text, tone = "red" }: { text: string; tone?: "red" | "black" }) {
+  const phrases = text.split("/").map((phrase) => phrase.trim()).filter(Boolean);
+  const run = (
+    <span>
+      {phrases.map((phrase, index) => (
+        <span key={index}>
+          {phrase}
+          <b className="marquee-star" aria-hidden="true">✳</b>
+        </span>
+      ))}
+    </span>
+  );
   return (
-    <div className={`marquee ${dark ? "marquee-dark" : ""}`} aria-hidden="true">
-      <div>
-        {Array.from({ length: 6 }).map((_, i) => <span key={i}>{text} <b className="marquee-mark" aria-hidden="true" /> </span>)}
+    <div className={`marquee marquee-${tone}`} role="presentation">
+      <p className="sr-only">{phrases.join(", ")}</p>
+      <div className="marquee-track" aria-hidden="true">
+        {run}
+        {run}
+        {run}
+        {run}
       </div>
     </div>
   );

@@ -1,45 +1,58 @@
-import { StaffMember } from "@/lib/data";
-import { StaffAchievements } from "./StaffAchievements";
+import type { StaffMember, TeamPage } from "@/lib/types";
 
-export function StaffProfile({ person, content }: { person: StaffMember; content: any }) {
+export function StaffProfile({ person, labels }: { person: StaffMember; labels: TeamPage["profile"] }) {
   return (
     <>
-      <section className="staff-profile-story">
-        <div className="staff-profile-label">
-          <span>01</span>
-          <p>{content.bioLabel}</p>
-        </div>
-        <div className="staff-profile-bio">
-          {person.bio.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+      <section className="profile-bio">
+        <p className="label">{labels.bioLabel}</p>
+        <div>
+          {person.bio.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
         </div>
       </section>
 
-      <section className="staff-profile-quote">
-        <span>“</span>
-        <blockquote>{person.quote}</blockquote>
+      <section className="profile-quote">
+        <blockquote>“{person.quote}”</blockquote>
       </section>
 
-      <StaffAchievements person={person} content={content} />
+      {person.achievements.length ? (
+        <section className="achievements">
+          <header>
+            <p className="label">{labels.achievementsEyebrow}</p>
+            <h2>{labels.achievementsTitle}</h2>
+          </header>
+          <ol>
+            {person.achievements.map((achievement) => (
+              <li key={`${achievement.year}-${achievement.title}-${achievement.organization}`}>
+                <time>{achievement.year}</time>
+                <strong>{achievement.title}</strong>
+                <span>{achievement.organization}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ) : null}
 
-      <section className="staff-practice">
-        <div className="staff-practice-heading">
-          <p className="eyebrow">{content.practiceEyebrow}</p>
-          <h2>{content.practiceTitle.replace("{name}", person.shortName)}</h2>
+      <section className="practice">
+        <div className="practice-head">
+          <p className="label">{labels.practiceEyebrow}</p>
+          <h2>{labels.practiceTitle.replace("{name}", person.shortName)}</h2>
           <p>{person.teachingFocus}</p>
         </div>
-        <div className="staff-specialties">
+        <ol className="practice-list">
           {person.specialties.map((specialty, index) => (
-            <div key={specialty}>
-              <span>0{index + 1}</span>
-              <h3>{specialty}</h3>
-            </div>
+            <li key={specialty}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              {specialty}
+            </li>
           ))}
-          <div className="favorite-pour">
-            <span>{content.offDutyLabel}</span>
-            <p>{content.favoritePourLabel}</p>
-            <strong>{person.favoritePour}</strong>
-          </div>
-        </div>
+        </ol>
+        <aside className="practice-pour">
+          <p className="label">{labels.offDutyLabel}</p>
+          <p>{labels.favoritePourLabel}</p>
+          <strong>{person.favoritePour}</strong>
+        </aside>
       </section>
     </>
   );

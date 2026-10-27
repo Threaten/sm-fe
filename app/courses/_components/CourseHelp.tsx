@@ -1,14 +1,17 @@
 import { ArrowLink } from "@/components/ArrowLink";
+import type { CoursesPage } from "@/lib/types";
 
-export function CourseHelp({ content }: { content: { eyebrow: string; title: string; linkLabel: string } }) {
+export function CourseHelp({ content }: { content: CoursesPage["help"] }) {
   return (
-    <section className="course-help">
-      <span>?</span>
+    <section className="callout callout-red">
+      <span className="callout-glyph" aria-hidden="true">?</span>
       <div>
-        <p className="eyebrow">{content.eyebrow}</p>
+        <p className="label">{content.eyebrow}</p>
         <h2>{content.title}</h2>
       </div>
-      <ArrowLink href="/contact-us">{content.linkLabel}</ArrowLink>
+      <ArrowLink href="/contact-us" tone="white">
+        {content.linkLabel}
+      </ArrowLink>
     </section>
   );
 }

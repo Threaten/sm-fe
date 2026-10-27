@@ -1,34 +1,52 @@
 import Link from "next/link";
-import { Course } from "@/lib/data";
-import { formatCoursePrice } from "@/lib/price";
+import { Price } from "@/components/Price";
+import type { Course, CoursesPage } from "@/lib/types";
 
-export function CourseHero({ course, content }: { course: Course; content: any }) {
+export function CourseHero({
+  course,
+  number,
+  labels,
+}: {
+  course: Course;
+  number: number;
+  labels: CoursesPage["detail"];
+}) {
   return (
-    <section className="course-editorial" style={{ "--course-accent": course.tone } as React.CSSProperties}>
-      <div className="course-editorial-copy">
-        <div className="course-editorial-nav"><Link href="/courses"><span className="icon icon-arrow-left" aria-hidden="true" /> {content.backLabel}</Link><span>{course.index}</span></div>
-        <div className="course-editorial-title"><p>{course.level}</p><h1>{course.title}</h1></div>
-        <p className="course-editorial-summary">{course.summary}</p>
-        <dl className="course-editorial-facts">
-          <div><dt>{content.durationLabel}</dt><dd>{course.duration}</dd></div>
+    <section className="course-hero">
+      <div className="course-hero-copy">
+        <nav className="crumb">
+          <Link href="/courses">
+            <span className="icon icon-arrow-left" aria-hidden="true" /> {labels.backLabel}
+          </Link>
+          <span className="course-hero-number">{String(number).padStart(2, "0")}</span>
+        </nav>
+        <p className="label">{course.level}</p>
+        <h1>{course.title}</h1>
+        <p className="course-hero-summary">{course.summary}</p>
+        <dl className="spec spec-inverse">
           <div>
-            <dt>{content.tuitionLabel}</dt>
-            <dd className="course-price course-price-compact">
-              {course.promotionPrice ? (
-                <>
-                  <del>{formatCoursePrice(course.price)}</del>
-                  <strong>{formatCoursePrice(course.promotionPrice)}</strong>
-                </>
-              ) : (
-                <strong>{formatCoursePrice(course.price)}</strong>
-              )}
+            <dt>{labels.durationLabel}</dt>
+            <dd>{course.duration}</dd>
+          </div>
+          <div>
+            <dt>{labels.tuitionLabel}</dt>
+            <dd>
+              <Price price={course.price} promotionPrice={course.promotionPrice} />
             </dd>
           </div>
-          <div><dt>{content.classSizeLabel}</dt><dd>{course.classSize}</dd></div>
+          <div>
+            <dt>{labels.classSizeLabel}</dt>
+            <dd>{course.classSize}</dd>
+          </div>
         </dl>
-        <Link className="course-editorial-cta" href={`/contact-us?course=${course.slug}`}>{content.reserveLabel} <span className="icon icon-arrow-up-right" aria-hidden="true" /></Link>
+        <Link className="button-solid" href={`/contact-us?course=${course.slug}`}>
+          {labels.reserveLabel} <b className="icon icon-arrow" aria-hidden="true" />
+        </Link>
       </div>
-      <figure className="course-editorial-image"><img src={course.image} alt={course.imageAlt} /><figcaption>{course.imageCaption}</figcaption></figure>
+      <figure className="course-hero-image">
+        <img src={course.image.url} alt={course.image.alt} />
+        <figcaption>{course.imageCaption}</figcaption>
+      </figure>
     </section>
   );
 }
