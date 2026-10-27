@@ -29,7 +29,7 @@
   --contrast: var(--black);
   --focus: var(--red);
 
-  --font-sans: var(--font-body), system-ui, sans-serif;
+  --font-sans: Arial, sans-serif;
   --gutter: clamp(1rem, 3.2vw, 3.25rem);
   --section: clamp(4.5rem, 10vw, 9rem);
   --radius: 0.35rem;
@@ -182,8 +182,6 @@ button {
 h1,
 h2,
 .display {
-  font-family: var(--font-display);
-  font-stretch: 62.5%;
   font-weight: 900;
   line-height: 1.04;
   letter-spacing: -0.005em;
@@ -213,9 +211,7 @@ p {
 dt,
 legend,
 .crumb {
-  font-family: var(--font-display);
   font-size: 0.72rem;
-  font-stretch: 125%;
   font-weight: 700;
   line-height: 1.3;
   letter-spacing: 0.08em;
@@ -284,9 +280,7 @@ legend,
   animation: wobble 14s linear infinite;
 }
 .starburst span {
-  font-family: var(--font-display);
   font-size: clamp(1rem, 1.8vw, 1.45rem);
-  font-stretch: 62.5%;
   font-weight: 900;
   line-height: 0.95;
   text-align: center;
@@ -304,9 +298,7 @@ legend,
   background: var(--red);
   color: var(--white);
   box-shadow: 0 0 0 0.35rem var(--red);
-  font-family: var(--font-display);
   font-size: 1rem;
-  font-stretch: 125%;
   font-weight: 800;
   line-height: 1.05;
   text-align: center;
@@ -350,8 +342,6 @@ legend,
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  font-family: var(--font-display);
-  font-stretch: 112%;
   font-weight: 800;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -480,9 +470,7 @@ legend,
   margin-right: auto;
 }
 .brand-mark-name {
-  font-family: var(--font-display);
   font-size: 1.85rem;
-  font-stretch: 62.5%;
   font-weight: 900;
   line-height: 1;
   letter-spacing: -0.01em;
@@ -496,9 +484,7 @@ legend,
 .brand-mark-school {
   padding-left: 0.65rem;
   border-left: 1.5px solid currentColor;
-  font-family: var(--font-display);
   font-size: 0.6rem;
-  font-stretch: 125%;
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: 0.08em;
@@ -525,9 +511,7 @@ legend,
 }
 .site-nav small,
 .mobile-menu small {
-  font-family: var(--font-display);
   font-size: 0.6rem;
-  font-stretch: 125%;
   font-weight: 700;
   color: var(--red);
 }
@@ -556,9 +540,7 @@ legend,
   border-radius: 99px;
   background: var(--red);
   color: var(--white);
-  font-family: var(--font-display);
   font-size: 0.8rem;
-  font-stretch: 112%;
   font-weight: 800;
   text-transform: uppercase;
   transition: background-color 0.25s var(--ease);
@@ -574,7 +556,6 @@ legend,
   border: 2px solid var(--black);
   border-radius: 99px;
   background: var(--white);
-  font-family: var(--font-display);
   font-size: 0.8rem;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -600,9 +581,7 @@ legend,
   gap: 0.6rem;
   padding: 0.35rem 0;
   border-bottom: 1px solid color-mix(in oklch, var(--white), transparent 75%);
-  font-family: var(--font-display);
   font-size: clamp(2.5rem, 12vw, 4.5rem);
-  font-stretch: 62.5%;
   font-weight: 900;
   line-height: 1.05;
   text-transform: uppercase;
@@ -662,9 +641,7 @@ legend,
   border-radius: 50%;
   background: var(--red);
   color: var(--white);
-  font-family: var(--font-display);
   font-size: 0.85rem;
-  font-stretch: 112%;
   font-weight: 800;
   line-height: 1.15;
   text-align: center;
@@ -744,9 +721,7 @@ legend,
   position: absolute;
   top: -0.12em;
   right: -0.04em;
-  font-family: var(--font-display);
   font-size: clamp(10rem, 30vw, 30rem);
-  font-stretch: 62.5%;
   font-weight: 900;
   line-height: 1;
   color: transparent;
@@ -802,9 +777,7 @@ legend,
   align-items: center;
   gap: 1.75rem;
   padding-right: 1.75rem;
-  font-family: var(--font-display);
   font-size: clamp(1.6rem, 3.4vw, 3rem);
-  font-stretch: 62.5%;
   font-weight: 900;
   line-height: 1.1;
   text-transform: uppercase;
@@ -880,9 +853,7 @@ legend,
 }
 .accordion summary > span,
 .accordion-row > span {
-  font-family: var(--font-display);
   font-size: 0.85rem;
-  font-stretch: 125%;
   font-weight: 700;
   color: var(--red);
 }
@@ -949,9 +920,7 @@ legend,
   gap: 0.75rem;
   padding-bottom: 0.25rem;
   border-bottom: 3px solid currentColor;
-  font-family: var(--font-display);
   font-size: clamp(1.4rem, 2.8vw, 2.6rem);
-  font-stretch: 75%;
   font-weight: 900;
   word-break: break-word;
 }
@@ -1153,9 +1122,7 @@ legend,
   align-self: center;
 }
 .featured-instructor-name {
-  font-family: var(--font-display);
   font-size: clamp(3rem, 7vw, 7rem);
-  font-stretch: 62.5%;
   font-weight: 900;
   line-height: 0.92;
   text-transform: uppercase;
@@ -1211,9 +1178,7 @@ legend,
   clip-path: inset(0);
 }
 .course-index-number {
-  font-family: var(--font-display);
   font-size: 1.1rem;
-  font-stretch: 125%;
   font-weight: 800;
 }
 .course-index-thumb {
@@ -1232,9 +1197,7 @@ legend,
   gap: 0.25rem;
 }
 .course-index-title strong {
-  font-family: var(--font-display);
   font-size: clamp(1.8rem, 3.6vw, 3.4rem);
-  font-stretch: 62.5%;
   font-weight: 900;
   line-height: 1;
   text-transform: uppercase;
@@ -1250,9 +1213,7 @@ legend,
   font-weight: 600;
 }
 .course-index-meta small {
-  font-family: var(--font-display);
   font-size: 0.65rem;
-  font-stretch: 125%;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1275,8 +1236,6 @@ legend,
   align-items: baseline;
 }
 .testimonials-count {
-  font-family: var(--font-display);
-  font-stretch: 125%;
   font-weight: 700;
 }
 .testimonials-count b {
@@ -1302,9 +1261,7 @@ legend,
   align-items: baseline;
 }
 .testimonial figcaption strong {
-  font-family: var(--font-display);
   font-size: 1.5rem;
-  font-stretch: 75%;
   font-weight: 900;
   text-transform: uppercase;
   color: var(--white);
@@ -1433,9 +1390,7 @@ legend,
   border-bottom: 2px solid var(--black);
 }
 .values-number {
-  font-family: var(--font-display);
   font-size: clamp(2.5rem, 5vw, 4.5rem);
-  font-stretch: 62.5%;
   font-weight: 900;
   line-height: 1;
   color: transparent;
@@ -1478,9 +1433,7 @@ legend,
   position: absolute;
   top: 0.06em;
   left: 0.1em;
-  font-family: var(--font-display);
   font-size: clamp(6rem, 14vw, 13rem);
-  font-stretch: 62.5%;
   font-weight: 900;
   line-height: 0.85;
   color: transparent;
@@ -1525,9 +1478,7 @@ legend,
   border-radius: 50%;
   background: var(--contrast);
   color: var(--white);
-  font-family: var(--font-display);
   font-size: 0.95rem;
-  font-stretch: 75%;
   font-weight: 900;
   line-height: 1.05;
   text-align: center;
@@ -1538,7 +1489,6 @@ legend,
   display: block;
   margin-top: 0.3rem;
   font-size: 0.65rem;
-  font-stretch: 125%;
   color: var(--white);
   opacity: 0.75;
 }
@@ -1571,9 +1521,7 @@ legend,
   border-radius: 99px;
   background: var(--accent);
   color: var(--on-accent);
-  font-family: var(--font-display);
   font-size: 0.85rem;
-  font-stretch: 112%;
   font-weight: 800;
   text-transform: uppercase;
 }
@@ -1615,9 +1563,7 @@ legend,
   margin-bottom: auto;
 }
 .course-hero-number {
-  font-family: var(--font-display);
   font-size: 3rem;
-  font-stretch: 62.5%;
   font-weight: 900;
   line-height: 1;
 }
@@ -1747,8 +1693,6 @@ legend,
   border-radius: 50%;
   background: var(--red);
   color: var(--white);
-  font-family: var(--font-display);
-  font-stretch: 125%;
   font-weight: 800;
 }
 .staff-card .label {
@@ -1762,9 +1706,7 @@ legend,
   align-items: center;
   gap: 0.5rem;
   margin-top: 0.5rem;
-  font-family: var(--font-display);
   font-size: 0.85rem;
-  font-stretch: 112%;
   font-weight: 800;
   text-transform: uppercase;
 }
@@ -1838,9 +1780,7 @@ legend,
 }
 .profile-quote blockquote {
   max-width: 22ch;
-  font-family: var(--font-display);
   font-size: clamp(2.2rem, 5.4vw, 5.25rem);
-  font-stretch: 75%;
   font-weight: 900;
   line-height: 1;
   text-transform: uppercase;
@@ -1878,16 +1818,12 @@ legend,
   border-top: 1px solid color-mix(in oklch, var(--white), transparent 75%);
 }
 .achievements time {
-  font-family: var(--font-display);
   font-size: 1.75rem;
-  font-stretch: 62.5%;
   font-weight: 900;
   color: var(--red);
 }
 .achievements strong {
-  font-family: var(--font-display);
   font-size: 1.15rem;
-  font-stretch: 100%;
   font-weight: 800;
   text-transform: uppercase;
 }
@@ -1925,8 +1861,6 @@ legend,
 }
 .practice-list span {
   color: var(--red);
-  font-family: var(--font-display);
-  font-stretch: 125%;
 }
 .practice-pour {
   display: grid;
@@ -1939,9 +1873,7 @@ legend,
   rotate: 2deg;
 }
 .practice-pour strong {
-  font-family: var(--font-display);
   font-size: clamp(1.8rem, 2.8vw, 2.6rem);
-  font-stretch: 62.5%;
   font-weight: 900;
   line-height: 1;
   text-transform: uppercase;
@@ -1968,9 +1900,7 @@ legend,
   border: 0.3rem solid var(--white);
 }
 .next-up span {
-  font-family: var(--font-display);
   font-size: var(--text-h1);
-  font-stretch: 62.5%;
   font-weight: 900;
   line-height: 0.95;
   text-transform: uppercase;
@@ -2007,9 +1937,7 @@ legend,
   top: -0.35em;
   left: -0.05em;
   z-index: 2;
-  font-family: var(--font-display);
   font-size: clamp(5rem, 11vw, 10rem);
-  font-stretch: 62.5%;
   font-weight: 900;
   line-height: 1;
   color: var(--white);
@@ -2093,9 +2021,7 @@ legend,
   font-weight: 600;
 }
 .gallery-item figcaption span {
-  font-family: var(--font-display);
   font-size: 0.75rem;
-  font-stretch: 125%;
   font-weight: 700;
   color: var(--red);
 }
@@ -2104,9 +2030,7 @@ legend,
   top: 38%;
   left: 50%;
   z-index: 3;
-  font-family: var(--font-display);
   font-size: clamp(4rem, 13vw, 12rem);
-  font-stretch: 62.5%;
   font-weight: 900;
   line-height: 0.85;
   text-align: center;
@@ -2138,9 +2062,7 @@ legend,
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  font-family: var(--font-display);
   font-size: clamp(2.4rem, 6vw, 5.5rem);
-  font-stretch: 62.5%;
   font-weight: 900;
   color: var(--white);
 }
@@ -2162,9 +2084,7 @@ legend,
   border-left: 2px solid var(--black);
 }
 .contact-panels span {
-  font-family: var(--font-display);
   font-size: 0.85rem;
-  font-stretch: 125%;
   font-weight: 700;
   color: var(--red);
 }
@@ -2208,9 +2128,7 @@ legend,
 .contact-form legend {
   display: grid;
   gap: 0.6rem;
-  font-family: var(--font-display);
   font-size: 0.75rem;
-  font-stretch: 125%;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -2223,7 +2141,6 @@ legend,
   border-bottom: 2px solid var(--black);
   border-radius: 0;
   background: transparent;
-  font-family: var(--font-sans);
   font-size: 1.15rem;
   letter-spacing: normal;
   text-transform: none;
@@ -2265,7 +2182,6 @@ legend,
   padding: 1rem 1.1rem;
   border: 2px solid var(--black);
   border-radius: var(--radius);
-  font-family: var(--font-sans);
   font-size: 1rem;
   letter-spacing: normal;
   text-transform: none;
@@ -2281,8 +2197,6 @@ legend,
 }
 .course-option b {
   grid-row: 1 / 3;
-  font-family: var(--font-display);
-  font-stretch: 125%;
 }
 .course-option strong {
   font-weight: 700;
@@ -2321,9 +2235,7 @@ legend,
   color: var(--white);
 }
 .form-success h3 {
-  font-family: var(--font-display);
   font-size: clamp(2.2rem, 4vw, 3.5rem);
-  font-stretch: 62.5%;
   font-weight: 900;
   text-transform: uppercase;
 }
@@ -2465,9 +2377,7 @@ legend,
   padding: var(--section) var(--gutter);
 }
 .not-found span {
-  font-family: var(--font-display);
   font-size: clamp(8rem, 26vw, 24rem);
-  font-stretch: 62.5%;
   font-weight: 900;
   line-height: 0.8;
   color: var(--red);

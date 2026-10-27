@@ -1,25 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, Be_Vietnam_Pro } from "next/font/google";
 import { EntryPopup } from "@/components/EntryPopup";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { getEntryPopup, getSiteSettings } from "@/lib/cms";
 import "./globals.css";
-
-const bodyFont = Be_Vietnam_Pro({
-  subsets: ["latin", "vietnamese"],
-  variable: "--font-body",
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-/** One variable family; its width axis gives condensed headlines and expanded labels. */
-const displayFont = Archivo({
-  subsets: ["latin", "vietnamese"],
-  variable: "--font-display",
-  axes: ["wdth"],
-  display: "swap",
-});
 
 export async function generateMetadata(): Promise<Metadata> {
   const { seo } = await getSiteSettings();
@@ -46,7 +30,6 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   return (
     <html
       lang="vi"
-      className={`${bodyFont.variable} ${displayFont.variable}`}
       style={
         {
           "--white": theme.white,
