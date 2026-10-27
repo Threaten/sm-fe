@@ -15,9 +15,7 @@ export function CourseHero({
     <section className="course-hero">
       <div className="course-hero-copy">
         <nav className="crumb">
-          <Link href="/courses">
-            <span className="icon icon-arrow-left" aria-hidden="true" /> {labels.backLabel}
-          </Link>
+          <Link href="/courses">{labels.backLabel}</Link>
           <span className="course-hero-number">{String(number).padStart(2, "0")}</span>
         </nav>
         <p className="label">{course.level}</p>
@@ -40,7 +38,7 @@ export function CourseHero({
           </div>
         </dl>
         <Link className="button-solid" href={`/contact-us?course=${course.slug}`}>
-          {labels.reserveLabel} <b className="icon icon-arrow" aria-hidden="true" />
+          {labels.reserveLabel}
         </Link>
       </div>
       <figure className="course-hero-image">

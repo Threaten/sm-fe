@@ -1,6 +1,5 @@
 import { ArrowLink } from "@/components/ArrowLink";
 import { Lines } from "@/components/Lines";
-import { Scribble } from "@/components/Scribble";
 import { Starburst } from "@/components/Starburst";
 import type { HomePage } from "@/lib/types";
 
@@ -33,10 +32,7 @@ export function HomeHero({ content }: { content: HomePage["hero"] }) {
           {content.buttonLabel}
         </ArrowLink>
         <p className="hero-note">
-          <Scribble />
-          <span>
-            <Lines text={content.note} />
-          </span>
+          <Lines text={content.note} />
         </p>
       </div>
     </section>

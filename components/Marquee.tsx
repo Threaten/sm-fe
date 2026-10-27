@@ -5,7 +5,7 @@ export function Marquee({ text, tone = "red" }: { text: string; tone?: "red" | "
       {phrases.map((phrase, index) => (
         <span key={index}>
           {phrase}
-          <b className="marquee-star" aria-hidden="true">✳</b>
+          <b className="marquee-sep" aria-hidden="true">/</b>
         </span>
       ))}
     </span>

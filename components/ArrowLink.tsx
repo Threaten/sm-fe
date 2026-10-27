@@ -12,7 +12,6 @@ export function ArrowLink({
   return (
     <Link href={href} className={`arrow-link arrow-link-${tone}`}>
       <span>{children}</span>
-      <b className="icon icon-arrow" aria-hidden="true" />
     </Link>
   );
 }

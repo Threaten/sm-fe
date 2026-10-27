@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Link as NavLink, SiteSettings } from "@/lib/types";
 import { BrandMark } from "./BrandMark";
 
@@ -19,9 +19,22 @@ export function SiteHeader({
   cta: NavLink;
 }) {
   const [open, setOpen] = useState(false);
+  const header = useRef<HTMLElement>(null);
   const pathname = usePathname();
 
   useEffect(() => setOpen(false), [pathname]);
+
+  useEffect(() => {
+    if (!open) return;
+    // The header is sticky below the topbar, so the menu starts wherever the header ends.
+    const placeMenu = () => {
+      const bottom = header.current?.getBoundingClientRect().bottom ?? 0;
+      document.body.style.setProperty("--menu-top", `${Math.max(bottom, 0)}px`);
+    };
+    placeMenu();
+    window.addEventListener("resize", placeMenu);
+    return () => window.removeEventListener("resize", placeMenu);
+  }, [open]);
 
   useEffect(() => {
     document.body.classList.toggle("menu-open", open);
@@ -40,12 +53,12 @@ export function SiteHeader({
           <span>{announcementBar.message}</span>
           {announcementBar.linkHref && announcementBar.linkLabel ? (
             <Link href={announcementBar.linkHref}>
-              {announcementBar.linkLabel} <b className="icon icon-arrow" aria-hidden="true" />
+              {announcementBar.linkLabel}
             </Link>
           ) : null}
         </aside>
       ) : null}
-      <header className="site-header">
+      <header ref={header} className="site-header">
         <BrandMark />
         <nav className="site-nav" aria-label="Primary navigation">
           {navigation.map(({ label, href }, index) => (
@@ -60,7 +73,7 @@ export function SiteHeader({
           ))}
         </nav>
         <Link href={cta.href} className="header-cta">
-          {cta.label} <b className="icon icon-arrow" aria-hidden="true" />
+          {cta.label}
         </Link>
         <button
           className="menu-button"
@@ -68,8 +81,7 @@ export function SiteHeader({
           aria-expanded={open}
           aria-controls="mobile-navigation"
         >
-          <span className="menu-button-bars" aria-hidden="true" />
-          <span className="sr-only">Menu</span>
+          {open ? "Đóng" : "Menu"}
         </button>
       </header>
       {open ? (
@@ -81,7 +93,7 @@ export function SiteHeader({
             </Link>
           ))}
           <Link href={cta.href} className="mobile-menu-cta">
-            {cta.label} <b className="icon icon-arrow" aria-hidden="true" />
+            {cta.label}
           </Link>
         </nav>
       ) : null}

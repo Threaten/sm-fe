@@ -8,7 +8,6 @@ export function StaffDetailFooter({ nextPerson, labels }: { nextPerson: StaffMem
       <Link href={`/staffs/${nextPerson.slug}`}>
         <img src={nextPerson.image.url} alt="" />
         <span>{nextPerson.name}</span>
-        <b className="icon icon-arrow" aria-hidden="true" />
       </Link>
     </section>
   );

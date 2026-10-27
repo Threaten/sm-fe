@@ -23,7 +23,7 @@ export function EnrollmentPanel({ course, labels }: { course: Course; labels: Co
         </li>
       </ul>
       <Link className="button-solid" href={`/contact-us?course=${course.slug}`}>
-        {labels.reserveLabel} <b className="icon icon-arrow" aria-hidden="true" />
+        {labels.reserveLabel}
       </Link>
     </section>
   );

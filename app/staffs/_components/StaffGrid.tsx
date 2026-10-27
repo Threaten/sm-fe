@@ -15,7 +15,7 @@ export function StaffGrid({ staff, cardLinkLabel }: { staff: StaffMember[]; card
             <h2>{person.name}</h2>
             <p>{person.note}</p>
             <b className="staff-card-cta">
-              {cardLinkLabel} {person.shortName} <span className="icon icon-arrow" aria-hidden="true" />
+              {cardLinkLabel} {person.shortName}
             </b>
           </Link>
         </article>

@@ -1,5 +1,4 @@
 import type { PageIntro as PageIntroContent } from "@/lib/types";
-import { Scribble } from "./Scribble";
 
 export function PageIntro({ intro, number }: { intro: PageIntroContent; number?: string }) {
   return (
@@ -10,7 +9,6 @@ export function PageIntro({ intro, number }: { intro: PageIntroContent; number?:
       </div>
       <h1>{intro.title}</h1>
       <div className="page-intro-copy">
-        <Scribble />
         <p>{intro.copy}</p>
       </div>
       <div className="ruler" aria-hidden="true" />

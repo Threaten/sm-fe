@@ -14,9 +14,7 @@ export function StaffDetailHero({
   return (
     <section className="profile-hero">
       <nav className="crumb">
-        <Link href="/staffs">
-          <span className="icon icon-arrow-left" aria-hidden="true" /> {labels.backLabel}
-        </Link>
+        <Link href="/staffs">{labels.backLabel}</Link>
         <span>
           {labels.profileLabel} / {String(number).padStart(2, "0")}
         </span>

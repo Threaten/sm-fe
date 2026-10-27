@@ -13,7 +13,6 @@ export function SiteFooter({ settings }: { settings: SiteSettings }) {
         <h2>{footer.headline}</h2>
         <Link className="footer-cta" href={headerCta.href}>
           <span>{footer.ctaLabel}</span>
-          <b className="icon icon-arrow" aria-hidden="true" />
         </Link>
       </div>
       <div className="footer-grid">

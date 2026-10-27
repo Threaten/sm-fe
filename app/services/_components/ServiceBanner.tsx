@@ -8,7 +8,7 @@ export function ServiceBanner({ content, email }: { content: ServicesPage["banne
         <h2>{content.title}</h2>
       </div>
       <a className="callout-mail" href={`mailto:${email}`}>
-        {email} <span className="icon icon-arrow" aria-hidden="true" />
+        {email}
       </a>
     </section>
   );

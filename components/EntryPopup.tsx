@@ -84,7 +84,7 @@ export function EntryPopup({ content }: { content: EntryPopupContent }) {
         aria-label="Slide trước"
         onClick={() => setActiveIndex((currentIndex - 1 + slides.length) % slides.length)}
       >
-        <span aria-hidden="true">‹</span>
+        Trước
       </button>
       <div className="entry-popup-carousel-indicators">
         {slides.map((slide, index) => (
@@ -104,7 +104,7 @@ export function EntryPopup({ content }: { content: EntryPopupContent }) {
         aria-label="Slide tiếp theo"
         onClick={() => setActiveIndex((currentIndex + 1) % slides.length)}
       >
-        <span aria-hidden="true">›</span>
+        Sau
       </button>
     </nav>
   );
@@ -131,7 +131,7 @@ export function EntryPopup({ content }: { content: EntryPopupContent }) {
           onClick={dismiss}
           aria-label="Đóng thông báo"
         >
-          <span aria-hidden="true">×</span>
+          Đóng
         </button>
         {currentSlide.kind === "video" && (
           <iframe
@@ -156,7 +156,7 @@ export function EntryPopup({ content }: { content: EntryPopupContent }) {
               <div className="entry-popup-actions">
                 {currentSlide.ctaLabel && currentSlide.ctaHref ? (
                   <Link className="button-solid" href={currentSlide.ctaHref} onClick={dismiss}>
-                    {currentSlide.ctaLabel} <span className="icon icon-arrow" aria-hidden="true" />
+                    {currentSlide.ctaLabel}
                   </Link>
                 ) : null}
                 <button type="button" onClick={dismiss}>

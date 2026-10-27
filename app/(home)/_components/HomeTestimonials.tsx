@@ -43,10 +43,10 @@ export function HomeTestimonials({ eyebrow, testimonials }: { eyebrow: string; t
       </figure>
       <div className="testimonials-controls">
         <button type="button" onClick={() => move(-1)} aria-label="Feedback trước">
-          <span className="icon icon-arrow-left" aria-hidden="true" />
+          Trước
         </button>
         <button type="button" onClick={() => move(1)} aria-label="Feedback tiếp theo">
-          <span className="icon icon-arrow-right" aria-hidden="true" />
+          Sau
         </button>
         <div className="testimonials-dots">
           {testimonials.map((item, index) => (

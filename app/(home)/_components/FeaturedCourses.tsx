@@ -17,7 +17,7 @@ export function FeaturedCourses({
         <p className="label">{content.eyebrow}</p>
         <h2>{content.title}</h2>
         <Link className="text-link" href="/courses">
-          {content.linkLabel} <b className="icon icon-arrow" aria-hidden="true" />
+          {content.linkLabel}
         </Link>
       </div>
       <ol className="course-index">
@@ -40,7 +40,6 @@ export function FeaturedCourses({
                 <small>{labels.tuitionLabel}</small>
                 <Price price={course.price} promotionPrice={course.promotionPrice} />
               </span>
-              <b className="icon icon-arrow" aria-hidden="true" />
             </Link>
           </li>
         ))}

@@ -19,7 +19,6 @@ export function CourseSyllabus({ course, labels }: { course: Course; labels: Cou
               <summary>
                 {number}
                 <h3>{item.title}</h3>
-                <b aria-hidden="true" />
               </summary>
               <p>{item.description}</p>
             </details>

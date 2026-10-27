@@ -28,7 +28,7 @@ export function ContactDetails({
             target={item.href.startsWith("http") ? "_blank" : undefined}
             rel={item.href.startsWith("http") ? "noreferrer" : undefined}
           >
-            {item.link} <span className="icon icon-arrow" aria-hidden="true" />
+            {item.link}
           </a>
         </div>
       ))}

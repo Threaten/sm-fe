@@ -5,7 +5,7 @@ export function GallerySocial({ copy, social }: { copy: string; social: SiteSett
     <section className="gallery-social">
       <p>{copy}</p>
       <a href={social.url} target="_blank" rel="noreferrer">
-        {social.handle} <span className="icon icon-arrow" aria-hidden="true" />
+        {social.handle}
       </a>
     </section>
   );

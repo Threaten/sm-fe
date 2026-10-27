@@ -222,29 +222,6 @@ legend,
   text-transform: uppercase;
 }
 
-/* ---------- Icons (CSS masks so they inherit colour) ---------- */
-
-.icon {
-  display: inline-block;
-  flex: none;
-  width: 1em;
-  height: 1em;
-  vertical-align: -0.12em;
-  background: currentColor;
-  mask: var(--icon) center / contain no-repeat;
-}
-.icon-arrow {
-  --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='square'%3E%3Cpath d='M6 18 18 6M8 6h10v10'/%3E%3C/svg%3E");
-}
-.icon-arrow-left {
-  --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='square'%3E%3Cpath d='M20 12H5m6-7-7 7 7 7'/%3E%3C/svg%3E");
-}
-.icon-arrow-right {
-  --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='square'%3E%3Cpath d='M4 12h15m-6-7 7 7-7 7'/%3E%3C/svg%3E");
-}
-.icon-check {
-  --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='square'%3E%3Cpath d='m4 12 5 5L20 6'/%3E%3C/svg%3E");
-}
 
 .spinner {
   display: inline-block;
@@ -337,11 +314,6 @@ legend,
   rotate: -12deg;
 }
 
-.scribble {
-  width: 6.5rem;
-  height: auto;
-  color: var(--red);
-}
 
 .chips {
   display: flex;
@@ -388,7 +360,7 @@ legend,
 .arrow-link {
   --fg: var(--black);
   --hover: var(--red);
-  padding: 0.95rem 1rem 0.95rem 1.35rem;
+  padding: 0.95rem 1.35rem;
   border: 2px solid var(--fg);
   border-radius: 99px;
   color: var(--fg);
@@ -397,33 +369,9 @@ legend,
     background-color 0.3s var(--ease),
     color 0.3s var(--ease);
 }
-.arrow-link .icon {
-  display: grid;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  background: var(--fg);
-  mask: none;
-  place-items: center;
-  transition: rotate 0.4s var(--ease);
-}
-.arrow-link .icon::after {
-  width: 0.95rem;
-  height: 0.95rem;
-  content: "";
-  background: var(--white);
-  mask: var(--icon) center / contain no-repeat;
-}
 .arrow-link:hover {
   background: var(--fg);
   color: var(--white);
-}
-.arrow-link:hover .icon {
-  background: var(--hover);
-  rotate: 45deg;
-}
-.arrow-link:hover .icon::after {
-  background: var(--white);
 }
 .arrow-link-white {
   --fg: var(--white);
@@ -432,27 +380,15 @@ legend,
 .arrow-link-white:hover {
   color: var(--black);
 }
-.arrow-link-white .icon::after {
-  background: var(--black);
-}
 .arrow-link-red {
   --fg: var(--red);
   background: var(--red);
   color: var(--white);
 }
-.arrow-link-red .icon {
-  background: var(--white);
-}
-.arrow-link-red .icon::after {
-  background: var(--red);
-}
 .arrow-link-red:hover {
   --fg: var(--black);
   border-color: var(--black);
   background: var(--black);
-}
-.arrow-link-red:hover .icon {
-  background: var(--red);
 }
 
 .button-solid {
@@ -482,12 +418,6 @@ legend,
   gap: 0.5rem;
   border-bottom: 2px solid currentColor;
   font-size: 0.85rem;
-}
-.text-link:hover .icon {
-  rotate: 45deg;
-}
-.text-link .icon {
-  transition: rotate 0.3s var(--ease);
 }
 
 .crumb {
@@ -639,38 +569,21 @@ legend,
 
 .menu-button {
   display: none;
-  width: 3rem;
   height: 3rem;
+  padding: 0 1.1rem;
   border: 2px solid var(--black);
-  border-radius: 50%;
+  border-radius: 99px;
   background: var(--white);
-}
-.menu-button-bars,
-.menu-button-bars::before {
-  display: block;
-  width: 1.1rem;
-  height: 2px;
-  margin: 0 auto;
-  background: var(--black);
-  transition: transform 0.3s var(--ease);
-}
-.menu-button-bars {
-  transform: translateY(-3px);
-}
-.menu-button-bars::before {
-  content: "";
-  transform: translateY(6px);
-}
-.menu-button[aria-expanded="true"] .menu-button-bars {
-  transform: rotate(45deg);
-}
-.menu-button[aria-expanded="true"] .menu-button-bars::before {
-  transform: rotate(-90deg);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .mobile-menu {
   position: fixed;
-  inset: 4.5rem 0 0;
+  inset: var(--menu-top, 4.5rem) 0 0;
   z-index: 49;
   display: flex;
   flex-direction: column;
@@ -759,10 +672,6 @@ legend,
   transition:
     background-color 0.3s var(--ease),
     rotate 0.6s var(--ease);
-}
-.footer-cta .icon {
-  width: 1.75rem;
-  height: 1.75rem;
 }
 .footer-cta:hover {
   background: var(--white);
@@ -860,10 +769,6 @@ legend,
   font-size: var(--text-lead);
   line-height: 1.5;
 }
-.page-intro-copy .scribble {
-  margin-bottom: 1rem;
-  color: var(--on-accent);
-}
 .page-intro .ruler {
   grid-column: 1 / -1;
   margin: 0 calc(var(--gutter) * -1);
@@ -883,9 +788,6 @@ legend,
 .marquee-black {
   background: var(--black);
   color: var(--white);
-}
-.marquee-black .marquee-star {
-  color: var(--red);
 }
 .marquee-track {
   display: flex;
@@ -908,9 +810,9 @@ legend,
   text-transform: uppercase;
   white-space: nowrap;
 }
-.marquee-star {
-  color: var(--black);
-  font-size: 0.85em;
+.marquee-sep {
+  font-weight: 400;
+  opacity: 0.55;
 }
 .marquee:hover .marquee-track {
   animation-play-state: paused;
@@ -964,7 +866,7 @@ legend,
 .accordion summary,
 .accordion-row {
   display: grid;
-  grid-template-columns: 3rem minmax(0, 1fr) 2.25rem;
+  grid-template-columns: 3rem minmax(0, 1fr);
   align-items: center;
   gap: 1rem;
   padding: 1.35rem 0;
@@ -989,40 +891,6 @@ legend,
   font-size: clamp(1.1rem, 1.6vw, 1.45rem);
   font-weight: 600;
 }
-.accordion summary b {
-  position: relative;
-  display: block;
-  width: 2.25rem;
-  height: 2.25rem;
-  border: 1.5px solid currentColor;
-  border-radius: 50%;
-  transition:
-    rotate 0.35s var(--ease),
-    background-color 0.25s var(--ease);
-}
-.accordion summary b::before,
-.accordion summary b::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0.85rem;
-  height: 2px;
-  content: "";
-  background: currentColor;
-  translate: -50% -50%;
-}
-.accordion summary b::after {
-  rotate: 90deg;
-}
-.accordion summary:hover b {
-  background: var(--black);
-  color: var(--white);
-}
-.accordion details[open] summary b {
-  background: var(--red);
-  color: var(--white);
-  rotate: 45deg;
-}
 .accordion details > p {
   max-width: 62ch;
   padding: 0 3.25rem 1.6rem 4rem;
@@ -1034,7 +902,7 @@ legend,
 
 .callout {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: 2rem clamp(2rem, 5vw, 5rem);
   padding: clamp(3.5rem, 7vw, 6rem) var(--gutter);
@@ -1075,15 +943,6 @@ legend,
 .callout-white .callout-mail {
   color: var(--red);
 }
-.callout-glyph {
-  font-family: var(--font-display);
-  font-size: clamp(7rem, 14vw, 13rem);
-  font-stretch: 62.5%;
-  font-weight: 900;
-  line-height: 0.8;
-  color: var(--black);
-  rotate: -8deg;
-}
 .callout-mail {
   display: inline-flex;
   align-items: center;
@@ -1095,12 +954,6 @@ legend,
   font-stretch: 75%;
   font-weight: 900;
   word-break: break-word;
-}
-.callout-mail:hover .icon {
-  rotate: 45deg;
-}
-.callout-mail .icon {
-  transition: rotate 0.3s var(--ease);
 }
 
 /* ---------- Home: hero ---------- */
@@ -1218,10 +1071,6 @@ legend,
   font-size: 0.95rem;
   font-weight: 600;
 }
-.hero-note .scribble {
-  width: 4.5rem;
-  flex: none;
-}
 
 /* ---------- Home: manifesto ---------- */
 
@@ -1337,7 +1186,7 @@ legend,
 .course-index a {
   position: relative;
   display: grid;
-  grid-template-columns: 3.5rem 7.5rem minmax(0, 2.2fr) minmax(0, 1fr) minmax(0, 0.9fr) 2.5rem;
+  grid-template-columns: 3.5rem 7.5rem minmax(0, 2.2fr) minmax(0, 1fr) minmax(0, 0.9fr);
   align-items: center;
   gap: 1.5rem;
   padding: 1.25rem 0.75rem;
@@ -1409,14 +1258,6 @@ legend,
   text-transform: uppercase;
   opacity: 0.65;
 }
-.course-index .icon-arrow {
-  width: 1.75rem;
-  height: 1.75rem;
-  transition: rotate 0.4s var(--ease);
-}
-.course-index a:hover .icon-arrow {
-  rotate: 45deg;
-}
 
 /* ---------- Home: testimonials ---------- */
 
@@ -1445,18 +1286,6 @@ legend,
   position: relative;
   display: grid;
   gap: 2rem;
-  padding-left: clamp(0rem, 8vw, 9rem);
-}
-.testimonial::before {
-  position: absolute;
-  top: -0.2em;
-  left: 0;
-  content: "“";
-  font-family: var(--font-display);
-  font-size: clamp(6rem, 14vw, 13rem);
-  font-weight: 900;
-  line-height: 1;
-  color: var(--black);
 }
 .testimonial blockquote {
   max-width: 28ch;
@@ -1487,14 +1316,14 @@ legend,
   gap: 0.75rem;
 }
 .testimonials-controls > button {
-  display: grid;
-  place-items: center;
-  width: 3.25rem;
   height: 3.25rem;
+  padding: 0 1.4rem;
   border: 2px solid var(--white);
-  border-radius: 50%;
+  border-radius: 99px;
   background: transparent;
-  font-size: 1.1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
   transition: background-color 0.25s var(--ease);
 }
 .testimonials-controls > button:hover {
@@ -1748,12 +1577,6 @@ legend,
   font-weight: 800;
   text-transform: uppercase;
 }
-.catalog-course:hover .catalog-link .icon {
-  rotate: 45deg;
-}
-.catalog-link .icon {
-  transition: rotate 0.35s var(--ease);
-}
 
 .faq {
   display: grid;
@@ -1871,10 +1694,6 @@ legend,
   display: grid;
   gap: 0.4rem;
 }
-.enroll-meta li::before {
-  content: "✳ ";
-  color: var(--red);
-}
 .enroll .button-solid {
   background: var(--red);
   color: var(--white);
@@ -1948,12 +1767,6 @@ legend,
   font-stretch: 112%;
   font-weight: 800;
   text-transform: uppercase;
-}
-.staff-card-cta .icon {
-  transition: rotate 0.35s var(--ease);
-}
-.staff-card a:hover .staff-card-cta .icon {
-  rotate: 45deg;
 }
 
 .profile-hero {
@@ -2162,15 +1975,6 @@ legend,
   line-height: 0.95;
   text-transform: uppercase;
 }
-.next-up .icon {
-  width: clamp(2.5rem, 5vw, 4.5rem);
-  height: clamp(2.5rem, 5vw, 4.5rem);
-  margin-left: auto;
-  transition: rotate 0.4s var(--ease);
-}
-.next-up a:hover .icon {
-  rotate: 45deg;
-}
 
 /* ---------- Services ---------- */
 
@@ -2339,14 +2143,6 @@ legend,
   font-stretch: 62.5%;
   font-weight: 900;
   color: var(--white);
-}
-.gallery-social a:hover .icon {
-  rotate: 45deg;
-}
-.gallery-social .icon {
-  width: 0.6em;
-  height: 0.6em;
-  transition: rotate 0.35s var(--ease);
 }
 
 /* ---------- Contact ---------- */
@@ -2524,10 +2320,6 @@ legend,
   background: var(--red);
   color: var(--white);
 }
-.form-success .icon {
-  width: 3rem;
-  height: 3rem;
-}
 .form-success h3 {
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 4vw, 3.5rem);
@@ -2536,12 +2328,11 @@ legend,
   text-transform: uppercase;
 }
 .form-success button {
-  width: 3rem;
-  height: 3rem;
+  padding: 0.75rem 1.25rem;
   border: 2px solid var(--white);
-  border-radius: 50%;
+  border-radius: 99px;
   background: transparent;
-  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 /* ---------- Entry popup ---------- */
@@ -2606,15 +2397,14 @@ legend,
   top: 0.75rem;
   right: 0.75rem;
   z-index: 3;
-  display: grid;
-  place-items: center;
-  width: 2.6rem;
   height: 2.6rem;
+  padding: 0 1rem;
   border: 2px solid var(--black);
-  border-radius: 50%;
+  border-radius: 99px;
   background: var(--white);
-  font-size: 1.5rem;
-  line-height: 1;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 .entry-popup-video-slide {
   width: min(100%, 56rem);
@@ -2645,6 +2435,7 @@ legend,
 .entry-popup-carousel-nav button {
   min-width: 2.2rem;
   height: 2.2rem;
+  padding: 0 0.75rem;
   border: 1.5px solid currentColor;
   border-radius: 99px;
   background: transparent;
@@ -2743,7 +2534,7 @@ legend,
     place-content: center;
   }
   .course-index a {
-    grid-template-columns: 3rem 6rem minmax(0, 1fr) 2rem;
+    grid-template-columns: 3rem 6rem minmax(0, 1fr);
   }
   .course-index-meta {
     display: none;
@@ -2909,9 +2700,6 @@ legend,
   .callout-red:has(> p) .arrow-link {
     grid-column: auto;
   }
-  .callout-glyph {
-    font-size: 6rem;
-  }
 
   .enroll {
     grid-template-columns: minmax(0, 1fr);
@@ -2941,7 +2729,7 @@ legend,
     font-size: clamp(2.9rem, 14vw, 4.5rem);
   }
   .course-index a {
-    grid-template-columns: minmax(0, 1fr) 1.5rem;
+    grid-template-columns: minmax(0, 1fr);
     gap: 0.75rem;
     padding-inline: 0.25rem;
   }
@@ -2963,18 +2751,11 @@ legend,
   }
   .accordion summary,
   .accordion-row {
-    grid-template-columns: 2rem minmax(0, 1fr) 2rem;
+    grid-template-columns: 2rem minmax(0, 1fr);
     gap: 0.75rem;
   }
   .accordion details > p {
     padding: 0 0 1.5rem 2.75rem;
-  }
-  .testimonial {
-    padding-left: 0;
-    padding-top: 3.5rem;
-  }
-  .testimonial::before {
-    top: -0.35em;
   }
   .testimonials-dots {
     width: 100%;

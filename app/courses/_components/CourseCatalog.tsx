@@ -55,7 +55,7 @@ export function CourseCatalog({
               </div>
             </dl>
             <Link className="catalog-link" href={`/courses/${course.slug}`} aria-hidden="true" tabIndex={-1}>
-              {catalog.viewCourseLabel} <b className="icon icon-arrow" />
+              {catalog.viewCourseLabel}
             </Link>
           </div>
         </article>

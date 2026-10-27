@@ -62,12 +62,10 @@ export function ContactForm({ courses, content }: { courses: Course[]; content: 
       </div>
       {sent ? (
         <div className="form-success" role="status">
-          <span className="icon icon-check" aria-hidden="true" />
           <h3>{content.successTitle}</h3>
           <p>{content.successCopy}</p>
           <button type="button" onClick={() => setSent(false)}>
-            ↺
-            <span className="sr-only">Gửi tin nhắn khác</span>
+            Gửi tin nhắn khác
           </button>
         </div>
       ) : (
@@ -112,7 +110,8 @@ export function ContactForm({ courses, content }: { courses: Course[]; content: 
             <textarea name="message" required rows={5} placeholder={content.messagePlaceholder} />
           </label>
           <button type="submit" className="button-solid" disabled={sending} aria-busy={sending}>
-            {content.submitLabel} <b className={sending ? "spinner" : "icon icon-arrow"} aria-hidden="true" />
+            {content.submitLabel}
+            {sending ? <b className="spinner" aria-hidden="true" /> : null}
           </button>
         </form>
       )}

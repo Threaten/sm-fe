@@ -15,7 +15,6 @@ export function CourseFaq({ content }: { content: CoursesPage["faq"] }) {
             <summary>
               <span>{String(index + 1).padStart(2, "0")}</span>
               <h3>{item.question}</h3>
-              <b aria-hidden="true" />
             </summary>
             <p>{item.answer}</p>
           </details>
