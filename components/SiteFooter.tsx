@@ -4,7 +4,7 @@ import { BrandMark } from "./BrandMark";
 import { Lines } from "./Lines";
 
 export function SiteFooter({ settings }: { settings: SiteSettings }) {
-  const { footer, contact, social, navigation, headerCta } = settings;
+  const { footer, contact, social, navigation, headerCta, logo } = settings;
 
   return (
     <footer className="site-footer">
@@ -43,7 +43,7 @@ export function SiteFooter({ settings }: { settings: SiteSettings }) {
         </nav>
       </div>
       <div className="footer-base">
-        <BrandMark inverse />
+        <BrandMark logo={logo.imageOnDark ?? logo.image} inverse />
         <p>{footer.copyright}</p>
       </div>
     </footer>

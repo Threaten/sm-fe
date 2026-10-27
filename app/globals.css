@@ -490,6 +490,14 @@ legend,
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+.brand-mark-logo {
+  display: block;
+  width: auto;
+  max-width: 12rem;
+  height: 2.5rem;
+  object-fit: contain;
+  object-position: left center;
+}
 .brand-mark-inverse {
   color: var(--white);
 }

@@ -1,16 +1,23 @@
 import Link from "next/link";
+import type { Image } from "@/lib/types";
 
-export function BrandMark({ inverse = false }: { inverse?: boolean }) {
+export function BrandMark({ logo, inverse = false }: { logo?: Image | null; inverse?: boolean }) {
   return (
     <Link href="/" className={`brand-mark ${inverse ? "brand-mark-inverse" : ""}`} aria-label="Skill & Mix home">
-      <span className="brand-mark-name">
-        skill<span className="brand-mark-amp">&amp;</span>mix
-      </span>
-      <span className="brand-mark-school">
-        bartending
-        <br />
-        school
-      </span>
+      {logo ? (
+        <img className="brand-mark-logo" src={logo.url} alt="" />
+      ) : (
+        <>
+          <span className="brand-mark-name">
+            skill<span className="brand-mark-amp">&amp;</span>mix
+          </span>
+          <span className="brand-mark-school">
+            bartending
+            <br />
+            school
+          </span>
+        </>
+      )}
     </Link>
   );
 }

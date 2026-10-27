@@ -58,6 +58,7 @@ export const siteSettings: SiteSettings = {
     linksLabel: "Khám Phá",
     copyright: "© 2026 Skill & Mix Academy.",
   },
+  logo: { image: null, imageOnDark: null },
   seo: {
     siteName: "Skill & Mix",
     description: "A hands-on academy for better drinks, sharper service, and braver ideas.",
@@ -65,6 +66,7 @@ export const siteSettings: SiteSettings = {
       url: unsplash("1574096079513-d8259312b785", 1200),
       alt: "Bartending class in progress at Skill & Mix",
     },
+    favicon: null,
   },
   theme: {
     white: "#FFFFFF",

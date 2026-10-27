@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getStaff, getTeamPage } from "@/lib/cms";
+import { pageMetadata } from "@/lib/seo";
 import { StaffDetailFooter } from "./_components/StaffDetailFooter";
 import { StaffDetailHero } from "./_components/StaffDetailHero";
 import { StaffProfile } from "./_components/StaffProfile";
@@ -13,7 +14,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const person = (await getStaff()).find((member) => member.slug === slug);
   return person
-    ? { title: person.name, description: `${person.name}, ${person.role}. ${person.note}` }
+    ? pageMetadata(`/staffs/${person.slug}`, person.seo, {
+        title: person.name,
+        description: `${person.name}, ${person.role}. ${person.note}`,
+        image: person.image,
+      })
     : { title: "Team" };
 }
 

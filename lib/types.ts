@@ -8,6 +8,9 @@ export type Image = { url: string; alt: string };
 export type Accent = "red" | "black";
 export type Link = { label: string; href: string };
 
+/** Per-page search and link-preview overrides; empty values fall back to the page content. */
+export type Seo = { title?: string | null; description?: string | null; image?: Image | null; noIndex?: boolean | null };
+
 export type PageIntro = {
   eyebrow: string;
   title: string;
@@ -31,7 +34,7 @@ export type Course = {
   schedule: string;
   price: string;
   promotionPrice?: string | null;
-  syllabus: { title: string; description?: string | null }[];
+  syllabus: { title: string; description?: string | null }[];  seo?: Seo;
 };
 
 export type StaffMember = {
@@ -46,7 +49,7 @@ export type StaffMember = {
   teachingFocus: string;
   specialties: string[];
   favoritePour: string;
-  achievements: { year: string; title: string; organization: string }[];
+  achievements: { year: string; title: string; organization: string }[];  seo?: Seo;
 };
 
 export type Service = { title: string; label: string; copy: string; image: Image };
@@ -68,7 +71,18 @@ export type SiteSettings = {
     linksLabel: string;
     copyright: string;
   };
-  seo: { siteName: string; description: string; shareImage: Image };
+  /** Uploaded logos; null shows the built-in wordmark. */
+  logo: { image: Image | null; imageOnDark: Image | null };
+  seo: {
+    siteName: string;
+    description: string;
+    shareImage: Image;
+    /** Public origin such as https://skillandmix.com; needed for canonical links and the sitemap. */
+    siteUrl?: string | null;
+    keywords?: string | null;
+    favicon: Image | null;
+    noIndex?: boolean | null;
+  };
   theme: { white: string; black: string; red: string };
 };
 
@@ -92,7 +106,7 @@ export type HomePage = {
   /** `person` is a staff slug in the fallback and a populated doc from the CMS. */
   featuredInstructor: { eyebrow: string; title: string; person: StaffMember | string; linkLabel: string };
   featuredCourses: { eyebrow: string; title: string; linkLabel: string };
-  testimonials: { eyebrow: string };
+  testimonials: { eyebrow: string };  seo?: Seo;
 };
 
 export type AboutPage = {
@@ -107,7 +121,7 @@ export type AboutPage = {
     stamp: string;
   };
   marquee: string;
-  values: { title: string; items: { title: string; copy: string }[] };
+  values: { title: string; items: { title: string; copy: string }[] };  seo?: Seo;
 };
 
 export type CoursesPage = {
@@ -126,7 +140,7 @@ export type CoursesPage = {
     syllabusTitle: string;
     syllabusCopy: string;
     intakeLabel: string;
-  };
+  };  seo?: Seo;
 };
 
 export type TeamPage = {
@@ -145,19 +159,19 @@ export type TeamPage = {
     offDutyLabel: string;
     favoritePourLabel: string;
     nextLabel: string;
-  };
+  };  seo?: Seo;
 };
 
 export type ServicesPage = {
   intro: PageIntro;
   itemLinkLabel: string;
-  banner: { eyebrow: string; title: string };
+  banner: { eyebrow: string; title: string };  seo?: Seo;
 };
 
 export type GalleryPage = {
   intro: PageIntro;
   graffiti: string;
-  social: { copy: string };
+  social: { copy: string };  seo?: Seo;
 };
 
 export type ContactPage = {
@@ -180,7 +194,7 @@ export type ContactPage = {
     submitLabel: string;
     successTitle: string;
     successCopy: string;
-  };
+  };  seo?: Seo;
 };
 
 export type PopupSlide = {

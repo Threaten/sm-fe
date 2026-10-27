@@ -16,6 +16,7 @@ import type {
   SiteSettings,
   StaffMember,
   TeamPage,
+  Seo,
   Testimonial,
 } from "./types";
 
@@ -24,7 +25,7 @@ type Doc = Record<string, any>;
 
 /* The site uses no emoji or icon glyphs, so any an editor types into the CMS are dropped. */
 const symbols =
-  /[ \t]*[‍←-⇿⌀-⏿■-◿☀-➿⤀-⥿⬀-⯿︎️\u{1F000}-\u{1FAFF}]+[ \t]*/gu;
+  /[ \t]*[\u200D\u2190-\u21FF\u2300-\u23FF\u25A0-\u25FF\u2600-\u27BF\u2900-\u297F\u2B00-\u2BFF\uFE0E\uFE0F\u{1F000}-\u{1FAFF}]+[ \t]*/gu;
 const stripSymbols = (value: string) => {
   const stripped = value.replace(symbols, " ");
   return stripped === value ? value : stripped.replace(/^[ \t]+|[ \t]+$/gm, "");
@@ -56,6 +57,15 @@ function toImage(value: unknown, fallbackImage?: Image | null): Image {
   return fallbackImage ?? { url: "", alt: "" };
 }
 
+const upload = (media: unknown) => {
+  const image = toImage(media);
+  return image.url ? image : null;
+};
+
+/** A page's SEO group with its share image resolved. */
+const toSeo = (value: unknown): Seo | undefined =>
+  value && typeof value === "object" ? { ...(value as Seo), image: upload((value as Doc).image) } : undefined;
+
 const isEmpty = (value: unknown) =>
   value === null || value === undefined || (Array.isArray(value) && value.length === 0);
 
@@ -80,6 +90,7 @@ function normalizeCourse(doc: Doc): Course {
     ...(doc as Course),
     id: doc.id ? String(doc.id) : undefined,
     image: toImage(doc.image),
+    seo: toSeo(doc.seo),
     syllabus: Array.isArray(doc.syllabus) ? doc.syllabus.filter((item: Doc) => item?.title) : [],
   };
 }
@@ -91,6 +102,7 @@ function normalizeStaff(doc: Doc): StaffMember {
     bio: list(doc.bio, "paragraph"),
     specialties: list(doc.specialties, "item"),
     achievements: Array.isArray(doc.achievements) ? doc.achievements : [],
+    seo: toSeo(doc.seo),
   };
 }
 
@@ -101,7 +113,8 @@ async function getCollection<T>(slug: string, normalize: (doc: Doc) => T, base: 
 
 async function getGlobal<T>(slug: string, base: T, depth = 1): Promise<Doc & T> {
   const value = await requestJSON<Doc>(`/api/globals/${slug}?depth=${depth}`);
-  return withFallback(value, base) as Doc & T;
+  const merged = withFallback(value, base) as Doc & T;
+  return "seo" in merged ? { ...merged, seo: toSeo(merged.seo) } : merged;
 }
 
 /* Collections */
@@ -129,6 +142,14 @@ export const getTestimonials = () =>
 
 /* Globals */
 
+const toOrigin = (value: unknown) => {
+  try {
+    return typeof value === "string" && value ? new URL(value).origin : null;
+  } catch {
+    return null;
+  }
+};
+
 const isHexColour = (value: unknown) =>
   typeof value === "string" && /^#(?:[0-9a-f]{3}|[0-9a-f]{6})$/i.test(value);
 
@@ -143,10 +164,18 @@ export async function getSiteSettings(): Promise<SiteSettings> {
     }),
   ) as SiteSettings["theme"];
 
+  const logo = (value.logo ?? {}) as Doc;
+
   return {
     ...value,
     theme,
-    seo: { ...value.seo, shareImage: toImage(value.seo.shareImage, fallback.siteSettings.seo.shareImage) },
+    logo: { image: upload(logo.image), imageOnDark: upload(logo.imageOnDark) },
+    seo: {
+      ...value.seo,
+      shareImage: toImage(value.seo.shareImage, fallback.siteSettings.seo.shareImage),
+      siteUrl: toOrigin(value.seo.siteUrl),
+      favicon: upload(value.seo.favicon),
+    },
   };
 }
 

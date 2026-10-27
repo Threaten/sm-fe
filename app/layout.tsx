@@ -7,14 +7,23 @@ import "./globals.css";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { seo } = await getSiteSettings();
+  const keywords = seo.keywords?.split(",").map((word) => word.trim()).filter(Boolean);
   return {
+    metadataBase: seo.siteUrl ? new URL(seo.siteUrl) : undefined,
+    applicationName: seo.siteName,
     title: { default: seo.siteName, template: `%s | ${seo.siteName}` },
     description: seo.description,
+    keywords: keywords?.length ? keywords : undefined,
+    icons: seo.favicon ? { icon: seo.favicon.url, apple: seo.favicon.url } : undefined,
+    robots: seo.noIndex ? { index: false, follow: false } : undefined,
     openGraph: {
+      type: "website",
+      locale: "vi_VN",
       siteName: seo.siteName,
       description: seo.description,
       images: seo.shareImage.url ? [{ url: seo.shareImage.url, alt: seo.shareImage.alt }] : undefined,
     },
+    twitter: { card: "summary_large_image" },
   };
 }
 
@@ -46,6 +55,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
           announcementBar={settings.announcementBar}
           navigation={settings.navigation}
           cta={settings.headerCta}
+          logo={settings.logo.image}
         />
         <main id="main-content" tabIndex={-1}>
           {children}

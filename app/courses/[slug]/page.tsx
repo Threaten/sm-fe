@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getCourseBySlug, getCourses, getCoursesPage } from "@/lib/cms";
+import { pageMetadata } from "@/lib/seo";
 import { CourseHero } from "./_components/CourseHero";
 import { CourseSyllabus } from "./_components/CourseSyllabus";
 import { EnrollmentPanel } from "./_components/EnrollmentPanel";
@@ -12,7 +13,11 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const course = await getCourseBySlug((await params).slug);
   return course
-    ? { title: course.title, description: course.summary, openGraph: { images: [course.image.url] } }
+    ? pageMetadata(`/courses/${course.slug}`, course.seo, {
+        title: course.title,
+        description: course.summary,
+        image: course.image,
+      })
     : { title: "Course" };
 }
 

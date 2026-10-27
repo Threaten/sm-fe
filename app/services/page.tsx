@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import { PageIntro } from "@/components/PageIntro";
 import { getServices, getServicesPage, getSiteSettings, pageNumber } from "@/lib/cms";
+import { pageMetadata } from "@/lib/seo";
 import { ServiceBanner } from "./_components/ServiceBanner";
 import { ServiceList } from "./_components/ServiceList";
 
-export const metadata: Metadata = { title: "Services" };
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getServicesPage();
+  return pageMetadata("/services", page.seo, { description: page.intro.copy });
+}
 
 export default async function ServicesPage() {
   const [services, page, settings] = await Promise.all([getServices(), getServicesPage(), getSiteSettings()]);

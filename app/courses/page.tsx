@@ -2,11 +2,15 @@ import type { Metadata } from "next";
 import { Marquee } from "@/components/Marquee";
 import { PageIntro } from "@/components/PageIntro";
 import { getCourses, getCoursesPage, getSiteSettings, pageNumber } from "@/lib/cms";
+import { pageMetadata } from "@/lib/seo";
 import { CourseCatalog } from "./_components/CourseCatalog";
 import { CourseFaq } from "./_components/CourseFaq";
 import { CourseHelp } from "./_components/CourseHelp";
 
-export const metadata: Metadata = { title: "Courses" };
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getCoursesPage();
+  return pageMetadata("/courses", page.seo, { description: page.intro.copy });
+}
 
 export default async function CoursesPage() {
   const [courses, page, settings] = await Promise.all([getCourses(), getCoursesPage(), getSiteSettings()]);

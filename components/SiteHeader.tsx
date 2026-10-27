@@ -13,10 +13,12 @@ export function SiteHeader({
   announcementBar,
   navigation,
   cta,
+  logo,
 }: {
   announcementBar: SiteSettings["announcementBar"];
   navigation: NavLink[];
   cta: NavLink;
+  logo: SiteSettings["logo"]["image"];
 }) {
   const [open, setOpen] = useState(false);
   const header = useRef<HTMLElement>(null);
@@ -59,7 +61,7 @@ export function SiteHeader({
         </aside>
       ) : null}
       <header ref={header} className="site-header">
-        <BrandMark />
+        <BrandMark logo={logo} />
         <nav className="site-nav" aria-label="Primary navigation">
           {navigation.map(({ label, href }, index) => (
             <Link
