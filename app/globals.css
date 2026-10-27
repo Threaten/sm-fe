@@ -35,9 +35,9 @@
   --radius: 0.35rem;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 
-  --text-mega: clamp(3.6rem, 12.4vw, 13.5rem);
-  --text-h1: clamp(3rem, 8.4vw, 8.75rem);
-  --text-h2: clamp(2.35rem, 5.4vw, 5.5rem);
+  --text-mega: clamp(2.34rem, 8.06vw, 8.78rem);
+  --text-h1: clamp(1.95rem, 5.46vw, 5.69rem);
+  --text-h2: clamp(1.53rem, 3.51vw, 3.58rem);
   --text-h3: clamp(1.35rem, 2.1vw, 2rem);
   --text-lead: clamp(1.15rem, 1.55vw, 1.45rem);
 }
@@ -280,7 +280,7 @@ legend,
   animation: wobble 14s linear infinite;
 }
 .starburst span {
-  font-size: clamp(1rem, 1.8vw, 1.45rem);
+  font-size: clamp(0.8rem, 1.4vw, 1.1rem);
   font-weight: 900;
   line-height: 0.95;
   text-align: center;
@@ -470,7 +470,7 @@ legend,
   margin-right: auto;
 }
 .brand-mark-name {
-  font-size: 1.85rem;
+  font-size: 1.2rem;
   font-weight: 900;
   line-height: 1;
   letter-spacing: -0.01em;
@@ -627,7 +627,7 @@ legend,
 .footer-call h2 {
   max-width: 14ch;
   padding-top: 0.12em;
-  font-size: var(--text-mega);
+  font-size: var(--text-h1);
   line-height: 1;
 }
 .footer-cta {
@@ -777,7 +777,7 @@ legend,
   align-items: center;
   gap: 1.75rem;
   padding-right: 1.75rem;
-  font-size: clamp(1.6rem, 3.4vw, 3rem);
+  font-size: clamp(1.04rem, 2.21vw, 1.95rem);
   font-weight: 900;
   line-height: 1.1;
   text-transform: uppercase;
@@ -880,7 +880,7 @@ legend,
 }
 .callout h2 {
   max-width: 18ch;
-  font-size: clamp(2.2rem, 4.6vw, 4.6rem);
+  font-size: clamp(1.43rem, 2.99vw, 2.99rem);
 }
 .callout .label {
   margin-bottom: 1rem;
@@ -920,7 +920,7 @@ legend,
   gap: 0.75rem;
   padding-bottom: 0.25rem;
   border-bottom: 3px solid currentColor;
-  font-size: clamp(1.4rem, 2.8vw, 2.6rem);
+  font-size: clamp(1.12rem, 2.24vw, 2.08rem);
   font-weight: 900;
   word-break: break-word;
 }
@@ -1122,7 +1122,7 @@ legend,
   align-self: center;
 }
 .featured-instructor-name {
-  font-size: clamp(3rem, 7vw, 7rem);
+  font-size: clamp(1.95rem, 4.55vw, 4.55rem);
   font-weight: 900;
   line-height: 0.92;
   text-transform: uppercase;
@@ -1197,7 +1197,7 @@ legend,
   gap: 0.25rem;
 }
 .course-index-title strong {
-  font-size: clamp(1.8rem, 3.6vw, 3.4rem);
+  font-size: clamp(1.17rem, 2.34vw, 2.21rem);
   font-weight: 900;
   line-height: 1;
   text-transform: uppercase;
@@ -1261,7 +1261,7 @@ legend,
   align-items: baseline;
 }
 .testimonial figcaption strong {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 900;
   text-transform: uppercase;
   color: var(--white);
@@ -1328,7 +1328,7 @@ legend,
   color: var(--red);
 }
 .story-lead h2 {
-  font-size: clamp(2.4rem, 4.4vw, 4.4rem);
+  font-size: clamp(1.56rem, 2.86vw, 2.86rem);
 }
 .story-lead p:not(.label) {
   font-size: var(--text-lead);
@@ -1390,7 +1390,7 @@ legend,
   border-bottom: 2px solid var(--black);
 }
 .values-number {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: clamp(1.62rem, 3.25vw, 2.93rem);
   font-weight: 900;
   line-height: 1;
   color: transparent;
@@ -1433,7 +1433,7 @@ legend,
   position: absolute;
   top: 0.06em;
   left: 0.1em;
-  font-size: clamp(6rem, 14vw, 13rem);
+  font-size: clamp(3.9rem, 9.1vw, 8.45rem);
   font-weight: 900;
   line-height: 0.85;
   color: transparent;
@@ -1478,7 +1478,7 @@ legend,
   border-radius: 50%;
   background: var(--contrast);
   color: var(--white);
-  font-size: 0.95rem;
+  font-size: 0.76rem;
   font-weight: 900;
   line-height: 1.05;
   text-align: center;
@@ -1563,12 +1563,12 @@ legend,
   margin-bottom: auto;
 }
 .course-hero-number {
-  font-size: 3rem;
+  font-size: 1.95rem;
   font-weight: 900;
   line-height: 1;
 }
 .course-hero-copy h1 {
-  font-size: clamp(3.5rem, 8vw, 8.5rem);
+  font-size: clamp(2.27rem, 5.2vw, 5.53rem);
   line-height: 0.9;
 }
 .course-hero-summary {
@@ -1631,7 +1631,7 @@ legend,
   color: var(--red);
 }
 .enroll-intake h2 {
-  font-size: clamp(2rem, 4vw, 3.75rem);
+  font-size: clamp(1.3rem, 2.6vw, 2.44rem);
 }
 .enroll-schedule {
   line-height: 1.6;
@@ -1699,7 +1699,7 @@ legend,
   color: var(--red);
 }
 .staff-card h2 {
-  font-size: clamp(2.2rem, 3.6vw, 3.4rem);
+  font-size: clamp(1.43rem, 2.34vw, 2.21rem);
 }
 .staff-card-cta {
   display: inline-flex;
@@ -1780,7 +1780,7 @@ legend,
 }
 .profile-quote blockquote {
   max-width: 22ch;
-  font-size: clamp(2.2rem, 5.4vw, 5.25rem);
+  font-size: clamp(1.76rem, 4.32vw, 4.2rem);
   font-weight: 900;
   line-height: 1;
   text-transform: uppercase;
@@ -1804,7 +1804,7 @@ legend,
   color: var(--red);
 }
 .achievements h2 {
-  font-size: clamp(2.2rem, 4vw, 4rem);
+  font-size: clamp(1.43rem, 2.6vw, 2.6rem);
 }
 .achievements li {
   display: grid;
@@ -1818,7 +1818,7 @@ legend,
   border-top: 1px solid color-mix(in oklch, var(--white), transparent 75%);
 }
 .achievements time {
-  font-size: 1.75rem;
+  font-size: 1.14rem;
   font-weight: 900;
   color: var(--red);
 }
@@ -1843,7 +1843,7 @@ legend,
   color: var(--red);
 }
 .practice-head h2 {
-  font-size: clamp(2.2rem, 4vw, 4rem);
+  font-size: clamp(1.43rem, 2.6vw, 2.6rem);
 }
 .practice-head p:not(.label) {
   font-size: 1.1rem;
@@ -1873,7 +1873,7 @@ legend,
   rotate: 2deg;
 }
 .practice-pour strong {
-  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+  font-size: clamp(1.17rem, 1.82vw, 1.69rem);
   font-weight: 900;
   line-height: 1;
   text-transform: uppercase;
@@ -1937,7 +1937,7 @@ legend,
   top: -0.35em;
   left: -0.05em;
   z-index: 2;
-  font-size: clamp(5rem, 11vw, 10rem);
+  font-size: clamp(3.25rem, 7.15vw, 6.5rem);
   font-weight: 900;
   line-height: 1;
   color: var(--white);
@@ -1961,7 +1961,7 @@ legend,
   color: var(--red);
 }
 .service-copy h2 {
-  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  font-size: clamp(1.43rem, 2.6vw, 2.47rem);
 }
 .service-copy > p:not(.label) {
   font-size: 1.05rem;
@@ -2030,7 +2030,7 @@ legend,
   top: 38%;
   left: 50%;
   z-index: 3;
-  font-size: clamp(4rem, 13vw, 12rem);
+  font-size: clamp(2.6rem, 8.45vw, 7.8rem);
   font-weight: 900;
   line-height: 0.85;
   text-align: center;
@@ -2062,7 +2062,7 @@ legend,
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: clamp(2.4rem, 6vw, 5.5rem);
+  font-size: clamp(1.56rem, 3.9vw, 3.58rem);
   font-weight: 900;
   color: var(--white);
 }
@@ -2089,7 +2089,7 @@ legend,
   color: var(--red);
 }
 .contact-panels h2 {
-  font-size: clamp(2.4rem, 4vw, 3.75rem);
+  font-size: clamp(1.56rem, 2.6vw, 2.44rem);
 }
 .contact-panels a {
   display: inline-flex;
@@ -2235,7 +2235,7 @@ legend,
   color: var(--white);
 }
 .form-success h3 {
-  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-size: clamp(1.43rem, 2.6vw, 2.27rem);
   font-weight: 900;
   text-transform: uppercase;
 }
@@ -2288,7 +2288,7 @@ legend,
   color: var(--red);
 }
 .entry-popup-content h2 {
-  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-size: clamp(1.43rem, 2.6vw, 2.27rem);
 }
 .entry-popup-actions {
   display: flex;
@@ -2377,7 +2377,7 @@ legend,
   padding: var(--section) var(--gutter);
 }
 .not-found span {
-  font-size: clamp(8rem, 26vw, 24rem);
+  font-size: clamp(5.2rem, 16.9vw, 15.6rem);
   font-weight: 900;
   line-height: 0.8;
   color: var(--red);
@@ -2492,7 +2492,7 @@ legend,
     gap: 0.25rem;
   }
   .hero-title {
-    font-size: clamp(3.2rem, 17vw, 6rem);
+    font-size: clamp(2.1rem, 11vw, 3.9rem);
     text-wrap: wrap;
   }
   .hero-stage {
@@ -2636,7 +2636,7 @@ legend,
   .page-intro h1,
   .footer-call h2,
   .profile-hero-title h1 {
-    font-size: clamp(2.9rem, 14vw, 4.5rem);
+    font-size: clamp(1.89rem, 9.1vw, 2.93rem);
   }
   .course-index a {
     grid-template-columns: minmax(0, 1fr);
