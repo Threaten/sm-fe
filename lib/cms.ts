@@ -47,6 +47,7 @@ export type ServiceItem = {
 export type SiteContent = {
   entryPopup: {
     enabled: boolean;
+    promotionActive: boolean;
     eyebrow: string;
     title: string;
     copy: string;
@@ -54,6 +55,18 @@ export type SiteContent = {
     ctaLabel: string;
     ctaHref: string;
     dismissLabel: string;
+    additionalSlides: {
+      active: boolean;
+      displayMode: "image" | "video";
+      eyebrow?: string;
+      title?: string;
+      copy?: string;
+      image?: string;
+      imageAlt?: string;
+      videoUrl?: string;
+      ctaLabel?: string;
+      ctaHref?: string;
+    }[];
   };
   pageIntros: {
     page: string;
@@ -246,12 +259,14 @@ const siteSettingsFallback: SiteSettings = {
 const siteContentFallback: SiteContent = {
   entryPopup: {
     enabled: false,
+    promotionActive: true,
     eyebrow: "Ưu đãi hiện tại",
     title: "Đăng Ký Sớm – Giá Tốt Hơn",
     copy: "Đăng ký trước hạn để nhận mức giảm và ưu đãi theo số suất còn lại.",
     ctaLabel: "Xem Ưu Đãi",
     ctaHref: "/contact-us",
     dismissLabel: "Để sau",
+    additionalSlides: [],
   },
   pageIntros: [
     {
@@ -721,7 +736,14 @@ export async function getSiteContent() {
     entryPopup: {
       ...siteContentFallback.entryPopup,
       ...value.entryPopup,
+      promotionActive:
+        value.entryPopup?.promotionActive ??
+        siteContentFallback.entryPopup.promotionActive,
       image: mediaUrl(value.entryPopup?.image),
+      additionalSlides: value.entryPopup?.additionalSlides?.map((slide) => ({
+        ...slide,
+        image: mediaUrl(slide.image),
+      })) ?? [],
     },
     featuredInstructor: {
       ...merged.featuredInstructor,
