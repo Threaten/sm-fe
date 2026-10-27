@@ -15,7 +15,7 @@ export function FeaturedInstructor({
         <h2>{content.title}</h2>
       </div>
       <figure className="featured-instructor-portrait tape">
-        <img src={person.image.url} alt={person.image.alt} />
+        <img src={person.image.url} alt={person.image.alt} loading="lazy" />
         <figcaption>{person.note}</figcaption>
       </figure>
       <div className="featured-instructor-body">

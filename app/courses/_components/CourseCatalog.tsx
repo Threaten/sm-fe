@@ -20,7 +20,7 @@ export function CourseCatalog({
               {String(index + 1).padStart(2, "0")}
             </span>
             <figure className="tape">
-              <img src={course.image.url} alt={course.image.alt} />
+              <img src={course.image.url} alt={course.image.alt} loading="lazy" />
               <figcaption>{course.imageCaption}</figcaption>
             </figure>
             <span className="catalog-sticker" aria-hidden="true">

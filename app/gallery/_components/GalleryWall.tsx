@@ -6,7 +6,7 @@ export function GalleryWall({ items, graffiti }: { items: GalleryItem[]; graffit
     <section className="gallery">
       {items.map((item, index) => (
         <figure key={`${item.image.url}-${index}`} className="gallery-item">
-          <img src={item.image.url} alt={item.image.alt} loading={index > 3 ? "lazy" : undefined} />
+          <img src={item.image.url} alt={item.image.alt} loading="lazy" />
           <figcaption>
             <span>{String(index + 1).padStart(2, "0")}</span>
             {item.caption}

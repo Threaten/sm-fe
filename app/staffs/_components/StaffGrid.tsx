@@ -8,7 +8,7 @@ export function StaffGrid({ staff, cardLinkLabel }: { staff: StaffMember[]; card
         <article key={person.slug} className="staff-card">
           <Link href={`/staffs/${person.slug}`}>
             <figure className="staff-card-photo">
-              <img src={person.image.url} alt={person.image.alt} />
+              <img src={person.image.url} alt={person.image.alt} loading="lazy" />
               <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
             </figure>
             <p className="label">{person.role}</p>

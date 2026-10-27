@@ -6,7 +6,7 @@ export function HomeManifesto({ content }: { content: HomePage["manifesto"] }) {
   return (
     <section className="manifesto">
       <figure className="manifesto-photo">
-        <img src={content.image.url} alt={content.image.alt} />
+        <img src={content.image.url} alt={content.image.alt} loading="lazy" />
         <span className="stamp" aria-hidden="true">
           <Lines text={content.stamp} />
         </span>

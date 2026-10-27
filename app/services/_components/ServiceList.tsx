@@ -7,7 +7,7 @@ export function ServiceList({ services, linkLabel }: { services: Service[]; link
       {services.map((service, index) => (
         <article key={service.title} className="service">
           <figure className="service-image">
-            <img src={service.image.url} alt={service.image.alt} />
+            <img src={service.image.url} alt={service.image.alt} loading="lazy" />
           </figure>
           <span className="service-number" aria-hidden="true">
             {String(index + 1).padStart(2, "0")}

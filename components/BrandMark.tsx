@@ -5,7 +5,7 @@ export function BrandMark({ logo, inverse = false }: { logo?: Image | null; inve
   return (
     <Link href="/" className={`brand-mark ${inverse ? "brand-mark-inverse" : ""}`} aria-label="Skill & Mix home">
       {logo ? (
-        <img className="brand-mark-logo" src={logo.url} alt="" />
+        <img className="brand-mark-logo" src={logo.url} alt="" loading={inverse ? "lazy" : undefined} />
       ) : (
         <>
           <span className="brand-mark-name">

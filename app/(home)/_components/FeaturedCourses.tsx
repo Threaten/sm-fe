@@ -26,7 +26,7 @@ export function FeaturedCourses({
             <Link href={`/courses/${course.slug}`}>
               <span className="course-index-number">{String(index + 1).padStart(2, "0")}</span>
               <span className="course-index-thumb">
-                <img src={course.image.url} alt={course.image.alt} />
+                <img src={course.image.url} alt={course.image.alt} loading="lazy" />
               </span>
               <span className="course-index-title">
                 <strong>{course.title}</strong>
