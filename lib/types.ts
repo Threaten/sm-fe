@@ -52,6 +52,33 @@ export type StaffMember = {
   achievements: { year: string; title: string; organization: string }[];  seo?: Seo;
 };
 
+/** A node of a Lexical rich-text field. Upload nodes carry their resolved `image`. */
+export type RichTextNode = {
+  type: string;
+  children?: RichTextNode[];
+  text?: string;
+  format?: number | string;
+  tag?: string;
+  listType?: string;
+  fields?: { linkType?: string; url?: string; newTab?: boolean; doc?: { relationTo?: string; value?: unknown } };
+  image?: Image | null;
+};
+export type RichText = { root: RichTextNode } | null;
+
+export type NewsPost = {
+  id?: string;
+  slug: string;
+  title: string;
+  accent: Accent;
+  publishedAt: string;
+  excerpt: string;
+  image: Image;
+  imageCaption?: string | null;
+  /** Left out of list requests; only the detail page loads it. */
+  content?: RichText;
+  seo?: Seo;
+};
+
 export type Service = { title: string; label: string; copy: string; image: Image };
 export type GalleryItem = { image: Image; caption: string };
 export type Testimonial = { quote: string; author: string; role: string };
@@ -166,6 +193,13 @@ export type ServicesPage = {
   intro: PageIntro;
   itemLinkLabel: string;
   banner: { eyebrow: string; title: string };  seo?: Seo;
+};
+
+export type NewsPage = {
+  intro: PageIntro;
+  readMoreLabel: string;
+  emptyLabel: string;
+  detail: { backLabel: string; publishedLabel: string; moreTitle: string };  seo?: Seo;
 };
 
 export type GalleryPage = {

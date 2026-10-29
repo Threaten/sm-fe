@@ -11,6 +11,10 @@ import type {
   HomePage,
   Image,
   Link,
+  NewsPage,
+  NewsPost,
+  RichText,
+  RichTextNode,
   Service,
   ServicesPage,
   SiteSettings,
@@ -106,8 +110,37 @@ function normalizeStaff(doc: Doc): StaffMember {
   };
 }
 
-async function getCollection<T>(slug: string, normalize: (doc: Doc) => T, base: T[]): Promise<T[]> {
-  const result = await requestJSON<{ docs: Doc[] }>(`/api/${slug}?limit=100&sort=_order&depth=1`);
+/** Resolves the images inside a rich-text field, the same way as any other upload. */
+function normalizeRichText(value: unknown): RichText {
+  if (!value || typeof value !== "object" || !("root" in value)) return null;
+  const walk = (node: RichTextNode & { value?: unknown }): RichTextNode => {
+    const { value: media, ...rest } = node;
+    return {
+      ...rest,
+      ...(node.type === "upload" ? { image: upload(media) } : {}),
+      ...(node.children ? { children: node.children.map(walk) } : {}),
+    };
+  };
+  return { root: walk((value as { root: RichTextNode }).root) };
+}
+
+function normalizeNews(doc: Doc): NewsPost {
+  return {
+    ...(doc as NewsPost),
+    id: doc.id ? String(doc.id) : undefined,
+    image: toImage(doc.image),
+    content: normalizeRichText(doc.content),
+    seo: toSeo(doc.seo),
+  };
+}
+
+async function getCollection<T>(
+  slug: string,
+  normalize: (doc: Doc) => T,
+  base: T[],
+  query = "limit=100&sort=_order",
+): Promise<T[]> {
+  const result = await requestJSON<{ docs: Doc[] }>(`/api/${slug}?${query}&depth=1`);
   return result ? result.docs.map(normalize) : base;
 }
 
@@ -139,6 +172,20 @@ export const getGalleryItems = () =>
 
 export const getTestimonials = () =>
   getCollection<Testimonial>("testimonials", (doc) => doc as Testimonial, fallback.testimonials);
+
+/** Newest first. The list leaves out each post's body; `getNewsBySlug` loads it. */
+export const getNews = () =>
+  getCollection("news", normalizeNews, fallback.news, "limit=100&sort=-publishedAt&select[content]=false");
+
+export async function getNewsBySlug(slug: string) {
+  const [post] = await getCollection(
+    "news",
+    normalizeNews,
+    fallback.news.filter((item) => item.slug === slug),
+    `limit=1&where[slug][equals]=${encodeURIComponent(slug)}`,
+  );
+  return post ?? null;
+}
 
 /* Globals */
 
@@ -216,6 +263,7 @@ export async function getAboutPage(): Promise<AboutPage> {
 export const getCoursesPage = () => getGlobal<CoursesPage>("courses-page", fallback.coursesPage);
 export const getTeamPage = () => getGlobal<TeamPage>("team-page", fallback.teamPage);
 export const getServicesPage = () => getGlobal<ServicesPage>("services-page", fallback.servicesPage);
+export const getNewsPage = () => getGlobal<NewsPage>("news-page", fallback.newsPage);
 export const getGalleryPage = () => getGlobal<GalleryPage>("gallery-page", fallback.galleryPage);
 export const getContactPage = () => getGlobal<ContactPage>("contact-page", fallback.contactPage);
 
