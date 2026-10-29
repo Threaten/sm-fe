@@ -14,7 +14,9 @@ export async function generateMetadata(): Promise<Metadata> {
     title: { default: seo.siteName, template: `%s | ${seo.siteName}` },
     description: seo.description,
     keywords: keywords?.length ? keywords : undefined,
-    icons: seo.favicon ? { icon: seo.favicon.url, apple: seo.favicon.url } : undefined,
+    // Served from this site at a fixed address (app/favicon.ico/route.ts) rather than the CMS file URL,
+    // which changes with every upload and makes Google start over on the icon.
+    icons: seo.favicon ? { icon: "/favicon.ico", apple: "/favicon.ico" } : undefined,
     robots: seo.noIndex ? { index: false, follow: false } : undefined,
     openGraph: {
       type: "website",
