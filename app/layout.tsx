@@ -8,7 +8,7 @@ import "./globals.css";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { seo } = await getSiteSettings();
-  const keywords = seo.keywords?.split(",").map((word) => word.trim()).filter(Boolean);
+  const keywords = seo.keywords?.split(/[,\n]/).map((word) => word.trim()).filter(Boolean);
   return {
     metadataBase: seo.siteUrl ? new URL(seo.siteUrl) : undefined,
     applicationName: seo.siteName,
