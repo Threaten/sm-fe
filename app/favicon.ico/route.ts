@@ -1,17 +1,15 @@
-import { getSiteSettings } from "@/lib/cms";
+import { getIconSource, iconHeaders, renderIco } from "@/lib/icons";
 
 /**
  * Browsers and crawlers also ask for /favicon.ico directly, ignoring the <link rel="icon">,
- * so serve the browser icon from Site settings here too.
+ * so serve the browser icon from Site settings here too, as a real 16/32/48px .ico.
  */
 export async function GET() {
-  const { seo } = await getSiteSettings();
-  const response = seo.favicon ? await fetch(seo.favicon.url, { next: { revalidate: 60 } }).catch(() => null) : null;
-  if (!response?.ok) return new Response(null, { status: 404 });
-  return new Response(response.body, {
-    headers: {
-      "Content-Type": response.headers.get("content-type") ?? "image/png",
-      "Cache-Control": "public, max-age=300",
-    },
-  });
+  const source = await getIconSource();
+  if (!source) return new Response(null, { status: 404 });
+  try {
+    return new Response(new Uint8Array(await renderIco(source)), { headers: iconHeaders("image/x-icon") });
+  } catch {
+    return new Response(null, { status: 404 });
+  }
 }
