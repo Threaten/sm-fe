@@ -27,21 +27,12 @@ import type {
 /* eslint-disable @typescript-eslint/no-explicit-any */
 type Doc = Record<string, any>;
 
-/* The site uses no emoji or icon glyphs, so any an editor types into the CMS are dropped. */
-const symbols =
-  /[ \t]*[\u200D\u2190-\u21FF\u2300-\u23FF\u25A0-\u25FF\u2600-\u27BF\u2900-\u297F\u2B00-\u2BFF\uFE0E\uFE0F\u{1F000}-\u{1FAFF}]+[ \t]*/gu;
-const stripSymbols = (value: string) => {
-  const stripped = value.replace(symbols, " ");
-  return stripped === value ? value : stripped.replace(/^[ \t]+|[ \t]+$/gm, "");
-};
-
 async function requestJSON<T>(path: string): Promise<T | null> {
   if (!backendUrl) return null;
   try {
     const response = await fetch(`${backendUrl}${path}`, { next: { revalidate: 60 } });
     if (!response.ok) return null;
-    const text = await response.text();
-    return JSON.parse(text, (_key, value) => (typeof value === "string" ? stripSymbols(value) : value)) as T;
+    return (await response.json()) as T;
   } catch {
     return null;
   }

@@ -2460,8 +2460,15 @@ legend,
 .news-lead:hover .news-lead-image {
   rotate: 0deg;
 }
+/* News images are often posters with text, so they are shown whole, never cropped. */
+.news-lead-image {
+  justify-self: center;
+}
 .news-lead-image img {
-  aspect-ratio: 4 / 3;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 70svh;
   border: 0.5rem solid var(--white);
 }
 .news-lead-copy {
@@ -2508,6 +2515,8 @@ legend,
 }
 .news-index img {
   aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: var(--white-deep);
   border-radius: var(--radius);
 }
 .news-index-copy {
@@ -2529,6 +2538,18 @@ legend,
 }
 .news-hero .course-hero-copy .label {
   opacity: 0.85;
+}
+.news-hero .course-hero-image {
+  display: grid;
+  place-items: center;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  background: var(--white-deep);
+}
+.news-hero .course-hero-image img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: calc(100svh - 10rem);
 }
 
 .news-body {
@@ -2616,6 +2637,9 @@ legend,
   }
   .news-index time {
     grid-column: 1 / -1;
+  }
+  .news-hero .course-hero-image {
+    aspect-ratio: auto;
   }
   .news-index-more {
     display: none;
