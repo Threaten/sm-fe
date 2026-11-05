@@ -8,7 +8,7 @@ import { StoryCollage } from "./_components/StoryCollage";
 
 export async function generateMetadata(): Promise<Metadata> {
   const page = await getAboutPage();
-  return pageMetadata("/about", page.seo, { description: page.intro.copy });
+  return pageMetadata("/about", page.seo, { title: "Giới Thiệu", description: page.intro.copy });
 }
 
 export default async function AboutPage() {

@@ -7,7 +7,7 @@ import { ContactForm } from "./_components/ContactForm";
 
 export async function generateMetadata(): Promise<Metadata> {
   const page = await getContactPage();
-  return pageMetadata("/contact-us", page.seo, { description: page.intro.copy });
+  return pageMetadata("/contact-us", page.seo, { title: "Liên Hệ", description: page.intro.copy });
 }
 
 export default async function ContactPage() {

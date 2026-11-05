@@ -15,7 +15,8 @@ export async function pageMetadata(
   const site = settings.seo;
   // The home page is titled by the site name alone, not its menu label.
   const navTitle = path === "/" ? undefined : settings.navigation.find((link) => link.href === path)?.label;
-  const pageTitle = page.title ?? navTitle;
+  // The menu label wins, so renaming a page in the menu renames its search title too.
+  const pageTitle = navTitle ?? page.title;
   const description = seo?.description || page.description || site.description;
   const image = seo?.image ?? page.image ?? site.shareImage;
   // An SEO title is used as written; otherwise the layout's "%s | Site name" template applies.

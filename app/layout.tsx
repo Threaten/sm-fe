@@ -1,9 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { EntryPopup } from "@/components/EntryPopup";
+import { JsonLd } from "@/components/JsonLd";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { getEntryPopup, getSiteSettings } from "@/lib/cms";
 import { APPLE_ICON_SIZE, ICON_SIZES } from "@/lib/icons";
+import { organization, website } from "@/lib/structuredData";
 import "./globals.css";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -45,7 +47,7 @@ export async function generateViewport(): Promise<Viewport> {
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const [settings, popup] = await Promise.all([getSiteSettings(), getEntryPopup()]);
-  const { theme } = settings;
+  const { theme, seo } = settings;
 
   return (
     <html
@@ -59,6 +61,9 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
       }
     >
       <body>
+        {seo.siteUrl && !seo.noIndex ? (
+          <JsonLd items={[organization(settings, seo.siteUrl), website(settings, seo.siteUrl)]} />
+        ) : null}
         <a className="skip-link" href="#main-content">
           Skip to content
         </a>
