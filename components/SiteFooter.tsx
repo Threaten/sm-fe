@@ -30,7 +30,7 @@ export function SiteFooter({ settings }: { settings: SiteSettings }) {
           <p className="label">{footer.contactLabel}</p>
           <a href={`mailto:${contact.email}`}>{contact.email}</a>
           <a href={`tel:${contact.phone.replace(/\s/g, "")}`}>{contact.phone}</a>
-          <SocialLinks links={socialLinks} className="footer-social" />
+          <SocialLinks links={socialLinks} className="footer-social" icons />
         </div>
         <nav aria-label="Footer navigation">
           <p className="label">{footer.linksLabel}</p>
