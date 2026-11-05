@@ -2,9 +2,10 @@ import Link from "next/link";
 import type { SiteSettings } from "@/lib/types";
 import { BrandMark } from "./BrandMark";
 import { Lines } from "./Lines";
+import { SocialLinks } from "./SocialLinks";
 
 export function SiteFooter({ settings }: { settings: SiteSettings }) {
-  const { footer, contact, social, navigation, headerCta, logo } = settings;
+  const { footer, contact, socialLinks, navigation, headerCta, logo } = settings;
 
   return (
     <footer className="site-footer">
@@ -29,9 +30,7 @@ export function SiteFooter({ settings }: { settings: SiteSettings }) {
           <p className="label">{footer.contactLabel}</p>
           <a href={`mailto:${contact.email}`}>{contact.email}</a>
           <a href={`tel:${contact.phone.replace(/\s/g, "")}`}>{contact.phone}</a>
-          <a href={social.url} target="_blank" rel="noreferrer">
-            {social.handle}
-          </a>
+          <SocialLinks links={socialLinks} className="footer-social" />
         </div>
         <nav aria-label="Footer navigation">
           <p className="label">{footer.linksLabel}</p>

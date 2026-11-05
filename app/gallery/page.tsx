@@ -17,7 +17,7 @@ export default async function GalleryPage() {
     <>
       <PageIntro intro={page.intro} number={pageNumber(settings.navigation, "/gallery")} />
       <GalleryWall items={items} graffiti={page.graffiti} />
-      <GallerySocial copy={page.social.copy} social={settings.social} />
+      <GallerySocial copy={page.social.copy} links={settings.socialLinks} />
     </>
   );
 }

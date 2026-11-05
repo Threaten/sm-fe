@@ -29,7 +29,8 @@ export const organizationId = (siteUrl: string) => `${siteUrl}/#organization`;
 
 /** The academy itself, on every page: name, logo, address and contacts for the knowledge panel and maps. */
 export function organization(settings: SiteSettings, siteUrl: string): Thing {
-  const { seo, contact, social, logo } = settings;
+  const { seo, contact, socialLinks, logo } = settings;
+  const profiles = socialLinks.map((link) => link.url).filter(isProfileUrl);
   const [street, ...locality] = contact.address.split("\n").map((line) => line.trim()).filter(Boolean);
   const logoUrl = logo.image?.url ?? seo.favicon?.url;
   return {
@@ -51,7 +52,7 @@ export function organization(settings: SiteSettings, siteUrl: string): Thing {
         }
       : undefined,
     hasMap: contact.mapUrl || undefined,
-    sameAs: social.url && isProfileUrl(social.url) ? [social.url] : undefined,
+    sameAs: profiles.length ? profiles : undefined,
   };
 }
 

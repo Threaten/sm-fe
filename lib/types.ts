@@ -83,12 +83,15 @@ export type Service = { title: string; label: string; copy: string; image: Image
 export type GalleryItem = { image: Image; caption: string };
 export type Testimonial = { quote: string; author: string; role: string };
 
+export type SocialLink = { platform: string; label?: string | null; url: string };
+
 export type SiteSettings = {
   announcementBar: { enabled: boolean; message: string; linkLabel?: string | null; linkHref?: string | null };
   navigation: Link[];
   headerCta: Link;
   contact: { address: string; mapUrl: string; email: string; phone: string; hours: string };
-  social: { handle: string; url: string };
+  /** In display order. `label` is optional; the website then shows the platform name. */
+  socialLinks: SocialLink[];
   footer: {
     tagline: string;
     headline: string;

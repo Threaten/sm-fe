@@ -208,6 +208,9 @@ export async function getSiteSettings(): Promise<SiteSettings> {
     ...value,
     theme,
     logo: { image: upload(logo.image), imageOnDark: upload(logo.imageOnDark) },
+    socialLinks: (Array.isArray(value.socialLinks) ? value.socialLinks : []).filter(
+      (link: Doc) => typeof link?.url === "string" && link.url.trim(),
+    ),
     seo: {
       ...value.seo,
       shareImage: toImage(value.seo.shareImage, fallback.siteSettings.seo.shareImage),
