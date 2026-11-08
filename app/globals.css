@@ -894,8 +894,36 @@ legend,
   padding: 0 3.25rem 1.6rem 4rem;
   font-size: 1.05rem;
 }
-.accordion details[open] > p {
+.accordion details[open] > p,
+.accordion details[open] > .accordion-body {
   animation: rise 0.45s var(--ease) both;
+}
+.accordion-body {
+  display: grid;
+  gap: 0.6rem;
+  max-width: 62ch;
+  padding: 0 3.25rem 1.6rem 4rem;
+  font-size: 1.05rem;
+}
+.accordion-body ul {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.accordion-body li {
+  position: relative;
+  padding-left: 1.1rem;
+}
+.accordion-body li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 0.4rem;
+  height: 1px;
+  background: var(--accent);
 }
 
 .callout {
@@ -2911,7 +2939,8 @@ legend,
     grid-template-columns: 2rem minmax(0, 1fr);
     gap: 0.75rem;
   }
-  .accordion details > p {
+  .accordion details > p,
+  .accordion-body {
     padding: 0 0 1.5rem 2.75rem;
   }
   .testimonials-dots {
