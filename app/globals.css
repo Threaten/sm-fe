@@ -914,16 +914,16 @@ legend,
 }
 .accordion-body li {
   position: relative;
-  padding-left: 1.1rem;
+  padding-left: 1.4rem;
 }
 .accordion-body li::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 0.62em;
-  width: 0.4rem;
-  height: 1px;
-  background: var(--accent);
+  top: 0.7em;
+  width: 0.55rem;
+  height: 2px;
+  background: var(--red);
 }
 
 .callout {
