@@ -4,7 +4,9 @@ import { JsonLd } from "@/components/JsonLd";
 import { getCourseBySlug, getCourses, getCoursesPage, getSiteSettings } from "@/lib/cms";
 import { pageMetadata } from "@/lib/seo";
 import { breadcrumbs, course as courseLd } from "@/lib/structuredData";
+import { CourseAbout } from "./_components/CourseAbout";
 import { CourseHero } from "./_components/CourseHero";
+import { CourseOutcomes } from "./_components/CourseOutcomes";
 import { CourseSyllabus } from "./_components/CourseSyllabus";
 import { EnrollmentPanel } from "./_components/EnrollmentPanel";
 
@@ -42,6 +44,8 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
         />
       ) : null}
       <CourseHero course={course} number={index + 1} labels={page.detail} />
+      <CourseAbout course={course} labels={page.detail} />
+      <CourseOutcomes course={course} labels={page.detail} />
       <CourseSyllabus course={course} labels={page.detail} />
       <EnrollmentPanel course={course} labels={page.detail} />
     </div>

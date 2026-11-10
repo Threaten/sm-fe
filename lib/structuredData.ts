@@ -101,6 +101,7 @@ export function course(item: Course, siteUrl: string): Thing {
     image: item.image.url ? absolute(siteUrl, item.image.url) : undefined,
     inLanguage: "vi",
     educationalLevel: item.level || undefined,
+    teaches: item.outcomes?.length ? item.outcomes.map((outcome) => outcome.title) : undefined,
     provider: { "@id": organizationId(siteUrl) },
     syllabusSections: item.syllabus.length
       ? item.syllabus.map((section) => ({

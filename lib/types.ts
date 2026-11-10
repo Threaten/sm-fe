@@ -5,6 +5,8 @@
  */
 
 export type Image = { url: string; alt: string };
+/** An uploaded video (Videos collection), as used in rich text. */
+export type Video = { url: string; title: string; mimeType?: string | null; poster?: Image | null };
 export type Accent = "red" | "black";
 export type Link = { label: string; href: string };
 
@@ -34,6 +36,10 @@ export type Course = {
   schedule: string;
   price: string;
   promotionPrice?: string | null;
+  /** Longer introduction for the "About this course" section. Optional. */
+  description?: string | null;
+  /** What students walk away with. Optional; the section is hidden when empty. */
+  outcomes?: { title: string; description?: string | null }[];
   syllabus: { title: string; description?: string | null }[];  seo?: Seo;
 };
 
@@ -60,8 +66,18 @@ export type RichTextNode = {
   format?: number | string;
   tag?: string;
   listType?: string;
-  fields?: { linkType?: string; url?: string; newTab?: boolean; doc?: { relationTo?: string; value?: unknown } };
+  fields?: {
+    linkType?: string;
+    url?: string;
+    newTab?: boolean;
+    doc?: { relationTo?: string; value?: unknown };
+    /** Optional line under an uploaded video. */
+    caption?: string | null;
+  };
+  /** Upload nodes: which collection the file is from. */
+  relationTo?: string;
   image?: Image | null;
+  video?: Video | null;
 };
 export type RichText = { root: RichTextNode } | null;
 
@@ -166,6 +182,11 @@ export type CoursesPage = {
     tuitionLabel: string;
     classSizeLabel: string;
     reserveLabel: string;
+    aboutEyebrow: string;
+    aboutTitle: string;
+    outcomesEyebrow: string;
+    outcomesTitle: string;
+    outcomesCopy: string;
     syllabusEyebrow: string;
     syllabusTitle: string;
     syllabusCopy: string;

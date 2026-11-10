@@ -55,6 +55,30 @@ function renderNodes(nodes: RichTextNode[] = []): ReactNode[] {
       case "horizontalrule":
         return <hr key={key} />;
       case "upload":
+        if (node.video) {
+          const caption = node.fields?.caption;
+          return (
+            <figure key={key} className="rich-video">
+              {/* Native player: keyboard and screen-reader accessible, works on every device. */}
+              <video
+                controls
+                playsInline
+                preload="metadata"
+                poster={node.video.poster?.url || undefined}
+                aria-label={node.video.title || undefined}
+              >
+                {/* .mov files are usually H.264 too; letting the browser try beats skipping them by type. */}
+                <source
+                  src={node.video.url}
+                  {...(node.video.mimeType && node.video.mimeType !== "video/quicktime"
+                    ? { type: node.video.mimeType }
+                    : {})}
+                />
+              </video>
+              {caption ? <figcaption>{caption}</figcaption> : null}
+            </figure>
+          );
+        }
         return node.image ? (
           <figure key={key}>
             <img src={node.image.url} alt={node.image.alt} loading="lazy" />
@@ -79,7 +103,7 @@ function renderNodes(nodes: RichTextNode[] = []): ReactNode[] {
   });
 }
 
-/** Renders a Payload Lexical field. Only the editor tools enabled in sm-be/src/collections/News.ts are handled. */
+/** Renders a Payload Lexical field. Only the editor tools enabled in sm-be/src/collections/News.ts are handled (images and videos included). */
 export function RichText({ content, className }: { content: RichTextValue | undefined; className?: string }) {
   if (!content?.root) return null;
   return <div className={className}>{renderNodes(content.root.children)}</div>;

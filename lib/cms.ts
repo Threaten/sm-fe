@@ -20,6 +20,7 @@ import type {
   SiteSettings,
   StaffMember,
   TeamPage,
+  Video,
   Seo,
   Testimonial,
 } from "./types";
@@ -86,6 +87,8 @@ function normalizeCourse(doc: Doc): Course {
     id: doc.id ? String(doc.id) : undefined,
     image: toImage(doc.image),
     seo: toSeo(doc.seo),
+    description: typeof doc.description === "string" && doc.description.trim() ? doc.description : null,
+    outcomes: Array.isArray(doc.outcomes) ? doc.outcomes.filter((item: Doc) => item?.title) : [],
     syllabus: Array.isArray(doc.syllabus) ? doc.syllabus.filter((item: Doc) => item?.title) : [],
   };
 }
@@ -101,14 +104,29 @@ function normalizeStaff(doc: Doc): StaffMember {
   };
 }
 
-/** Resolves the images inside a rich-text field, the same way as any other upload. */
+/** A populated Videos upload. Needs depth 2 for its poster image. */
+function toVideo(value: unknown): Video | null {
+  if (!value || typeof value !== "object") return null;
+  const video = value as { url?: string; title?: string; mimeType?: string; poster?: unknown };
+  if (!video.url) return null;
+  return {
+    url: absoluteUrl(video.url),
+    title: video.title ?? "",
+    mimeType: video.mimeType ?? null,
+    poster: upload(video.poster),
+  };
+}
+
+/** Resolves the images and videos inside a rich-text field, the same way as any other upload. */
 function normalizeRichText(value: unknown): RichText {
   if (!value || typeof value !== "object" || !("root" in value)) return null;
   const walk = (node: RichTextNode & { value?: unknown }): RichTextNode => {
     const { value: media, ...rest } = node;
+    const uploaded =
+      node.type !== "upload" ? {} : node.relationTo === "videos" ? { video: toVideo(media) } : { image: upload(media) };
     return {
       ...rest,
-      ...(node.type === "upload" ? { image: upload(media) } : {}),
+      ...uploaded,
       ...(node.children ? { children: node.children.map(walk) } : {}),
     };
   };
@@ -130,8 +148,9 @@ async function getCollection<T>(
   normalize: (doc: Doc) => T,
   base: T[],
   query = "limit=100&sort=_order",
+  depth = 1,
 ): Promise<T[]> {
-  const result = await requestJSON<{ docs: Doc[] }>(`/api/${slug}?${query}&depth=1`);
+  const result = await requestJSON<{ docs: Doc[] }>(`/api/${slug}?${query}&depth=${depth}`);
   return result ? result.docs.map(normalize) : base;
 }
 
@@ -174,6 +193,8 @@ export async function getNewsBySlug(slug: string) {
     normalizeNews,
     fallback.news.filter((item) => item.slug === slug),
     `limit=1&where[slug][equals]=${encodeURIComponent(slug)}`,
+    // Depth 2 so videos in the body arrive with their poster image.
+    2,
   );
   return post ?? null;
 }

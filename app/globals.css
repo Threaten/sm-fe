@@ -898,25 +898,23 @@ legend,
 .accordion details[open] > .accordion-body {
   animation: rise 0.45s var(--ease) both;
 }
-.accordion-body {
+/* Plain CMS text: paragraphs and "-" bullet lists (components/TextBlocks.tsx). */
+.text-blocks {
   display: grid;
   gap: 0.6rem;
-  max-width: 62ch;
-  padding: 0 3.25rem 1.6rem 4rem;
-  font-size: 1.05rem;
 }
-.accordion-body ul {
+.text-blocks ul {
   display: grid;
   gap: 0.4rem;
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.accordion-body li {
+.text-blocks li {
   position: relative;
   padding-left: 1.4rem;
 }
-.accordion-body li::before {
+.text-blocks li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -924,6 +922,11 @@ legend,
   width: 0.55rem;
   height: 2px;
   background: var(--red);
+}
+.accordion-body {
+  max-width: 62ch;
+  padding: 0 3.25rem 1.6rem 4rem;
+  font-size: 1.05rem;
 }
 
 .callout {
@@ -1651,7 +1654,8 @@ legend,
   font-weight: 600;
 }
 
-.syllabus {
+.syllabus,
+.course-section {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr);
   gap: 2rem clamp(2rem, 6vw, 6rem);
@@ -1669,6 +1673,45 @@ legend,
 }
 .syllabus-intro p:not(.label) {
   font-size: 1.1rem;
+}
+/* Consecutive course sections read as one flow, not separate blocks. */
+.course-section + .course-section,
+.course-section + .syllabus {
+  padding-top: 0;
+}
+.course-about-body {
+  max-width: 62ch;
+  font-size: 1.15rem;
+  line-height: 1.65;
+}
+.outcome-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.25rem clamp(1.5rem, 3vw, 3rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.outcome-list > li {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 0.6rem;
+  padding-top: 1.25rem;
+  border-top: 1.5px solid var(--line-strong);
+}
+.outcome-list > li::before {
+  content: "";
+  position: absolute;
+  top: -1.5px;
+  left: 0;
+  width: 2.5rem;
+  height: 3px;
+  background: var(--red);
+}
+.outcome-list h3 {
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  font-weight: 600;
 }
 
 .enroll {
@@ -2665,6 +2708,26 @@ legend,
 .prose figure img {
   border-radius: var(--radius);
 }
+.rich-video {
+  display: grid;
+  gap: 0.6rem;
+}
+.rich-video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Vertical phone videos stay on screen; the player keeps the video's own shape. */
+  max-height: 80svh;
+  object-fit: contain;
+  background: var(--black);
+  border-radius: var(--radius);
+}
+.rich-video figcaption {
+  padding-left: 0.85rem;
+  border-left: 3px solid var(--red);
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
 
 .news-more {
   padding-top: var(--section);
@@ -2743,6 +2806,8 @@ legend,
   .faq,
   .course-hero,
   .syllabus,
+  .course-section,
+  .outcome-list,
   .values,
   .profile-hero,
   .profile-bio,
