@@ -40,6 +40,10 @@
   --text-h2: clamp(1.53rem, 3.51vw, 3.58rem);
   --text-h3: clamp(1.35rem, 2.1vw, 2rem);
   --text-lead: clamp(1.15rem, 1.55vw, 1.45rem);
+  /* Small text grows a little on wide screens so it stays readable on desktop. */
+  --text-label: clamp(0.78rem, 0.7rem + 0.2vw, 0.9rem);
+  --text-small: clamp(0.86rem, 0.8rem + 0.2vw, 0.98rem);
+  --text-micro: clamp(0.7rem, 0.64rem + 0.15vw, 0.8rem);
 }
 
 /* A red block gets black details and vice versa. */
@@ -211,7 +215,7 @@ p {
 dt,
 legend,
 .crumb {
-  font-size: 0.72rem;
+  font-size: var(--text-label);
   font-weight: 700;
   line-height: 1.3;
   letter-spacing: 0.08em;
@@ -316,7 +320,7 @@ legend,
   padding: 0.35rem 0.8rem;
   border: 1.5px solid currentColor;
   border-radius: 99px;
-  font-size: 0.85rem;
+  font-size: var(--text-small);
   font-weight: 600;
 }
 
@@ -354,7 +358,7 @@ legend,
   border: 2px solid var(--fg);
   border-radius: 99px;
   color: var(--fg);
-  font-size: 0.85rem;
+  font-size: var(--text-small);
   transition:
     background-color 0.3s var(--ease),
     color 0.3s var(--ease);
@@ -407,7 +411,7 @@ legend,
 .text-link {
   gap: 0.5rem;
   border-bottom: 2px solid currentColor;
-  font-size: 0.85rem;
+  font-size: var(--text-small);
 }
 
 .crumb {
@@ -437,7 +441,7 @@ legend,
   padding: 0.6rem var(--gutter);
   background: var(--black);
   color: var(--white);
-  font-size: 0.85rem;
+  font-size: var(--text-small);
   text-align: center;
 }
 .topbar a {
@@ -484,7 +488,7 @@ legend,
 .brand-mark-school {
   padding-left: 0.65rem;
   border-left: 1.5px solid currentColor;
-  font-size: 0.6rem;
+  font-size: var(--text-micro);
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: 0.08em;
@@ -522,7 +526,7 @@ legend,
 }
 .site-nav small,
 .mobile-menu small {
-  font-size: 0.6rem;
+  font-size: var(--text-micro);
   font-weight: 700;
   color: var(--red);
 }
@@ -551,7 +555,7 @@ legend,
   border-radius: 99px;
   background: var(--red);
   color: var(--white);
-  font-size: 0.8rem;
+  font-size: var(--text-small);
   font-weight: 800;
   text-transform: uppercase;
   transition: background-color 0.25s var(--ease);
@@ -567,7 +571,7 @@ legend,
   border: 2px solid var(--black);
   border-radius: 99px;
   background: var(--white);
-  font-size: 0.8rem;
+  font-size: var(--text-small);
   font-weight: 800;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -652,7 +656,7 @@ legend,
   border-radius: 50%;
   background: var(--red);
   color: var(--white);
-  font-size: 0.85rem;
+  font-size: var(--text-small);
   font-weight: 800;
   line-height: 1.15;
   text-align: center;
@@ -680,7 +684,7 @@ legend,
 }
 .footer-grid .label {
   margin-bottom: 0.6rem;
-  color: color-mix(in oklch, var(--white), transparent 40%);
+  color: color-mix(in oklch, var(--white), transparent 25%);
 }
 .footer-grid a:hover {
   color: var(--red);
@@ -714,7 +718,7 @@ legend,
   padding-top: 1.5rem;
   border-top: 1px solid color-mix(in oklch, var(--white), transparent 75%);
   color: color-mix(in oklch, var(--white), transparent 35%);
-  font-size: 0.85rem;
+  font-size: var(--text-small);
 }
 
 /* ---------- Page intro ---------- */
@@ -880,7 +884,7 @@ legend,
 }
 .accordion summary > span,
 .accordion-row > span {
-  font-size: 0.85rem;
+  font-size: var(--text-small);
   font-weight: 700;
   color: var(--red);
 }
@@ -1003,10 +1007,18 @@ legend,
   padding-bottom: 1rem;
   border-bottom: 1.5px solid var(--black);
 }
+.hero-kicker {
+  font-size: clamp(0.86rem, 0.74rem + 0.3vw, 1.05rem);
+}
+/* The page's h1 for search engines, styled as the kicker line. Sized explicitly, never the h1 scale. */
 .hero-kicker h1 {
-  font: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
   letter-spacing: inherit;
   text-transform: inherit;
+  text-wrap: wrap;
 }
 .hero-title {
   position: relative;
@@ -1173,7 +1185,7 @@ legend,
   padding: 0.5rem 0.85rem;
   background: var(--red);
   color: var(--white);
-  font-size: 0.85rem;
+  font-size: var(--text-small);
   font-weight: 700;
   rotate: 2deg;
 }
@@ -1276,11 +1288,11 @@ legend,
   font-weight: 600;
 }
 .course-index-meta small {
-  font-size: 0.65rem;
+  font-size: var(--text-micro);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  opacity: 0.65;
+  opacity: 0.8;
 }
 
 /* ---------- Home: testimonials ---------- */
@@ -1341,7 +1353,7 @@ legend,
   border: 2px solid var(--white);
   border-radius: 99px;
   background: transparent;
-  font-size: 0.85rem;
+  font-size: var(--text-small);
   font-weight: 700;
   text-transform: uppercase;
   transition: background-color 0.25s var(--ease);
@@ -1525,7 +1537,7 @@ legend,
   padding: 0.3rem 0.6rem;
   background: var(--white);
   color: var(--black);
-  font-size: 0.75rem;
+  font-size: var(--text-label);
   font-weight: 600;
 }
 .catalog-sticker {
@@ -1541,7 +1553,7 @@ legend,
   border-radius: 50%;
   background: var(--contrast);
   color: var(--white);
-  font-size: 0.76rem;
+  font-size: var(--text-label);
   font-weight: 900;
   line-height: 1.05;
   text-align: center;
@@ -1551,7 +1563,7 @@ legend,
 .catalog-sticker small {
   display: block;
   margin-top: 0.3rem;
-  font-size: 0.65rem;
+  font-size: var(--text-micro);
   color: var(--white);
   opacity: 0.75;
 }
@@ -1584,7 +1596,7 @@ legend,
   border-radius: 99px;
   background: var(--accent);
   color: var(--on-accent);
-  font-size: 0.85rem;
+  font-size: var(--text-small);
   font-weight: 800;
   text-transform: uppercase;
 }
@@ -1655,7 +1667,7 @@ legend,
   left: 1.5rem;
   padding: 0.45rem 0.8rem;
   background: var(--white);
-  font-size: 0.85rem;
+  font-size: var(--text-small);
   font-weight: 600;
 }
 
@@ -1809,7 +1821,7 @@ legend,
   align-items: center;
   gap: 0.5rem;
   margin-top: 0.5rem;
-  font-size: 0.85rem;
+  font-size: var(--text-small);
   font-weight: 800;
   text-transform: uppercase;
 }
@@ -2124,7 +2136,7 @@ legend,
   font-weight: 600;
 }
 .gallery-item figcaption span {
-  font-size: 0.75rem;
+  font-size: var(--text-label);
   font-weight: 700;
   color: var(--red);
 }
@@ -2193,7 +2205,7 @@ legend,
   border-left: 2px solid var(--black);
 }
 .contact-panels span {
-  font-size: 0.85rem;
+  font-size: var(--text-small);
   font-weight: 700;
   color: var(--red);
 }
@@ -2237,7 +2249,7 @@ legend,
 .contact-form legend {
   display: grid;
   gap: 0.6rem;
-  font-size: 0.75rem;
+  font-size: var(--text-label);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -2423,7 +2435,7 @@ legend,
   border: 2px solid var(--black);
   border-radius: 99px;
   background: var(--white);
-  font-size: 0.8rem;
+  font-size: var(--text-small);
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -2626,7 +2638,7 @@ legend,
   opacity: 0.8;
 }
 .news-index-more {
-  font-size: 0.8rem;
+  font-size: var(--text-small);
   font-weight: 800;
   text-transform: uppercase;
 }
