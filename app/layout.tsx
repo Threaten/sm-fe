@@ -65,7 +65,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
           <JsonLd items={[organization(settings, seo.siteUrl), website(settings, seo.siteUrl)]} />
         ) : null}
         <a className="skip-link" href="#main-content">
-          Skip to content
+          Chuyển đến nội dung chính
         </a>
         <SiteHeader
           announcementBar={settings.announcementBar}

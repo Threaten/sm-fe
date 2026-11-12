@@ -22,6 +22,8 @@ export type PageIntro = {
 
 export type Course = {
   id?: string;
+  /** From the CMS; the sitemap's lastmod. */
+  updatedAt?: string;
   slug: string;
   title: string;
   accent: Accent;
@@ -44,6 +46,8 @@ export type Course = {
 };
 
 export type StaffMember = {
+  /** From the CMS; the sitemap's lastmod. */
+  updatedAt?: string;
   slug: string;
   name: string;
   shortName: string;
@@ -83,6 +87,8 @@ export type RichText = { root: RichTextNode } | null;
 
 export type NewsPost = {
   id?: string;
+  /** From the CMS; the sitemap's lastmod. */
+  updatedAt?: string;
   slug: string;
   title: string;
   accent: Accent;

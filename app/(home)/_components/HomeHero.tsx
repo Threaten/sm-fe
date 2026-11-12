@@ -7,16 +7,18 @@ export function HomeHero({ content }: { content: HomePage["hero"] }) {
   return (
     <section className="home-hero">
       <div className="hero-kicker label">
-        <span>{content.kickerLeft}</span>
+        {/* The page's one h1 for search engines: the Vietnamese line (Home page → Hero → Kicker left),
+            not the English slogan below, which is styled display text. */}
+        <h1>{content.kickerLeft}</h1>
         <span>{content.kickerRight}</span>
       </div>
-      <h1 className="hero-title">
+      <p className="hero-title">
         <span className="hero-line">{content.titleLineOne}</span>
         <span className="hero-line hero-line-big">
           {content.titleWord} <em>{content.titleEmphasis}</em>
         </span>
         <span className="hero-line">{content.titleLineThree}</span>
-      </h1>
+      </p>
       <div className="hero-stage">
         <figure className="hero-photo hero-photo-left tape">
           <img src={content.imageLeft.url} alt={content.imageLeft.alt} />

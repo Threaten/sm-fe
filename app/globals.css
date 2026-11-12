@@ -1003,6 +1003,11 @@ legend,
   padding-bottom: 1rem;
   border-bottom: 1.5px solid var(--black);
 }
+.hero-kicker h1 {
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
 .hero-title {
   position: relative;
   z-index: 3;

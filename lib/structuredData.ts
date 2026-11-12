@@ -48,10 +48,14 @@ export function organization(settings: SiteSettings, siteUrl: string): Thing {
           "@type": "PostalAddress",
           streetAddress: street,
           addressLocality: locality.join(", ") || undefined,
+          addressRegion: "Thành phố Hồ Chí Minh",
           addressCountry: "VN",
         }
       : undefined,
     hasMap: contact.mapUrl || undefined,
+    // Local searches ("học bartender tphcm"): where the academy teaches.
+    areaServed: { "@type": "City", name: "Thành phố Hồ Chí Minh" },
+    knowsLanguage: "vi",
     sameAs: profiles.length ? profiles : undefined,
   };
 }
