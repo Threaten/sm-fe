@@ -2852,7 +2852,10 @@ legend,
   }
   .hero-kicker {
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    letter-spacing: 0.04em;
   }
   .hero-title {
     font-size: clamp(2.1rem, 11vw, 3.9rem);
@@ -2865,6 +2868,7 @@ legend,
     margin-top: 2rem;
   }
   .hero-foot {
+    align-self: stretch;
     padding-top: 1.5rem;
   }
 
