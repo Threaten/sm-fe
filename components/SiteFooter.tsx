@@ -22,9 +22,14 @@ export function SiteFooter({ settings }: { settings: SiteSettings }) {
           <p>
             <Lines text={contact.address} />
           </p>
-          <p className="footer-hours">
-            <Lines text={contact.hours} />
-          </p>
+          {contact.hours ? (
+            <>
+              <p className="label footer-hours-label">{footer.hoursLabel}</p>
+              <p>
+                <Lines text={contact.hours} />
+              </p>
+            </>
+          ) : null}
         </div>
         <div>
           <p className="label">{footer.contactLabel}</p>

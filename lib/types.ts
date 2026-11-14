@@ -119,6 +119,7 @@ export type SiteSettings = {
     headline: string;
     ctaLabel: string;
     addressLabel: string;
+    hoursLabel: string;
     contactLabel: string;
     linksLabel: string;
     copyright: string;
