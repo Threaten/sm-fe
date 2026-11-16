@@ -5,6 +5,8 @@ import { getCourseBySlug, getCourses, getCoursesPage, getSiteSettings } from "@/
 import { pageMetadata } from "@/lib/seo";
 import { breadcrumbs, course as courseLd } from "@/lib/structuredData";
 import { CourseAbout } from "./_components/CourseAbout";
+import { CourseClassMedia } from "./_components/CourseClassMedia";
+import { CourseDetails } from "./_components/CourseDetails";
 import { CourseHero } from "./_components/CourseHero";
 import { CourseOutcomes } from "./_components/CourseOutcomes";
 import { CourseSyllabus } from "./_components/CourseSyllabus";
@@ -45,8 +47,10 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
       ) : null}
       <CourseHero course={course} number={index + 1} labels={page.detail} />
       <CourseAbout course={course} labels={page.detail} />
+      <CourseDetails course={course} labels={page.detail} />
       <CourseOutcomes course={course} labels={page.detail} />
       <CourseSyllabus course={course} labels={page.detail} />
+      <CourseClassMedia course={course} labels={page.detail} />
       <EnrollmentPanel course={course} labels={page.detail} />
     </div>
   );

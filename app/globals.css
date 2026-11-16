@@ -1699,7 +1699,8 @@ legend,
 }
 /* Consecutive course sections read as one flow, not separate blocks. */
 .course-section + .course-section,
-.course-section + .syllabus {
+.course-section + .syllabus,
+.syllabus + .course-section {
   padding-top: 0;
 }
 .course-about-body {
@@ -1735,6 +1736,67 @@ legend,
 .outcome-list h3 {
   font-size: clamp(1.1rem, 1.6vw, 1.35rem);
   font-weight: 600;
+}
+
+/* Course details: label/value rows, ruled like the syllabus. */
+.course-details-list {
+  margin: 0;
+  border-top: 1.5px solid var(--line-strong);
+}
+.course-details-list > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 0.5rem 2rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--line-strong);
+}
+.course-details-list dt {
+  font-size: var(--text-label);
+  font-weight: 700;
+  color: var(--red);
+  text-transform: uppercase;
+}
+.course-details-list dd {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  font-size: 1.05rem;
+}
+@media (max-width: 820px) {
+  .course-details-list > div {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Class photos and videos: a two-column wall; each keeps its own shape. */
+.class-media-grid {
+  columns: 2 16rem;
+  column-gap: 1.5rem;
+}
+.class-media-item {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0 0 1.75rem;
+  break-inside: avoid;
+}
+.class-media-item img,
+.class-media-item video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+.class-media-item video {
+  /* Vertical phone clips stay on screen. */
+  max-height: 80svh;
+  object-fit: contain;
+  background: var(--black);
+}
+.class-media-item figcaption {
+  padding-left: 0.85rem;
+  border-left: 3px solid var(--red);
+  font-size: 0.95rem;
+  opacity: 0.8;
 }
 
 .enroll {

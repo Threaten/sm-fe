@@ -40,10 +40,20 @@ export type Course = {
   promotionPrice?: string | null;
   /** Longer introduction for the "About this course" section. Optional. */
   description?: string | null;
+  /** Day-by-day rows for the "Course details" section. Optional; hidden when empty. No label → numbered automatically. */
+  details?: { label?: string | null; value: string }[];
   /** What students walk away with. Optional; the section is hidden when empty. */
   outcomes?: { title: string; description?: string | null }[];
-  syllabus: { title: string; description?: string | null }[];  seo?: Seo;
+  syllabus: { title: string; description?: string | null }[];
+  /** Photos and clips from real classes, in CMS order. Optional; the section is hidden when empty. */
+  classMedia?: ClassMediaItem[];
+  seo?: Seo;
 };
+
+/** One entry of a course's class gallery: either a photo or a video. */
+export type ClassMediaItem =
+  | { kind: "image"; image: Image; caption?: string | null }
+  | { kind: "video"; video: Video; caption?: string | null };
 
 export type StaffMember = {
   /** From the CMS; the sitemap's lastmod. */
@@ -191,9 +201,15 @@ export type CoursesPage = {
     reserveLabel: string;
     aboutEyebrow: string;
     aboutTitle: string;
+    detailsEyebrow: string;
+    detailsTitle: string;
+    detailsDayLabel: string;
     outcomesEyebrow: string;
     outcomesTitle: string;
     outcomesCopy: string;
+    classMediaEyebrow: string;
+    classMediaTitle: string;
+    classMediaCopy: string;
     syllabusEyebrow: string;
     syllabusTitle: string;
     syllabusCopy: string;

@@ -9,6 +9,7 @@ import type {
   GalleryItem,
   GalleryPage,
   HomePage,
+  ClassMediaItem,
   Image,
   Link,
   NewsPage,
@@ -88,9 +89,24 @@ function normalizeCourse(doc: Doc): Course {
     image: toImage(doc.image),
     seo: toSeo(doc.seo),
     description: typeof doc.description === "string" && doc.description.trim() ? doc.description : null,
+    details: Array.isArray(doc.details) ? doc.details.filter((item: Doc) => typeof item?.value === "string" && item.value.trim()) : [],
     outcomes: Array.isArray(doc.outcomes) ? doc.outcomes.filter((item: Doc) => item?.title) : [],
     syllabus: Array.isArray(doc.syllabus) ? doc.syllabus.filter((item: Doc) => item?.title) : [],
+    classMedia: Array.isArray(doc.classMedia) ? doc.classMedia.map(toClassMedia).filter((item: ClassMediaItem | null): item is ClassMediaItem => item !== null) : [],
   };
+}
+
+/** A class gallery row: a polymorphic upload `{ relationTo, value }` plus an optional caption. */
+function toClassMedia(row: Doc): ClassMediaItem | null {
+  const file = row?.file;
+  const caption = typeof row?.caption === "string" && row.caption.trim() ? row.caption : null;
+  if (!file || typeof file !== "object") return null;
+  if (file.relationTo === "videos") {
+    const video = toVideo(file.value);
+    return video ? { kind: "video", video, caption } : null;
+  }
+  const image = upload(file.value);
+  return image ? { kind: "image", image, caption } : null;
 }
 
 function normalizeStaff(doc: Doc): StaffMember {
@@ -162,7 +178,9 @@ async function getGlobal<T>(slug: string, base: T, depth = 1): Promise<Doc & T> 
 
 /* Collections */
 
-export const getCourses = () => getCollection("courses", normalizeCourse, fallback.courses);
+// Depth 2 so class videos arrive with their poster image.
+export const getCourses = () =>
+  getCollection("courses", normalizeCourse, fallback.courses, undefined, 2);
 
 export async function getCourseBySlug(slug: string) {
   return (await getCourses()).find((course) => course.slug === slug) ?? null;
