@@ -19,6 +19,8 @@
   --white: #ffffff;
   --black: #111111;
   --red: #d7141a;
+  /* Red text on black sections: the brand red lifted toward white so it stays readable (about 7:1 on --black). */
+  --red-on-dark: color-mix(in oklch, var(--red), var(--white) 45%);
 
   --white-deep: color-mix(in oklch, var(--white), var(--black) 7%);
   --line: color-mix(in oklch, var(--black), transparent 80%);
@@ -603,10 +605,10 @@ legend,
 }
 .mobile-menu small {
   margin-top: 0.6rem;
-  color: var(--red);
+  color: var(--red-on-dark);
 }
 .mobile-menu a[aria-current="page"] {
-  color: var(--red);
+  color: var(--red-on-dark);
 }
 .mobile-menu .mobile-menu-cta {
   align-items: center;
@@ -687,7 +689,7 @@ legend,
   color: color-mix(in oklch, var(--white), transparent 25%);
 }
 .footer-grid a:hover {
-  color: var(--red);
+  color: var(--red-on-dark);
 }
 .footer-social {
   display: flex;
@@ -1209,7 +1211,7 @@ legend,
   text-transform: uppercase;
 }
 .featured-instructor-body .label {
-  color: var(--red);
+  color: var(--red-on-dark);
 }
 .featured-instructor-body blockquote {
   max-width: 30ch;
@@ -2003,7 +2005,7 @@ legend,
 .achievements time {
   font-size: 1.14rem;
   font-weight: 900;
-  color: var(--red);
+  color: var(--red-on-dark);
 }
 .achievements strong {
   font-size: 1.15rem;
