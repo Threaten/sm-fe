@@ -34,11 +34,22 @@ export function EntryPopup({ content }: { content: EntryPopupContent }) {
 
   useEffect(() => {
     if (!content.enabled || slides.length === 0) return;
-    const timer = window.setTimeout(() => {
-      setActiveIndex(0);
-      setOpen(true);
-    }, 450);
-    return () => window.clearTimeout(timer);
+    // Open only once the page has finished loading. Visitors close the popup with Esc,
+    // and Esc during loading is also the browser's "stop" key: it would cancel every
+    // image and video still downloading, leaving them blank for the rest of the visit.
+    let timer: number | undefined;
+    const show = () => {
+      timer = window.setTimeout(() => {
+        setActiveIndex(0);
+        setOpen(true);
+      }, 450);
+    };
+    if (document.readyState === "complete") show();
+    else window.addEventListener("load", show, { once: true });
+    return () => {
+      window.removeEventListener("load", show);
+      window.clearTimeout(timer);
+    };
   }, [content.enabled, slides.length]);
 
   useEffect(() => {
@@ -48,7 +59,11 @@ export function EntryPopup({ content }: { content: EntryPopupContent }) {
     document.body.style.overflow = "hidden";
     closeButton.current?.focus();
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") dismiss();
+      if (event.key === "Escape") {
+        // Handled here, so the browser does not also treat it as "stop loading the page".
+        event.preventDefault();
+        dismiss();
+      }
       if (event.key === "ArrowLeft") {
         setActiveIndex((index) => (index - 1 + slides.length) % slides.length);
       }
