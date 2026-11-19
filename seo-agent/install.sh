@@ -56,17 +56,24 @@ ok "claude $(claude --version 2>/dev/null | head -1)"
 if [ -z "${CLAUDE_CODE_OAUTH_TOKEN:-}" ]; then
   cat <<'TXT'
 
-  The agent signs in with your Claude Pro account (no API credit).
-  Next, Claude Code prints a link: open it in your browser, log in with your Claude Pro account,
-  approve, paste the code back here. It then prints a long token starting with "sk-ant-oat":
-  copy it, and paste it at the prompt that follows.
+  The agent signs in with your Claude Pro account (no API credit). It needs a login token:
+    1. On your own computer (where your browser is), run:   claude setup-token
+    2. Log in with your Claude Pro account in the browser that opens.
+    3. Copy the token it prints (starts with sk-ant-oat01-, may wrap over several lines).
+  Paste it below (nothing shows while pasting). Leave empty and press Enter to try
+  logging in from this server instead.
 TXT
-  read -r -p "  Press Enter to start..." _ </dev/tty
-  claude setup-token </dev/tty || true
-  ask_secret CLAUDE_CODE_OAUTH_TOKEN "Paste the token (sk-ant-oat...)"
+  ask_secret CLAUDE_CODE_OAUTH_TOKEN "Paste the token"
+  if [ -z "${CLAUDE_CODE_OAUTH_TOKEN:-}" ]; then
+    echo "  Copy the WHOLE link it prints (it wraps over several lines), then paste the code back."
+    claude setup-token </dev/tty || true
+    ask_secret CLAUDE_CODE_OAUTH_TOKEN "Paste the token (sk-ant-oat...)"
+  fi
 else
   ok "Claude login token already saved (run 'claude setup-token' again if it stops working)"
 fi
+# Spaces or line breaks picked up while copying a wrapped token.
+CLAUDE_CODE_OAUTH_TOKEN="$(printf '%s' "${CLAUDE_CODE_OAUTH_TOKEN:-}" | tr -d '[:space:]')"
 [[ "${CLAUDE_CODE_OAUTH_TOKEN:-}" == sk-ant-oat* ]] || warn "That doesn't look like a subscription token (should start with sk-ant-oat)."
 
 bold "3/7 Where the site lives"
