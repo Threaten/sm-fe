@@ -45,14 +45,15 @@ prompt="$(cat "$KIT/PROMPT.md")
 - Today: $(date +%F)"
 
 cd "$FE_DIR"
+trace="${log%.log}.jsonl"
 timeout "${RUN_TIMEOUT:-90m}" claude -p "$prompt" \
   --model "${CLAUDE_MODEL:-sonnet}" \
   --max-turns "${MAX_TURNS:-60}" \
   --add-dir "$BE_DIR" "$HOME_DIR/state" \
   --allowedTools "${allowed[@]}" \
   --disallowedTools "${denied[@]}" \
-  --output-format text </dev/null
-status=$?
+  --output-format stream-json --verbose </dev/null | tee "$trace" | node "$KIT/tools/trace.mjs"
+status=${PIPESTATUS[0]}
 echo "=== finished $(date '+%F %T') with status $status ==="
-find "$HOME_DIR/logs" -name '*.log' -mtime +60 -delete
+find "$HOME_DIR/logs" \( -name '*.log' -o -name '*.jsonl' \) -mtime +60 -delete
 exit $status
