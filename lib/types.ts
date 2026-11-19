@@ -169,7 +169,16 @@ export type HomePage = {
   /** `person` is a staff slug in the fallback and a populated doc from the CMS. */
   featuredInstructor: { eyebrow: string; title: string; person: StaffMember | string; linkLabel: string };
   featuredCourses: { eyebrow: string; title: string; linkLabel: string };
-  testimonials: { eyebrow: string };  seo?: Seo;
+  testimonials: { eyebrow: string };
+  /** Longer keyword text under the courses ("học bartender TP.HCM"), plus a FAQ. */
+  guide: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    sections: { heading: string; body: string; linkLabel?: string | null; linkHref?: string | null }[];
+  };
+  faq: { eyebrow: string; title: string; items: { question: string; answer: string }[] };
+  seo?: Seo;
 };
 
 export type AboutPage = {
