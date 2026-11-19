@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 // Converts simple Markdown into the Lexical JSON that Payload's rich text field stores.
 // Supports: ## / ### headings, paragraphs, "- " and "1. " lists, **bold**, *italic*, [text](url), > quotes.
-// Usage: node md2lexical.mjs article.md > content.json
+// Usage: node md2lexical.mjs article.md content.json   (or without the second argument: prints the JSON)
 import fs from "node:fs";
 
 const file = process.argv[2];
 if (!file) {
-  console.error("usage: node md2lexical.mjs <file.md>");
+  console.error("usage: node md2lexical.mjs <file.md> [out.json]");
   process.exit(2);
 }
 const md = fs.readFileSync(file, "utf8").replace(/\r\n/g, "\n");
@@ -76,4 +76,8 @@ for (const raw of md.split("\n")) {
 }
 flushList();
 
-process.stdout.write(JSON.stringify({ root: { ...base, type: "root", children } }));
+const json = JSON.stringify({ root: { ...base, type: "root", children } });
+if (process.argv[3]) {
+  fs.writeFileSync(process.argv[3], json);
+  console.log(`Wrote ${process.argv[3]} (${children.length} blocks)`);
+} else process.stdout.write(json);

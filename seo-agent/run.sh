@@ -29,18 +29,8 @@ for dir in "$FE_DIR" "$BE_DIR"; do
   fi
 done
 
-allowed=(
-  Read Glob Grep Edit Write WebSearch WebFetch TodoWrite
-  "Bash(node $KIT/tools/:*)" "Bash($KIT/tools/payload.sh:*)" "Bash($KIT/deploy.sh:*)"
-  "Bash(git status:*)" "Bash(git diff:*)" "Bash(git log:*)" "Bash(git show:*)" "Bash(git add:*)"
-  "Bash(git commit:*)" "Bash(git push:*)" "Bash(git pull:*)" "Bash(git restore:*)"
-  "Bash(npx tsc:*)" "Bash(npm run lint:*)" "Bash(curl -s:*)" "Bash(curl -sS:*)" "Bash(curl -I:*)"
-  "Bash(ls:*)" "Bash(wc:*)" "Bash(date:*)" "Bash(mkdir -p $HOME_DIR/:*)"
-)
-denied=(
-  "Read(//${HOME_DIR#/}/env)" "Edit(//${KIT#/}/**)"
-  "Bash(git push --force:*)" "Bash(git push -f:*)" "Bash(git push origin --force:*)"
-)
+# shellcheck disable=SC1091
+source "$KIT/permissions.sh"
 
 prompt="$(cat "$KIT/PROMPT.md")
 

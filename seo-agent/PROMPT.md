@@ -29,7 +29,7 @@ Keyword → page map (one main keyword per page; never make two pages compete fo
 - CMS API (always through the wrapper; it holds the key): `payload.sh GET|POST|PATCH <path> [body.json]`.
   - Read the collection/global definitions in the backend repo (`src/collections/*.ts`, `src/globals/*.ts`) before writing, so you send the right fields.
   - News posts: `title`, `excerpt` (max 300 chars), `image` (id of an existing media doc: `GET /api/media?limit=100&depth=0`, pick one that fits and has a Vietnamese alt text), `content` (Lexical JSON), `publishedAt`, `seo.title`, `seo.description`, `_status: "published"`.
-    Write the article as Markdown in the state folder, convert it with `node <tools>/md2lexical.mjs article.md > content.json`, then build the body JSON with Write and POST it.
+    Write the article as Markdown in the state folder, convert it with `node <tools>/md2lexical.mjs article.md content.json` (no `>` redirects: they need approval nobody can give), then build the body JSON with Write and POST it.
   - Globals: `POST /api/globals/<slug>` with the fields to change, e.g. `home-page` has `guide` and `faq` groups made for keyword text.
   - Courses: `PATCH /api/courses/<id>` (fields `description`, `outcomes`, `seo`, ...).
   - The frontend refreshes CMS content within about a minute; no deploy is needed for CMS changes.
