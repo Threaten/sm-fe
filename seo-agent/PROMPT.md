@@ -36,6 +36,11 @@ Keyword → page map (one main keyword per page; never make two pages compete fo
 - Live checks: `node <tools>/audit.mjs` (whole sitemap) and `node <tools>/audit.mjs page <url>`.
 - Google data: `node <tools>/gsc.mjs queries`, `gsc.mjs pages`, `gsc.mjs inspect <url>` (only if Search Console is configured). WebSearch is US-based and does NOT show Google Vietnam rankings; never report rankings from it.
 
+## Running commands (unattended: anything that needs approval simply fails)
+- One plain command per Bash call, with full absolute paths: no `cd`, no `&&`/`;`/`|` chains, no `$VAR` or `${...}`, no `>`/`>>` redirects, no heredocs, no `node -e`.
+- To read or filter output, use the Read and Grep tools on files instead of piping. To write files (JSON bodies, journal entries), use Write/Edit.
+- payload.sh output is short JSON; if you need a big response later, run the GET once and read it from the tool output.
+
 ## Every run
 1. Read `state/journal.md` (what earlier runs did), `state/facts.md` (facts the owner confirmed), `state/owner-todo.md`, and `state/ALERT.md` if it exists. If ALERT.md describes an unresolved failed deploy, do not deploy code this run.
 2. Measure: run `gsc.mjs queries` and `audit.mjs`. Note positions for the target keywords.
