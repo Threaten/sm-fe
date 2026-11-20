@@ -46,7 +46,7 @@ prompt="$(cat "$KIT/PROMPT.md")
 
 cd "$FE_DIR"
 trace="${log%.log}.jsonl"
-timeout "${RUN_TIMEOUT:-90m}" claude -p "$prompt" \
+timeout --foreground "${RUN_TIMEOUT:-90m}" claude -p "$prompt" \
   --model "${CLAUDE_MODEL:-sonnet}" \
   --max-turns "${MAX_TURNS:-60}" \
   --add-dir "$BE_DIR" "$HOME_DIR/state" \

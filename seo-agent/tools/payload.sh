@@ -15,7 +15,7 @@ case "$method" in GET | POST | PATCH) ;; *) echo "Only GET, POST and PATCH are a
 [[ "$path" == /api/* ]] || { echo "Path must start with /api/" >&2; exit 2; }
 [[ "$path" == /api/users* || "$path" == /api/roles* ]] && { echo "Users and roles are off limits." >&2; exit 2; }
 [ -n "${PAYLOAD_API_KEY:-}" ] || { echo "PAYLOAD_API_KEY is not set in ~/.seo-agent/env; CMS writes are disabled." >&2; [ "$method" = GET ] || exit 3; }
-args=(-sS --fail-with-body -X "$method" -H "Content-Type: application/json")
+args=(-sS -g --fail-with-body -X "$method" -H "Content-Type: application/json")
 [ -n "${PAYLOAD_API_KEY:-}" ] && args+=(-H "Authorization: ${PAYLOAD_AUTH_COLLECTION:-users} API-Key $PAYLOAD_API_KEY")
 [ -n "$body" ] && args+=(--data-binary "@$body")
 curl "${args[@]}" "${PAYLOAD_URL%/}$path"
