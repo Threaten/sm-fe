@@ -29,22 +29,25 @@ export const socialLabel = (link: SocialLink) =>
 const platformLabel = (link: SocialLink) =>
   PLATFORM_NAMES[link.platform] || link.label?.trim() || hostName(link.url);
 
+/** Screen-reader name: "Facebook: Skill & Mix Academy", or just one of the two when they match or one is missing. */
+const accessibleName = (link: SocialLink) => {
+  const platform = platformLabel(link);
+  const label = socialLabel(link);
+  return platform === label ? label : `${platform}: ${label}`;
+};
+
 /**
- * `icons` shows each platform's mark in the current text colour, named for screen readers by its
- * label. Platforms without a mark (LinkedIn, Other) keep their text.
- * `byPlatform` writes the platform name ("Facebook", "Instagram") as the link text, with the
- * editor's label kept for screen readers.
+ * `icons` shows each platform's mark in the current text colour, named for screen readers by
+ * platform and label. Platforms without a mark (LinkedIn, Other) show their platform name.
  */
 export function SocialLinks({
   links,
   className,
   icons = false,
-  byPlatform = false,
 }: {
   links: SocialLink[];
   className?: string;
   icons?: boolean;
-  byPlatform?: boolean;
 }) {
   if (!links.length) return null;
   return (
@@ -55,18 +58,19 @@ export function SocialLinks({
         return (
           <li key={link.url}>
             {path ? (
-              <a href={link.url} target="_blank" rel="noreferrer me" aria-label={label} title={label}>
-                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <path d={path} />
-                </svg>
-              </a>
-            ) : byPlatform ? (
               <a
                 href={link.url}
                 target="_blank"
                 rel="noreferrer me"
-                aria-label={platformLabel(link) === label ? undefined : `${platformLabel(link)}: ${label}`}
+                aria-label={accessibleName(link)}
+                title={accessibleName(link)}
               >
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d={path} />
+                </svg>
+              </a>
+            ) : icons ? (
+              <a href={link.url} target="_blank" rel="noreferrer me" aria-label={accessibleName(link)}>
                 {platformLabel(link)}
               </a>
             ) : (

@@ -2257,6 +2257,15 @@ legend,
   font-weight: 900;
   color: var(--white);
 }
+/* Logos sized to match the old text links; a slight lift on hover. */
+.gallery-social .social-links-icons svg {
+  width: clamp(2.25rem, 4vw, 3.5rem);
+  height: clamp(2.25rem, 4vw, 3.5rem);
+  transition: translate 0.3s var(--ease);
+}
+.gallery-social .social-links-icons a:hover svg {
+  translate: 0 -0.2rem;
+}
 
 /* ---------- Contact ---------- */
 
