@@ -181,7 +181,8 @@ ask CRON_SCHEDULE "Cron schedule (server time; default = 02:30 in Vietnam)" "${C
 umask 077
 {
   echo "# Skill & Mix SEO agent settings. Re-run install.sh to change them."
-  for key in CLAUDE_CODE_OAUTH_TOKEN FE_DIR BE_DIR SITE_URL PAYLOAD_URL PAYLOAD_API_KEY FE_DEPLOY_CMD BE_DEPLOY_CMD \
+  NODE_DIR="$(dirname "$(command -v node)")"
+  for key in NODE_DIR CLAUDE_CODE_OAUTH_TOKEN FE_DIR BE_DIR SITE_URL PAYLOAD_URL PAYLOAD_API_KEY FE_DEPLOY_CMD BE_DEPLOY_CMD \
     FE_HEALTH_URL BE_HEALTH_URL GSC_KEY_FILE GSC_SITE CLAUDE_MODEL MAX_TURNS CRON_SCHEDULE; do
     printf '%s=%q\n' "$key" "${!key:-}"
   done

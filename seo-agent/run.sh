@@ -8,6 +8,12 @@ KIT="$(cd "$(dirname "$(readlink -f "$0")")" && pwd)"
 # shellcheck disable=SC1091
 source "$HOME_DIR/env"
 export SEO_AGENT_HOME="$HOME_DIR" PATH="$HOME/.local/bin:$HOME/.npm-global/bin:/usr/local/bin:$PATH"
+# Cron starts with a bare PATH, and node from nvm lives under ~/.nvm: find it.
+[ -n "${NODE_DIR:-}" ] && PATH="$NODE_DIR:$PATH"
+if ! command -v node >/dev/null && [ -s "$HOME/.nvm/nvm.sh" ]; then
+  set +u; export NVM_DIR="$HOME/.nvm"; . "$NVM_DIR/nvm.sh" >/dev/null 2>&1; set -u
+fi
+command -v node >/dev/null || { echo "node not found: run install.sh again from a normal login shell"; exit 1; }
 export CLAUDE_CODE_OAUTH_TOKEN GSC_KEY_FILE GSC_SITE
 # Pro/Max subscription only: an API key in the environment would bill API credit instead.
 unset ANTHROPIC_API_KEY
