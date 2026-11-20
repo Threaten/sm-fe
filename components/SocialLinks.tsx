@@ -25,18 +25,26 @@ const hostName = (url: string) => {
 export const socialLabel = (link: SocialLink) =>
   link.label?.trim() || PLATFORM_NAMES[link.platform] || hostName(link.url);
 
+/** The platform name, else the editor's label, else the site's address. Tells links apart even when every label is the account name. */
+const platformLabel = (link: SocialLink) =>
+  PLATFORM_NAMES[link.platform] || link.label?.trim() || hostName(link.url);
+
 /**
  * `icons` shows each platform's mark in the current text colour, named for screen readers by its
  * label. Platforms without a mark (LinkedIn, Other) keep their text.
+ * `byPlatform` writes the platform name ("Facebook", "Instagram") as the link text, with the
+ * editor's label kept for screen readers.
  */
 export function SocialLinks({
   links,
   className,
   icons = false,
+  byPlatform = false,
 }: {
   links: SocialLink[];
   className?: string;
   icons?: boolean;
+  byPlatform?: boolean;
 }) {
   if (!links.length) return null;
   return (
@@ -51,6 +59,15 @@ export function SocialLinks({
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                   <path d={path} />
                 </svg>
+              </a>
+            ) : byPlatform ? (
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noreferrer me"
+                aria-label={platformLabel(link) === label ? undefined : `${platformLabel(link)}: ${label}`}
+              >
+                {platformLabel(link)}
               </a>
             ) : (
               <a href={link.url} target="_blank" rel="noreferrer me">

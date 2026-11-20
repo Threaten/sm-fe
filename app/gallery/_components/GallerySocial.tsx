@@ -6,7 +6,7 @@ export function GallerySocial({ copy, links }: { copy: string; links: SocialLink
   return (
     <section className="gallery-social">
       <p>{copy}</p>
-      <SocialLinks links={links} />
+      <SocialLinks links={links} byPlatform />
     </section>
   );
 }
