@@ -31,6 +31,20 @@ ask_secret() { # ask_secret VAR "Question" (Enter keeps the current value)
   return 0
 }
 
+ask_secret_lines() { # ask_secret_lines VAR "Question": a pasted secret may wrap over several lines
+  local var="$1" question="$2" line all=""
+  echo "  $question"
+  echo "  (paste it, then press Enter on an empty line; nothing shows while pasting)"
+  while IFS= read -r -s line </dev/tty; do
+    line="$(printf '%s' "$line" | tr -d '[:space:]')"
+    [ -z "$line" ] && break
+    all+="$line"
+  done
+  echo
+  [ -n "$all" ] && printf -v "$var" '%s' "$all"
+  return 0
+}
+
 # Earlier answers become the defaults.
 # shellcheck disable=SC1090
 [ -f "$CONF" ] && source "$CONF"
@@ -60,14 +74,13 @@ if [ -z "${CLAUDE_CODE_OAUTH_TOKEN:-}" ]; then
     1. On your own computer (where your browser is), run:   claude setup-token
     2. Log in with your Claude Pro account in the browser that opens.
     3. Copy the token it prints (starts with sk-ant-oat01-, may wrap over several lines).
-  Paste it below (nothing shows while pasting). Leave empty and press Enter to try
-  logging in from this server instead.
+  Leave it empty (just press Enter) to try logging in from this server instead.
 TXT
-  ask_secret CLAUDE_CODE_OAUTH_TOKEN "Paste the token"
+  ask_secret_lines CLAUDE_CODE_OAUTH_TOKEN "Paste the token:"
   if [ -z "${CLAUDE_CODE_OAUTH_TOKEN:-}" ]; then
     echo "  Copy the WHOLE link it prints (it wraps over several lines), then paste the code back."
     claude setup-token </dev/tty || true
-    ask_secret CLAUDE_CODE_OAUTH_TOKEN "Paste the token (sk-ant-oat...)"
+    ask_secret_lines CLAUDE_CODE_OAUTH_TOKEN "Paste the token (sk-ant-oat...):"
   fi
 else
   ok "Claude login token already saved (run 'claude setup-token' again if it stops working)"
@@ -139,7 +152,7 @@ cat <<TXT
     2. Users: create user "SEO Agent" with that role, tick "Enable API Key", save, copy the key.
   Press Enter to skip; the agent then only does code work and writes CMS suggestions for you.
 TXT
-ask_secret PAYLOAD_API_KEY "Paste the SEO Agent API key (Enter to keep current/skip)"
+ask_secret_lines PAYLOAD_API_KEY "Paste the SEO Agent API key (or just press Enter to keep the current one / skip):"
 PAYLOAD_API_KEY="${PAYLOAD_API_KEY:-}"
 if [ -n "$PAYLOAD_API_KEY" ]; then
   code="$(curl -s -o /dev/null -w '%{http_code}' -H "Authorization: users API-Key $PAYLOAD_API_KEY" "${PAYLOAD_URL%/}/api/users/me")"
