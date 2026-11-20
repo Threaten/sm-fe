@@ -1,0 +1,23 @@
+# Competitors the SEO agent studies every week. One URL per line.
+# "site <address>" = the site's homepage plus up to 5 bartender pages from its sitemap.
+# The agent may add pages it finds ranking for our keywords (marked "added by agent").
+
+# Pages that rank for "học bartender tphcm" and related searches
+https://www.huongnghiepaau.com/hoc-pha-che
+https://saigontourist.edu.vn/pha-che-ruou-bartender-092646.html
+https://netspace.edu.vn/hoc-pha-che-bartender/
+https://daynghebanh.vn/khoa-hoc-bartender/
+https://www.bartender.edu.vn/hoc-bartender
+https://dayphache.edu.vn/dao-tao-pha-che/cap-toc
+https://saigonbartenders.com/
+
+# Whole sites (homepage + bartender pages from the sitemap)
+site https://ffgeducate.com
+site https://www.huongnghiepaau.com
+site https://netspace.edu.vn
+site https://daynghebanh.vn
+site https://saigontourist.edu.vn
+site https://www.bartender.edu.vn
+site https://saigonbartenders.com
+site https://baristazonehcm.com
+site https://hocviencaphe.vn

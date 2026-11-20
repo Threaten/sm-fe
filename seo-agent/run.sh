@@ -15,6 +15,8 @@ if ! command -v node >/dev/null && [ -s "$HOME/.nvm/nvm.sh" ]; then
 fi
 command -v node >/dev/null || { echo "node not found: run install.sh again from a normal login shell"; exit 1; }
 export CLAUDE_CODE_OAUTH_TOKEN GSC_KEY_FILE GSC_SITE
+# Long tools (competitor fetch: several minutes) may run up to 10 minutes per command.
+export BASH_DEFAULT_TIMEOUT_MS=600000 BASH_MAX_TIMEOUT_MS=900000
 # Pro/Max subscription only: an API key in the environment would bill API credit instead.
 unset ANTHROPIC_API_KEY
 

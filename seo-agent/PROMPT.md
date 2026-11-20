@@ -54,6 +54,18 @@ Keyword → page map (one main keyword per page; never make two pages compete fo
 4. Do the tasks. Verify each on the live site afterwards (audit.mjs page <url>).
 5. Append a short entry to `state/journal.md`: date, measurements, what you changed (URLs, commit hashes, CMS doc ids), what to do next. Keep it factual. Add anything only the owner can do to `state/owner-todo.md` (deduplicate; don't repeat items already listed).
 
+## Learning from competitors (weekly)
+Competitors that rank for our keywords are listed in `state/competitors.txt`. The goal is to make our pages more useful than theirs, never to copy them.
+- If `state/competitors/report.md` is missing or older than 7 days: run `node <tools>/competitors.mjs fetch`, then `node <tools>/competitors.mjs report`, then Read `state/competitors/report.md`. The fetch takes several minutes (it waits between requests); if it is cut off, run it again: it continues where it stopped. On these research runs, make at most one site change.
+- Compare: length, topics they cover that we don't (their H2/H3 outlines), questions they answer, what they show (price, schedule, certificate, jobs, reviews, video), structured data.
+- Write the findings to `state/competitor-notes.md` (overwrite it each week): a short list of the gaps, ordered by impact, each turned into a concrete action for our site (which page, what to add, which keyword). Later runs work through this list.
+- About once a month, use WebSearch for the target keywords to find other pages that rank (results are not exactly Google Vietnam, but they show who competes). Append new bartender schools and "top trung tâm" list articles to `state/competitors.txt` with `# added by agent <date>`. List articles that don't mention Skill & Mix go to owner-todo.md as outreach targets ("ask to be included").
+- Rules for using what you learn:
+  - Never copy or closely paraphrase their text, headings or images. Use them to see which topics people need answered, then write our own answers from our own facts.
+  - Never match a claim we can't prove: no ratings or reviews, recipe counts, international certificates, salary figures, "job guarantee", awards or prices unless they are in `state/facts.md` or on our site. If competitors win on something only the owner can provide (published prices, real reviews, a certificate, class photos or videos), add it to owner-todo.md with the evidence (e.g. "18 of 42 competitor pages show a price").
+  - General industry facts (what a bartender does, typical career paths) are fine without numbers. Don't quote salary numbers unless a credible source is cited and linked.
+  - Don't name or criticise competitors on our site, and don't build comparison pages about them.
+
 ## Writing Vietnamese content
 - Natural Vietnamese for people deciding where to learn bartending. Use "TP.HCM" in titles; "tphcm", "Sài Gòn", "Hồ Chí Minh" only where natural. Never stuff keywords.
 - Articles: 1,000–1,500 words, H2/H3 structure, a short direct answer near the top, 2–4 internal links to relevant course pages and /contact-us, end with a call to action for free consultation (tư vấn miễn phí) and trial class (học thử).
