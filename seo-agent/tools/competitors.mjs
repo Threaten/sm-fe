@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Competitor research: what the pages that rank for "học bartender tphcm" do, compared with ours.
+// Competitor research: what the pages that rank for our keywords (state/keywords.txt) do, compared with ours.
 // It measures structure and signals (length, headings, FAQ, prices, schedules, reviews, schema...);
 // it never copies their text into our site. Polite: obeys robots.txt, 2 s between requests,
 // re-fetches a page at most once every 6 days.
@@ -10,29 +10,33 @@
 //
 // state/competitors.txt: one URL per line, "# comments" allowed.
 //   https://example.com/hoc-bartender            a page to track
-//   site https://example.com                     homepage + up to 5 bartender pages from its sitemap
+//   site https://example.com                     homepage + up to 5 relevant pages from its sitemap (site.conf TOPIC_*)
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { STATE, SITE_URL, conf, keywords, keywordCounts, stateFile } from "./siteconf.mjs";
 
-const HOME = process.env.SEO_AGENT_HOME || path.join(process.env.HOME, ".seo-agent");
-const STATE = path.join(HOME, "state");
-const LIST = path.join(STATE, "competitors.txt");
+const LIST = stateFile("competitors.txt", "competitors.template.txt");
 const DIR = path.join(STATE, "competitors");
-const OURS = (process.env.SITE_URL || "https://skillandmix.com").replace(/\/$/, "");
-const OUR_PAGES = ["/", "/courses", "/courses/bartender-co-ban", "/courses/mot-kem-mot", "/courses/bartender-nang-cao"];
-const UA = "Mozilla/5.0 (compatible; SkillMixSEOResearch/1.0; +https://skillandmix.com)";
+const OURS = SITE_URL;
+// Our pages to compare: state/our-pages.txt if present (one path or URL per line), else site.conf
+const OUR_PAGES = (() => {
+  try { return fs.readFileSync(path.join(STATE, "our-pages.txt"), "utf8").split("\n").map((l) => l.replace(/#.*/, "").trim()).filter(Boolean); }
+  catch { return (conf.OUR_PAGES || "/").split(/\s+/).filter(Boolean); }
+})();
+const ourUrl = (p) => (/^https?:\/\//.test(p) ? p : OURS + p);
+const UA = `Mozilla/5.0 (compatible; SEOResearch/1.0; +${SITE_URL})`;
 const MAX_AGE_DAYS = 6;
-// Sitemap pages worth studying: bartender first, then cocktail/mixology, then general drink-making.
+// Sitemap pages worth studying, from words in their URL (site.conf TOPIC_*)
+const toRe = (v) => (v ? new RegExp(v, "i") : null);
+const [STRONG, MEDIUM, EXCLUDE] = [toRe(conf.TOPIC_STRONG), toRe(conf.TOPIC_MEDIUM), toRe(conf.TOPIC_EXCLUDE)];
 const score = (u) => {
   const t = decodeURIComponent(u).toLowerCase();
-  if (/latte|barista|tra-sua|matcha|cafe|ca-phe|banh|sua-dau/.test(t) && !/bartender|cocktail/.test(t)) return 0;
-  return (/bartender/.test(t) ? 3 : 0) + (/cocktail|mixology|flair|ruou/.test(t) ? 2 : 0) + (/pha-che|phache|hoc-|khoa-hoc|dao-tao/.test(t) ? 1 : 0);
+  if (EXCLUDE?.test(t) && !STRONG?.test(t)) return 0;
+  return (STRONG?.test(t) ? 3 : 0) + (MEDIUM?.test(t) ? 2 : 0) + (/hoc-|khoa-hoc|dao-tao|menu|thuc-don/.test(t) ? 1 : 0);
 };
-const KEYWORDS = ["học bartender", "khóa học bartender", "bartender cơ bản", "tphcm", "tp.hcm", "pha chế", "học phí", "lịch khai giảng", "chứng chỉ"];
+const KEYWORDS = keywords().slice(0, 12);
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-const fold = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/g, "d").replace(/Đ/g, "D").toLowerCase();
 const decode = (s) =>
   s.replace(/&nbsp;|&#160;/g, " ").replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#0?39;|&#x27;|&apos;/g, "'")
     .replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
@@ -152,7 +156,7 @@ function extract(html, url) {
       forms: (main.match(/<form\b/gi) || []).length,
     },
     links: { internal, external: links.length - internal },
-    keywords: Object.fromEntries(KEYWORDS.map((k) => [k, fold(lower).split(fold(k)).length - 1])),
+    keywords: keywordCounts(body, KEYWORDS),
   };
 }
 
@@ -174,13 +178,7 @@ async function sitemapPages(site) {
   return [origin + "/", ...relevant.slice(0, 5)];
 }
 async function targets() {
-  if (!fs.existsSync(LIST)) {
-    // First use: start from the list shipped with the kit.
-    const template = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "competitors.template.txt");
-    fs.mkdirSync(STATE, { recursive: true });
-    fs.copyFileSync(template, LIST);
-    console.log(`Created ${LIST} from the kit's list.`);
-  }
+  if (!fs.existsSync(LIST)) { console.log(`No ${LIST}: add competitor URLs there, one per line.`); process.exit(0); }
   const out = [];
   for (const raw of fs.readFileSync(LIST, "utf8").split("\n")) {
     const line = raw.replace(/#.*/, "").trim();
@@ -226,7 +224,7 @@ function line(p) {
     `  ${p.words} words | H2 ${p.headings.filter((h) => h.level === 2).length} | FAQ ${p.faq.length} | schema: ${p.schema.join(",") || "-"}${p.rating ? ` | rating ${p.rating.value} (${p.rating.count ?? "?"})` : ""}`,
     `  price: ${s.prices.slice(0, 3).join(", ") || "-"} | durations: ${s.durations.join(", ") || "-"} | schedule: ${s.schedule.length ? "yes" : "-"} | certificate: ${yes(s.certificate)} | jobs: ${yes(s.jobs)} | trial/consult: ${yes(s.trialOrConsult)} | testimonials: ${yes(s.testimonials)}`,
     `  images ${m.images} (${m.imagesWithAlt} with alt) | videos ${m.videos} | forms ${m.forms} | links in ${p.links.internal}/out ${p.links.external} | recipes: ${s.recipes.join(", ") || "-"}`,
-    `  keywords: ${Object.entries(p.keywords).filter(([, n]) => n).map(([k, n]) => `${k} ${n}`).join(", ") || "-"}`,
+    `  keywords: ${Object.entries(p.keywords).filter(([, n]) => n && n !== "0 (without place: 0)").map(([k, n]) => `${k}: ${n}`).join(" | ") || "-"}`,
   ].join("\n");
 }
 
@@ -236,8 +234,9 @@ async function cmdReport() {
   if (!snaps.length) { console.log("No snapshots yet: run  node competitors.mjs fetch"); return; }
   const ours = [];
   for (const p of OUR_PAGES) {
-    try { const r = await get(OURS + p); ours.push({ url: OURS + p, status: r.status, ...(r.status === 200 ? extract(r.html, OURS + p) : {}) }); }
-    catch (e) { ours.push({ url: OURS + p, status: `error ${e.message}` }); }
+    const u = ourUrl(p);
+    try { const r = await get(u); ours.push({ url: u, status: r.status, ...(r.status === 200 ? extract(r.html, u) : {}) }); }
+    catch (e) { ours.push({ url: u, status: `error ${e.message}` }); }
   }
   const ok = snaps.filter((s) => s.status === 200);
   const pct = (f) => `${Math.round((100 * ok.filter(f).length) / Math.max(ok.length, 1))}%`;
@@ -264,6 +263,8 @@ async function cmdReport() {
   fs.mkdirSync(DIR, { recursive: true });
   const file = path.join(DIR, "report.md");
   fs.writeFileSync(file, out.join("\n"));
+  // Our pages as data too, for the CMS dashboard (sm-be SeoAgentCompetitors), next to the competitor snapshots.
+  fs.writeFileSync(path.join(DIR, "ours.json"), JSON.stringify({ generatedAt: new Date().toISOString(), pages: ours }, null, 1));
   console.log(out.slice(0, 6).join("\n"));
   console.log(`\nFull report (outlines, questions, signals per page): ${file}`);
 }

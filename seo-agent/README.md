@@ -36,6 +36,7 @@ The installer asks a few questions and detects most answers itself (your pm2 app
 | --- | --- |
 | What the agent did | `cat ~/.seo-agent/state/journal.md` |
 | Things for you to do | `cat ~/.seo-agent/state/owner-todo.md` |
+| Target keywords | `nano ~/.seo-agent/state/keywords.txt` |
 | Add real facts (prices, intakes, ...) | `nano ~/.seo-agent/state/facts.md` |
 | Competitors it studies | `nano ~/.seo-agent/state/competitors.txt` |
 | What it learned from them | `cat ~/.seo-agent/state/competitor-notes.md` |
@@ -52,6 +53,7 @@ a night at 02:30 Vietnam time with the Sonnet model by default. If the login tok
 ## Files
 
 - `install.sh`: setup and cron. `run.sh`: one run. `deploy.sh fe|be`: build, restart, health check, rollback.
+- `site.conf`: this site's settings (the tools are shared with other sites' agents).
 - `PROMPT.md`: the agent's standing instructions and rules.
 - `tools/competitors.mjs`: weekly competitor research (pages listed in `~/.seo-agent/state/competitors.txt`; edit that file to add or remove competitors).
 - `tools/audit.mjs`: on-page audit. `tools/gsc.mjs`: Search Console. `tools/payload.sh`: CMS API (no deletes, no users/roles).

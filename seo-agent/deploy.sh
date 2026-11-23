@@ -4,7 +4,10 @@
 # (a new commit, pushed), the old version is rebuilt, and an alert is written for the owner.
 # Usage: deploy.sh fe|be
 set -euo pipefail
-HOME_DIR="${SEO_AGENT_HOME:-$HOME/.seo-agent}"
+KIT="$(cd "$(dirname "$(readlink -f "$0")")" && pwd)"
+# shellcheck disable=SC1091
+source "$KIT/site.conf"
+HOME_DIR="${SEO_AGENT_HOME:-$DEFAULT_HOME}"
 # shellcheck disable=SC1091
 source "$HOME_DIR/env"
 target="${1:?usage: deploy.sh fe|be}"

@@ -3,6 +3,9 @@
 // Supports: ## / ### headings, paragraphs, "- " and "1. " lists, **bold**, *italic*, [text](url), > quotes.
 // Usage: node md2lexical.mjs article.md content.json   (or without the second argument: prints the JSON)
 import fs from "node:fs";
+import { SITE_URL } from "./siteconf.mjs";
+
+const OWN_HOST = SITE_URL ? new URL(SITE_URL).hostname.replace(/^www\./, "") : "";
 
 const file = process.argv[2];
 if (!file) {
@@ -26,7 +29,7 @@ function inline(source) {
         ...base,
         type: "link",
         version: 3,
-        fields: { linkType: "custom", url: match[2], newTab: /^https?:\/\//.test(match[2]) && !match[2].includes("skillandmix.com") },
+        fields: { linkType: "custom", url: match[2], newTab: /^https?:\/\//.test(match[2]) && !(OWN_HOST && match[2].includes(OWN_HOST)) },
         children: [text(match[1])],
       });
     } else if (match[3]) nodes.push(text(match[3], 1));

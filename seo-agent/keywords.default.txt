@@ -1,0 +1,11 @@
+# Searches we want to rank for, one per line (with and without Vietnamese accents).
+# The agent reads this file every run; edit ~/.seo-agent/state/keywords.txt to change them.
+hoc bartender co ban tphcm
+học bartender cơ bản tphcm
+học bartender tphcm
+hoc bartender tphcm
+khoa hoc bartender tphcm
+khoá học bartender tphcm
+khóa học bartender tphcm
+học bartender
+hoc bartender

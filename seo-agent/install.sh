@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Installs the Skill & Mix SEO agent on this server. Safe to run again (it keeps your answers).
+# Installs this website's SEO agent on this server (site.conf says which site). Safe to run again.
 #
-#   cd <the sm-fe folder that serves skillandmix.com>
+#   cd <the frontend repo folder this site is built from>
 #   git pull
 #   bash seo-agent/install.sh
 #
@@ -10,7 +10,9 @@ set -euo pipefail
 
 KIT="$(cd "$(dirname "$(readlink -f "$0")")" && pwd)"
 FE_GUESS="$(cd "$KIT/.." && pwd)"
-HOME_DIR="$HOME/.seo-agent"
+# shellcheck disable=SC1091
+source "$KIT/site.conf"
+HOME_DIR="${SEO_AGENT_HOME:-$DEFAULT_HOME}"
 CONF="$HOME_DIR/env"
 mkdir -p "$HOME_DIR/state" "$HOME_DIR/logs"
 chmod 700 "$HOME_DIR"
@@ -93,18 +95,19 @@ bold "3/7 Where the site lives"
 FE_DIR="${FE_DIR:-$FE_GUESS}"
 if [ -z "${BE_DIR:-}" ]; then
   BE_DIR="$(find "$HOME" /var/www /srv /opt -maxdepth 4 -type d -name .git 2>/dev/null | while read -r g; do
-    d="$(dirname "$g")"; git -C "$d" remote get-url origin 2>/dev/null | grep -q 'sm-be' && { echo "$d"; break; }
+    d="$(dirname "$g")"; git -C "$d" remote get-url origin 2>/dev/null | grep -q "$BE_REMOTE" && { echo "$d"; break; }
   done || true)"
 fi
 ask FE_DIR "Frontend repo (sm-fe) folder" "$FE_DIR"
-ask BE_DIR "Backend repo (sm-be) folder" "$BE_DIR"
+ask BE_DIR "Backend repo ($BE_REMOTE) folder" "$BE_DIR"
 for d in "$FE_DIR" "$BE_DIR"; do [ -d "$d/.git" ] || { warn "$d is not a git repo"; exit 1; }; done
-ask SITE_URL "Live website" "${SITE_URL:-https://skillandmix.com}"
-ask PAYLOAD_URL "CMS (Payload) address" "${PAYLOAD_URL:-https://admin.skillandmix.com}"
+ask SITE_URL "Live website" "${SITE_URL:-$DEFAULT_SITE_URL}"
+ask PAYLOAD_URL "CMS (Payload) address" "${PAYLOAD_URL:-$DEFAULT_PAYLOAD_URL}"
 
 bold "4/7 How each app is deployed"
 pm() { # package manager of a repo
-  if [ -f "$1/pnpm-lock.yaml" ]; then echo pnpm; elif [ -f "$1/yarn.lock" ]; then echo yarn; else echo npm; fi
+  # npm when the repo has its lockfile (what this server has used), else pnpm / yarn
+  if [ -f "$1/package-lock.json" ]; then echo npm; elif [ -f "$1/pnpm-lock.yaml" ]; then echo pnpm; elif [ -f "$1/yarn.lock" ]; then echo yarn; else echo npm; fi
 }
 pm2_name() { # pm2 app whose folder is $1
   command -v pm2 >/dev/null || return 0
@@ -129,7 +132,7 @@ ask FE_DEPLOY_CMD "Frontend build+restart command (runs inside $FE_DIR)" "$FE_DE
 [ -n "$BE_DEPLOY_CMD" ] && ok "found backend in pm2" || warn "no pm2 app found for the backend: type the command you use to rebuild and restart it"
 ask BE_DEPLOY_CMD "Backend build+restart command (runs inside $BE_DIR)" "$BE_DEPLOY_CMD"
 ask FE_HEALTH_URL "Frontend health check URL" "${FE_HEALTH_URL:-$SITE_URL/}"
-ask BE_HEALTH_URL "Backend health check URL" "${BE_HEALTH_URL:-${PAYLOAD_URL%/}/api/globals/site-settings}"
+ask BE_HEALTH_URL "Backend health check URL" "${BE_HEALTH_URL:-${PAYLOAD_URL%/}$BE_HEALTH_PATH}"
 
 for d in "$FE_DIR" "$BE_DIR"; do
   if git -C "$d" push --dry-run origin HEAD >/dev/null 2>&1; then
@@ -139,35 +142,32 @@ for d in "$FE_DIR" "$BE_DIR"; do
     warn "'Allow write access', or 'gh auth login'), then run this installer again."
   fi
   if [ -z "$(git -C "$d" config user.email || true)" ]; then
-    git -C "$d" config user.name "Skill & Mix SEO Agent"
-    git -C "$d" config user.email "seo-agent@noreply.skillandmix.com"
+    git -C "$d" config user.name "$SITE_NAME SEO Agent"
+    git -C "$d" config user.email "seo-agent@noreply.${DEFAULT_SITE_URL#https://}"
   fi
 done
 
-bold "5/7 CMS access (lets the agent publish articles and edit page text)"
-cat <<TXT
-  In ${PAYLOAD_URL%/}/admin:
-    1. Roles: create "SEO Agent" with Read on everything, Create+Update on News,
-       Update on Courses, Home page, Courses page, About page, and Read on Media. Nothing on Users/Roles.
-    2. Users: create user "SEO Agent" with that role, tick "Enable API Key", save, copy the key.
-  Press Enter to skip; the agent then only does code work and writes CMS suggestions for you.
-TXT
+bold "5/7 CMS access (lets the agent edit page text and SEO fields)"
+echo "  In ${PAYLOAD_URL%/}/admin:"
+printf '%s\n' "$CMS_ROLE_HELP" | fold -s -w 96 | sed 's/^/    /'
+echo "  Press Enter to skip; the agent then only does code work and writes CMS suggestions for you."
 ask_secret_lines PAYLOAD_API_KEY "Paste the SEO Agent API key (or just press Enter to keep the current one / skip):"
 PAYLOAD_API_KEY="${PAYLOAD_API_KEY:-}"
 if [ -n "$PAYLOAD_API_KEY" ]; then
-  code="$(curl -s -o /dev/null -w '%{http_code}' -H "Authorization: users API-Key $PAYLOAD_API_KEY" "${PAYLOAD_URL%/}/api/users/me")"
-  [ "$code" = 200 ] && ok "API key works" || warn "API key check returned HTTP $code"
+  # /api/users/me answers 200 even for a wrong key ({"user":null}), so look at the body
+  me="$(curl -s -H "Authorization: users API-Key $PAYLOAD_API_KEY" "${PAYLOAD_URL%/}/api/users/me")"
+  case "$me" in *'"user":{'*) ok "API key works" ;; *) warn "API key not accepted (the CMS doesn't recognise it): make a new one and run this again" ;; esac
 fi
 
 bold "6/7 Google Search Console (optional, strongly recommended: real Google positions)"
 cat <<'TXT'
   1. console.cloud.google.com → new project → enable "Google Search Console API".
   2. IAM → Service accounts → create one → Keys → Add key → JSON. Upload the file to this server.
-  3. search.google.com/search-console → skillandmix.com → Settings → Users and permissions →
+  3. search.google.com/search-console → this site's property → Settings → Users and permissions →
      add the service account's email as a "Restricted" user.
 TXT
 ask GSC_KEY_FILE "Path to the JSON key on this server (Enter to skip)" "${GSC_KEY_FILE:-}"
-ask GSC_SITE "Search Console property" "${GSC_SITE:-sc-domain:skillandmix.com}"
+ask GSC_SITE "Search Console property" "${GSC_SITE:-sc-domain:${DEFAULT_SITE_URL#https://}}"
 [ -n "$GSC_KEY_FILE" ] && chmod 600 "$GSC_KEY_FILE" 2>/dev/null || true
 
 bold "7/7 Schedule"
@@ -175,12 +175,12 @@ ask CLAUDE_MODEL "Model (sonnet uses less of your Pro limit; opus is stronger)" 
 ask MAX_TURNS "Max steps per run" "${MAX_TURNS:-60}"
 # Nightly at 02:30 Vietnam time, converted to this server's clock.
 offset="$(date +%z)"; server_hours=$((10#${offset:1:2})); [ "${offset:0:1}" = "-" ] && server_hours=$((-server_hours))
-hour=$(( (2 - 7 + server_hours + 48) % 24 ))
-ask CRON_SCHEDULE "Cron schedule (server time; default = 02:30 in Vietnam)" "${CRON_SCHEDULE:-30 $hour * * *}"
+hour=$(( (CRON_VN_HOUR - 7 + server_hours + 48) % 24 ))
+ask CRON_SCHEDULE "Cron schedule (server time; default = $(printf '%02d:%02d' "$CRON_VN_HOUR" "$CRON_MINUTE") in Vietnam)" "${CRON_SCHEDULE:-$CRON_MINUTE $hour * * *}"
 
 umask 077
 {
-  echo "# Skill & Mix SEO agent settings. Re-run install.sh to change them."
+  echo "# $SITE_NAME SEO agent settings. Re-run install.sh to change them."
   NODE_DIR="$(dirname "$(command -v node)")"
   for key in NODE_DIR CLAUDE_CODE_OAUTH_TOKEN FE_DIR BE_DIR SITE_URL PAYLOAD_URL PAYLOAD_API_KEY FE_DEPLOY_CMD BE_DEPLOY_CMD \
     FE_HEALTH_URL BE_HEALTH_URL GSC_KEY_FILE GSC_SITE CLAUDE_MODEL MAX_TURNS CRON_SCHEDULE; do
@@ -192,12 +192,16 @@ ok "settings saved to $CONF"
 
 ln -sfn "$KIT" "$HOME_DIR/kit"
 [ -f "$HOME_DIR/state/facts.md" ] || cp "$KIT/facts.template.md" "$HOME_DIR/state/facts.md"
+[ -f "$HOME_DIR/state/keywords.txt" ] || cp "$KIT/keywords.default.txt" "$HOME_DIR/state/keywords.txt"
+[ -f "$HOME_DIR/state/competitors.txt" ] || cp "$KIT/competitors.template.txt" "$HOME_DIR/state/competitors.txt"
 touch "$HOME_DIR/state/journal.md" "$HOME_DIR/state/owner-todo.md"
 git -C "$FE_DIR" rev-parse HEAD > "$HOME_DIR/state/last-good-fe"
 git -C "$BE_DIR" rev-parse HEAD > "$HOME_DIR/state/last-good-be"
 
-line="$CRON_SCHEDULE $HOME_DIR/kit/run.sh >/dev/null 2>&1 # skillandmix-seo-agent"
-( crontab -l 2>/dev/null | grep -v 'skillandmix-seo-agent' || true; echo "$line" ) | crontab -
+line="$CRON_SCHEDULE SEO_AGENT_HOME=$HOME_DIR $HOME_DIR/kit/run.sh >/dev/null 2>&1 # $CRON_TAG"
+# Read the whole crontab first, then write it back with our line replaced (other jobs untouched)
+current_cron="$(crontab -l 2>/dev/null || true)"
+{ printf '%s\n' "$current_cron" | grep -v "# $CRON_TAG\$" | grep -v '^$' || true; echo "$line"; } | crontab -
 ok "cron: $CRON_SCHEDULE (server time $(date +%Z))"
 
 bold "Done"

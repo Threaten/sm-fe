@@ -3,7 +3,7 @@
 // Usage: node gsc.mjs queries [days=28]      top queries + target keywords with clicks, impressions, position
 //        node gsc.mjs pages [days=28]        top pages
 //        node gsc.mjs inspect <url>          is this URL indexed? last crawl, canonical
-// Needs GSC_KEY_FILE and GSC_SITE (e.g. sc-domain:skillandmix.com) in ~/.seo-agent/env.
+// Needs GSC_KEY_FILE and GSC_SITE (e.g. sc-domain:example.com) in the agent's env file.
 import crypto from "node:crypto";
 import fs from "node:fs";
 
@@ -12,10 +12,8 @@ if (!GSC_KEY_FILE || !GSC_SITE || !fs.existsSync(GSC_KEY_FILE)) {
   console.log("Search Console is not configured (GSC_KEY_FILE / GSC_SITE). Skip ranking data this run.");
   process.exit(0);
 }
-const TARGETS = [
-  "hoc bartender co ban tphcm", "học bartender cơ bản tphcm", "học bartender tphcm", "hoc bartender tphcm",
-  "khoa hoc bartender tphcm", "khoá học bartender tphcm", "khóa học bartender tphcm", "học bartender", "hoc bartender",
-];
+import { keywords } from "./siteconf.mjs";
+const TARGETS = keywords().map((k) => k.toLowerCase());
 
 async function token() {
   const key = JSON.parse(fs.readFileSync(GSC_KEY_FILE, "utf8"));
@@ -65,13 +63,16 @@ const [cmd = "queries", arg] = process.argv.slice(2);
 if (cmd === "queries") {
   const days = arg ?? 28;
   const { rows = [] } = await analytics(["query"], days);
-  console.log(`Target keywords, last ${days} days (position 1-10 = page 1):`);
+  console.log(TARGETS.length ? `Target keywords, last ${days} days (position 1-10 = page 1):` : "No target keywords yet (state/keywords.txt is empty): showing what people already find us for.");
   for (const target of TARGETS) {
     const hit = rows.find((r) => r.keys[0].toLowerCase() === target);
     console.log(hit ? `  ${row(hit)}` : `  ${target}  (no impressions yet)`);
   }
-  console.log(`\nAll queries containing "bartender" or "pha chế":`);
-  rows.filter((r) => /bartender|pha chế|pha che/.test(r.keys[0])).slice(0, 60).forEach((r) => console.log(`  ${row(r)}`));
+  const words = [...new Set(TARGETS.flatMap((k) => k.split(/\s+/)).filter((w) => w.length > 3))];
+  if (words.length) {
+    console.log(`\nQueries sharing words with the targets:`);
+    rows.filter((r) => words.some((w) => r.keys[0].includes(w)) && !TARGETS.includes(r.keys[0])).slice(0, 60).forEach((r) => console.log(`  ${row(r)}`));
+  }
   console.log(`\nTop queries overall:`);
   rows.slice(0, 25).forEach((r) => console.log(`  ${row(r)}`));
 } else if (cmd === "pages") {
