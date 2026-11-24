@@ -50,7 +50,7 @@ Keyword → page map (one main keyword per page; never make two pages compete fo
    c. Thin or weak target pages: course descriptions, outcomes, FAQ, home `guide` text; internal links between home, /courses, course pages and articles with descriptive Vietnamese anchor text.
    d. A new article, at most one per 6 days (check the journal). Topic from the related keywords above, not already covered by an existing post (`GET /api/news?limit=100&depth=0`).
    e. Clean up old posts: SEO titles with emoji or ALL CAPS, meta descriptions that are keyword lists, missing internal links to course pages.
-   f. Technical improvements in code: structured data, alt text fallbacks, headings, performance, accessibility.
+   f. Technical improvements visitors don't see: structured data, metadata, sitemap, canonical/hreflang, performance. Ideas that would change what the page looks like go to owner-todo.md.
 4. Do the tasks. Verify each on the live site afterwards (audit.mjs page <url>).
 5. Append a short entry to `state/journal.md`: date, measurements, what you changed (URLs, commit hashes, CMS doc ids), what to do next. Keep it factual. Add anything only the owner can do to `state/owner-todo.md` (deduplicate; don't repeat items already listed).
 
@@ -76,9 +76,10 @@ Competitors that rank for our keywords are listed in `state/competitors.txt`. Th
 - No black-hat SEO: no hidden text, no doorway pages (many near-duplicate keyword/district pages), no keyword-stuffed names, no paid or automated links, no comment/forum spam, no fake reviews, no cloaking.
 - Never delete anything. To retire a post, set it to draft. Never touch users, roles, permissions, auth, secrets, `.env` files, or this agent's own kit.
 - No emoji or icon glyphs in code or hardcoded UI text. (Emoji typed by editors in the CMS stay as they are on the page; just keep them out of SEO titles you write.)
-- Keep the existing visual design. Small, targeted changes only; no redesigns, no new dependencies.
+- Never change the layout or the design, in any way: no changes to components, page structure, the order or number of sections, CSS, spacing, fonts, colours, images, logo or favicon, and no new pages, sections or CMS fields. On the site you change text only: you replace the words in CMS fields that already exist (titles, descriptions, headings, paragraphs, questions, link and button text, alt text). Code changes are limited to things visitors never see: page titles and descriptions in metadata, structured data, sitemap, robots, canonical and hreflang. If you think the layout or design should change, or that a new field or section is needed, write it to `state/owner-todo.md` and do not do it.
+- Small, targeted code changes only; no new dependencies.
 - Code changes: work on `main`, keep each commit small and focused, run `npx tsc --noEmit` and check the change makes sense before committing. Commit message: `seo: <what and why>`. Then `git push`, then `<kit>/deploy.sh fe` (or `be`). If deploy reports failure, it has already rolled back: record it in the journal and stop code work for this run.
 - Backend code only when a CMS field is genuinely missing. New CMS fields must be optional (`required: false`) so editors can still save.
-- Everything you put on the site must be editable by the owner in the CMS admin. Never hardcode visible text (sections, headings, FAQs, links) in frontend code: write it to CMS fields. If a new section needs new fields, add them to the backend first, then fill them through the API, so the admin shows exactly what the page shows. Built-in fallback text in code is only a safety net for when the CMS is down.
+- Everything you put on the site must be editable by the owner in the CMS admin. Never hardcode visible text (sections, headings, FAQs, links) in frontend code: write it to CMS fields. Only use CMS fields that already exist; if something would need a new field or section, write it to `state/owner-todo.md` instead. Built-in fallback text in code is only a safety net for when the CMS is down.
 - At most 3 CMS writes and 2 commits per run. Quality over volume.
 - If something looks wrong or risky, don't do it: write it to owner-todo.md instead.
