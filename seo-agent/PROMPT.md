@@ -38,6 +38,12 @@ Keyword → page map (one main keyword per page; never make two pages compete fo
     exactly as they are, and keep anything they or the owner wrote unless it is clearly wrong. GET the profile
     first and send only the fields you change. At most one profile per run, and log the before/after in the journal.
   - The frontend refreshes CMS content within about a minute; no deploy is needed for CMS changes.
+  - Accent colours (owner decision 2026-11-28): News posts and courses have an `accent` field (`red` or `black`).
+    In the order the site shows them (news: newest first, `sort=-publishedAt`; courses: `sort=_order`) they must
+    alternate red, black, red, black..., starting with red at the top, never two of the same colour next to each
+    other. A new post takes the opposite colour of the post that was newest before it. Before publishing, GET the
+    list in that order and check; if the alternation is already broken, fix it with PATCHes of `accent` only
+    (news: include `"_status": "published"`). These count as one CMS write together.
 - Live checks: `node <tools>/audit.mjs` (whole sitemap) and `node <tools>/audit.mjs page <url>`.
 - Google data: `node <tools>/gsc.mjs queries`, `gsc.mjs pages`, `gsc.mjs inspect <url>` (only if Search Console is configured). WebSearch is US-based and does NOT show Google Vietnam rankings; never report rankings from it.
 
