@@ -1,0 +1,883 @@
+{
+  "content": {
+    "root": {
+      "direction": "ltr",
+      "format": "",
+      "indent": 0,
+      "version": 1,
+      "type": "root",
+      "children": [
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Gõ \"học bartender ở đâu\" là ra cả chục chỗ ở TP.HCM, chỗ nào quảng cáo cũng đẹp. Nhưng lúc đứng sau quầy, bạn mới biết mình học có tới nơi hay không. Bài này là sáu điều nên tự kiểm tra trước khi đóng tiền, dù cuối cùng bạn có chọn Skill & Mix hay không.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "Mỗi buổi bạn được tự tay làm bao lâu?",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Pha chế là nghề của đôi tay. Ngồi xem giảng viên lắc shaker hai tiếng không giúp tay bạn quen được. Khi đi tham quan, hỏi thẳng: mỗi buổi, bao nhiêu phần là mình tự đứng quầy, tự đong, tự lắc? Nếu câu trả lời vòng vo, bạn đã có câu trả lời.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "Lớp bao nhiêu người?",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Lớp đông thì giảng viên không thể đứng cạnh từng người để chỉnh cổ tay hay góc rót. Ở ",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 3,
+              "type": "link",
+              "fields": {
+                "linkType": "custom",
+                "url": "/courses/bartender-co-ban",
+                "newTab": false
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "lớp Bartender Cơ Bản của Skill & Mix",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": ", mỗi lớp tối đa 6 học viên, chính vì lý do đó. Bạn không cần chọn đúng con số 6, nhưng nên tránh những lớp mà bạn phải xếp hàng mới tới lượt cầm dụng cụ.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "Ai đứng lớp?",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Người đang đi làm sẽ dạy bạn những thứ sách không có: một tối đông khách thì quầy rối ở đâu, khách hay hỏi gì, ly nào hay bị làm sai. Giảng viên ở Skill & Mix là bartender đang làm trong ngành, bạn có thể xem từng người ở ",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 3,
+              "type": "link",
+              "fields": {
+                "linkType": "custom",
+                "url": "/staffs",
+                "newTab": false
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "trang giảng viên",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": ". Ở chỗ khác, cứ hỏi người dạy mình hiện đang làm ở đâu.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "Học xong mình đi tiếp đường nào?",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Một nơi dạy tử tế sẽ nói rõ bạn học gì, trong bao lâu, rồi học tiếp gì. Ví dụ ở Skill & Mix: lớp cơ bản 2 tháng, nâng cao 6 tuần, Flair và Bar Skill mỗi khóa 8 buổi. Nếu bạn còn phân vân chuyện thời gian, bài ",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 3,
+              "type": "link",
+              "fields": {
+                "linkType": "custom",
+                "url": "/news/hoc-bartender-mat-bao-lau-lo-trinh-tu-co-ban-den-nang-cao",
+                "newTab": false
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "học bartender mất bao lâu",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": " nói kỹ hơn.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "Có được học thử không?",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Gặp người dạy, nhìn cái quầy mình sẽ đứng, thử lắc một ly, rồi hẵng quyết. Chỗ nào không cho học thử thì bạn đang mua một thứ chưa thấy. Skill & Mix tư vấn miễn phí và có buổi học thử trước khi bạn đăng ký.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "Học xong có ai giúp tìm việc không?",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Nếu bạn học để đi làm, đây là câu nên hỏi sớm. Skill & Mix có kết nối việc làm cho học viên sau khóa. Ở đâu cũng vậy, hỏi cụ thể: giới thiệu tới đâu, bằng cách nào.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "Mới bắt đầu thì chọn khóa nào?",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "list",
+          "listType": "bullet",
+          "tag": "ul",
+          "start": 1,
+          "children": [
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "type": "listitem",
+              "value": 1,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Chưa từng pha chế: bắt đầu từ ",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                },
+                {
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "version": 3,
+                  "type": "link",
+                  "fields": {
+                    "linkType": "custom",
+                    "url": "/courses/bartender-co-ban",
+                    "newTab": false
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "Bartender Cơ Bản",
+                      "format": 0,
+                      "detail": 0,
+                      "mode": "normal",
+                      "style": "",
+                      "version": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": ".",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "type": "listitem",
+              "value": 2,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Đã đứng quầy, muốn lên head bartender: ",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                },
+                {
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "version": 3,
+                  "type": "link",
+                  "fields": {
+                    "linkType": "custom",
+                    "url": "/courses/bartender-nang-cao",
+                    "newTab": false
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "Bartender Nâng Cao",
+                      "format": 0,
+                      "detail": 0,
+                      "mode": "normal",
+                      "style": "",
+                      "version": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": ".",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "type": "listitem",
+              "value": 3,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Thấy mình còn chậm lúc quầy đông: ",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                },
+                {
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "version": 3,
+                  "type": "link",
+                  "fields": {
+                    "linkType": "custom",
+                    "url": "/courses/bar-skill",
+                    "newTab": false
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "Bar Skill",
+                      "format": 0,
+                      "detail": 0,
+                      "mode": "normal",
+                      "style": "",
+                      "version": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": ".",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "type": "listitem",
+              "value": 4,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Thích biểu diễn với chai và shaker: ",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                },
+                {
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "version": 3,
+                  "type": "link",
+                  "fields": {
+                    "linkType": "custom",
+                    "url": "/courses/flair-bartending",
+                    "newTab": false
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "Flair Bartending",
+                      "format": 0,
+                      "detail": 0,
+                      "mode": "normal",
+                      "style": "",
+                      "version": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": ".",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "type": "listitem",
+              "value": 5,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Lịch không cố định, hoặc có mục tiêu riêng như mở quán: ",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                },
+                {
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "version": 3,
+                  "type": "link",
+                  "fields": {
+                    "linkType": "custom",
+                    "url": "/courses/mot-kem-mot",
+                    "newTab": false
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "học 1 kèm 1",
+                      "format": 0,
+                      "detail": 0,
+                      "mode": "normal",
+                      "style": "",
+                      "version": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": ".",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "Học online có được không?",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Video giúp bạn nhớ công thức và tên gọi. Nhưng không có video nào nói cho bạn biết cổ tay đang gập sai hay jigger đang rót thiếu. Với một nghề dựa vào thao tác như bartending, nên học trực tiếp, rồi dùng video để ôn lại ở nhà.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "Mấy câu nên hỏi khi đi xem lớp",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "list",
+          "listType": "bullet",
+          "tag": "ul",
+          "start": 1,
+          "children": [
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "type": "listitem",
+              "value": 1,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Lớp tối đa bao nhiêu người?",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "type": "listitem",
+              "value": 2,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Mỗi buổi tự tay làm bao lâu?",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "type": "listitem",
+              "value": 3,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Người dạy đang làm ở đâu?",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "type": "listitem",
+              "value": 4,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Học phí đã gồm nguyên liệu chưa, có phát sinh gì không?",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "type": "listitem",
+              "value": 5,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Nghỉ một buổi thì học bù thế nào?",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "type": "listitem",
+              "value": 6,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Có học thử không?",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Ở Skill & Mix, học phí và ngày khai giảng gần nhất được báo theo từng khóa. Muốn hỏi cả sáu câu trên một lượt, bạn ",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 3,
+              "type": "link",
+              "fields": {
+                "linkType": "custom",
+                "url": "/contact-us",
+                "newTab": false
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "nhắn cho trung tâm",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": " hoặc ghé 643 Nguyễn Kiệm, phường Đức Nhuận, đứng thử sau quầy một lần cho biết.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "excerpt": "Trước khi đóng tiền học bartender ở TP.HCM, tự hỏi sáu điều: được tự tay làm bao lâu, lớp mấy người, ai dạy, học xong đi tiếp đâu, có học thử không, có ai giúp tìm việc không.",
+  "seo": {
+    "title": "Học bartender ở đâu TP.HCM? 6 tiêu chí chọn nơi học",
+    "description": "Học bartender ở đâu tại TP.HCM? Trước khi đóng tiền, hỏi 6 câu: tự tay làm bao lâu, lớp mấy người, ai dạy, có học thử và giới thiệu việc không.",
+    "noIndex": false
+  },
+  "_status": "published"
+}

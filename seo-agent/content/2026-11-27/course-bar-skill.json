@@ -1,0 +1,227 @@
+{
+  "description": {
+    "root": {
+      "direction": "ltr",
+      "format": "",
+      "indent": 0,
+      "version": 1,
+      "type": "root",
+      "children": [
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Biết pha là một chuyện. Pha nhanh, đong chuẩn và quầy vẫn gọn lúc 10 giờ tối thứ Bảy là chuyện khác. Bar Skill là 8 buổi để luyện đúng phần đó.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Mỗi buổi tập trung một nhóm thao tác: shaker, jigger, pour, bar spoon, rồi rolling, shaking, chill glass. Bạn lặp lại tại quầy cho tới khi tay tự làm mà không cần nghĩ, còn giảng viên chỉnh từng chi tiết nhỏ như góc rót hay chỗ đặt dụng cụ. Những buổi sau ghép các thao tác lại thành một quy trình liền mạch, để bạn đong chuẩn hơn, ít hao nguyên liệu hơn và không rối khi order dồn tới.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Khóa hợp với người vừa học xong ",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 3,
+              "type": "link",
+              "fields": {
+                "linkType": "custom",
+                "url": "/courses/bartender-co-ban",
+                "newTab": false
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "lớp cơ bản",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": ", hoặc bartender đang đi làm thấy mình còn chậm. Người dạy là bartender đang đứng quầy mỗi tuần, nên bài tập đi theo đúng nhịp một ca làm.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Nếu bạn muốn học thêm công thức và cách lên menu, xem ",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 3,
+              "type": "link",
+              "fields": {
+                "linkType": "custom",
+                "url": "/courses/bartender-nang-cao",
+                "newTab": false
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Bartender Nâng Cao",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": ". Thích biểu diễn thì xem ",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 3,
+              "type": "link",
+              "fields": {
+                "linkType": "custom",
+                "url": "/courses/flair-bartending",
+                "newTab": false
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Flair Bartending",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": ".",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 3,
+              "type": "link",
+              "fields": {
+                "linkType": "custom",
+                "url": "/contact-us",
+                "newTab": false
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Nhắn cho Skill & Mix",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": " để hỏi lịch và học phí.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

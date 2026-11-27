@@ -1,0 +1,777 @@
+{
+  "content": {
+    "root": {
+      "direction": "ltr",
+      "format": "",
+      "indent": 0,
+      "version": 1,
+      "type": "root",
+      "children": [
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Nếu bắt đầu từ con số 0, lớp cơ bản ở Skill & Mix mất 2 tháng. Nhưng \"học xong\" và \"làm được việc\" là hai mốc khác nhau, và khoảng cách giữa chúng tùy vào bạn muốn đi tới đâu. Dưới đây là thời gian của từng khóa, và vì sao người này mất 2 tháng còn người kia mất nửa năm.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "Mỗi khóa ở Skill & Mix dài bao lâu",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "list",
+          "listType": "bullet",
+          "tag": "ul",
+          "start": 1,
+          "children": [
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "type": "listitem",
+              "value": 1,
+              "children": [
+                {
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "version": 3,
+                  "type": "link",
+                  "fields": {
+                    "linkType": "custom",
+                    "url": "/courses/bartender-co-ban",
+                    "newTab": false
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "Bartender Cơ Bản",
+                      "format": 0,
+                      "detail": 0,
+                      "mode": "normal",
+                      "style": "",
+                      "version": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": ": 2 tháng (8 tuần), cho người chưa từng pha chế.",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "type": "listitem",
+              "value": 2,
+              "children": [
+                {
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "version": 3,
+                  "type": "link",
+                  "fields": {
+                    "linkType": "custom",
+                    "url": "/courses/bartender-nang-cao",
+                    "newTab": false
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "Bartender Nâng Cao",
+                      "format": 0,
+                      "detail": 0,
+                      "mode": "normal",
+                      "style": "",
+                      "version": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": ": 6 tuần, cho người đã có nền.",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "type": "listitem",
+              "value": 3,
+              "children": [
+                {
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "version": 3,
+                  "type": "link",
+                  "fields": {
+                    "linkType": "custom",
+                    "url": "/courses/flair-bartending",
+                    "newTab": false
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "Flair Bartending",
+                      "format": 0,
+                      "detail": 0,
+                      "mode": "normal",
+                      "style": "",
+                      "version": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": ": 8 buổi.",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "type": "listitem",
+              "value": 4,
+              "children": [
+                {
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "version": 3,
+                  "type": "link",
+                  "fields": {
+                    "linkType": "custom",
+                    "url": "/courses/bar-skill",
+                    "newTab": false
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "Bar Skill",
+                      "format": 0,
+                      "detail": 0,
+                      "mode": "normal",
+                      "style": "",
+                      "version": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": ": 8 buổi.",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "type": "listitem",
+              "value": 5,
+              "children": [
+                {
+                  "direction": "ltr",
+                  "format": "",
+                  "indent": 0,
+                  "version": 3,
+                  "type": "link",
+                  "fields": {
+                    "linkType": "custom",
+                    "url": "/courses/mot-kem-mot",
+                    "newTab": false
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "Học 1 kèm 1",
+                      "format": 0,
+                      "detail": 0,
+                      "mode": "normal",
+                      "style": "",
+                      "version": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": ": không có thời lượng cố định, tùy mục tiêu và lịch của bạn.",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Người mới thường đi theo thứ tự: cơ bản trước, rồi chọn thêm một hướng.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "Ba thứ quyết định bạn mất bao lâu",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Bạn muốn làm gì với nó.",
+              "format": 1,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            },
+            {
+              "type": "text",
+              "text": " Pha cho bạn bè cuối tuần hay phụ quầy ở quán nhà thì lớp cơ bản là đủ. Muốn làm bartender toàn thời gian, lên menu, hay một ngày làm head bartender thì cần thêm phần nâng cao và rất nhiều giờ đứng quầy.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Bạn bắt đầu từ đâu.",
+              "format": 1,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            },
+            {
+              "type": "text",
+              "text": " Ai từng chạy bàn hay làm quán cà phê sẽ quen nhịp sau quầy nhanh hơn. Ai chưa từng cầm shaker thì mất vài buổi đầu chỉ để tay quen dụng cụ và nhớ tên nguyên liệu. Cả hai đều học được, chỉ là xuất phát ở hai chỗ khác nhau.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Bạn tập bao nhiêu ngoài giờ học.",
+              "format": 1,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            },
+            {
+              "type": "text",
+              "text": " Đây là thứ tạo khác biệt lớn nhất. Người về nhà tập đong nước bằng jigger mỗi tối sẽ tiến nhanh hơn hẳn người chỉ cầm dụng cụ trên lớp.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "Lộ trình thường thấy",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "heading",
+          "tag": "h3",
+          "children": [
+            {
+              "type": "text",
+              "text": "Hai tháng đầu: lớp cơ bản",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Bạn học dụng cụ, các kỹ thuật shake, stir, build, muddle, các dòng rượu nền và cách một quầy bar chạy từ lúc mở tới lúc đóng. Lớp tối đa 6 người nên giảng viên theo sát tay từng người. Xem kỹ hơn ở trang ",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 3,
+              "type": "link",
+              "fields": {
+                "linkType": "custom",
+                "url": "/courses/bartender-co-ban",
+                "newTab": false
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "khóa học bartender cơ bản",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": ".",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "heading",
+          "tag": "h3",
+          "children": [
+            {
+              "type": "text",
+              "text": "Sáu tuần tiếp: nâng cao, nếu bạn muốn đi xa",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Mixology, kỹ thuật như infusion và smoke, cách lên một menu signature, và cả phần tính giá vốn mà người quản quầy nào cũng phải biết.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "heading",
+          "tag": "h3",
+          "children": [
+            {
+              "type": "text",
+              "text": "Tám buổi: chọn theo sở thích",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Thích biểu diễn thì học Flair. Muốn tay nhanh, đong chuẩn, quầy gọn khi đông khách thì học Bar Skill.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "Lịch bận thì sao?",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Đi làm giờ hành chính, ca xoay, hay chỉ có vài buổi tối một tuần? ",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 3,
+              "type": "link",
+              "fields": {
+                "linkType": "custom",
+                "url": "/courses/mot-kem-mot",
+                "newTab": false
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Học 1 kèm 1",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": " được làm cho trường hợp đó: buổi đầu giảng viên xem bạn đang ở mức nào, rồi hai bên tự xếp nội dung và lịch học.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "Học xong là đi làm được chưa?",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Học xong lớp cơ bản, bạn đủ nền để xin vào làm barback hoặc bartender ở nhiều quán. Còn thành thạo thật thì đến từ những ca làm sau đó. Giảng viên ở Skill & Mix là bartender đang đi làm, nên bạn học theo cách quầy bar chạy thật, và học xong trung tâm có hỗ trợ kết nối việc làm.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "Vẫn chưa biết mình cần bao lâu?",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Cách nhanh nhất là nói chuyện với người dạy. Kể mục tiêu của bạn, họ sẽ nói thẳng bạn nên bắt đầu ở đâu. Bạn có thể ",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 3,
+              "type": "link",
+              "fields": {
+                "linkType": "custom",
+                "url": "/contact-us",
+                "newTab": false
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "nhắn cho Skill & Mix",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": " để được tư vấn miễn phí, hoặc xin một buổi học thử để tự thấy mình hợp với nhịp nào. Nếu muốn hình dung lớp học trông ra sao, đọc thêm ",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 3,
+              "type": "link",
+              "fields": {
+                "linkType": "custom",
+                "url": "/news/hoc-bartender-1-kem-1-tu-tay-lam-tu-tin-dung-quay",
+                "newTab": false
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "học bartender 1 kèm 1: tự tay làm, tự tin đứng quầy",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": ".",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "excerpt": "Lớp cơ bản ở Skill & Mix mất 2 tháng, nâng cao thêm 6 tuần, Flair và Bar Skill mỗi khóa 8 buổi. Còn bạn mất bao lâu thì tùy ba thứ, và bài này nói rõ từng thứ.",
+  "seo": {
+    "title": "Học bartender mất bao lâu? Lộ trình | Skill & Mix",
+    "description": "Học bartender mất bao lâu? Lớp cơ bản 2 tháng, nâng cao 6 tuần, Flair và Bar Skill 8 buổi, và vì sao người này nhanh hơn người kia.",
+    "noIndex": false
+  },
+  "_status": "published"
+}

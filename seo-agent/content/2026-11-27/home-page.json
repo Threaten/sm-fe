@@ -1,0 +1,59 @@
+{
+  "guide": {
+    "sections": [
+      {
+        "heading": "Chưa biết gì? Học lớp cơ bản",
+        "body": "Lớp Bartender Cơ Bản kéo dài 2 tháng, tối đa 6 người một lớp. Bạn học cầm shaker, jigger, bar spoon cho đúng, các kỹ thuật shake, stir, build, muddle, hiểu các dòng rượu nền, rồi tự pha những ly cocktail classic mà quán nào ở Sài Gòn cũng có. Cuối khóa có phần thực hành như một ca làm thật.",
+        "linkLabel": "Xem lớp cơ bản",
+        "linkHref": "/courses/bartender-co-ban"
+      },
+      {
+        "heading": "Đã biết pha? Chọn hướng đi tiếp",
+        "body": "Muốn làm head bartender thì học Bartender Nâng Cao (6 tuần): mixology, lên menu signature, tính giá vốn. Thấy mình còn chậm khi quầy đông thì học Bar Skill (8 buổi). Thích biểu diễn với chai và shaker thì học Flair (8 buổi).",
+        "linkLabel": "So sánh các khóa học",
+        "linkHref": "/courses"
+      },
+      {
+        "heading": "Lịch bận thì học 1 kèm 1",
+        "body": "Không theo được lịch lớp nhóm, hoặc đang có mục tiêu riêng như mở quán? Học 1 kèm 1: buổi đầu giảng viên xem bạn đang ở mức nào, rồi cùng bạn xếp nội dung và lịch học.",
+        "linkLabel": "Xem khóa 1 kèm 1",
+        "linkHref": "/courses/mot-kem-mot"
+      },
+      {
+        "heading": "Học ở Skill & Mix thì khác gì",
+        "body": "- Đứng quầy từ buổi đầu, lớp nhỏ nên ai cũng được sửa tay\n- Người dạy là bartender đang đi làm\n- Học xong, trung tâm giúp kết nối việc làm\n- Được tư vấn và học thử trước, không mất phí",
+        "linkLabel": "Hẹn một buổi học thử",
+        "linkHref": "/contact-us"
+      }
+    ],
+    "eyebrow": "Học bartender TP.HCM",
+    "title": "Học bartender ở TP.HCM, nên bắt đầu từ đâu?",
+    "intro": "Skill & Mix dạy bartender ngay tại quầy bar ở 643 Nguyễn Kiệm, phường Đức Nhuận. Có người tới đây khi chưa từng cầm shaker, có người đã đứng quầy vài năm và muốn lên tay. Chọn khóa theo chỗ bạn đang đứng là dễ nhất."
+  },
+  "faq": {
+    "items": [
+      {
+        "question": "Học bartender ở đâu tại TP.HCM?",
+        "answer": "Ở Skill & Mix, 643 Nguyễn Kiệm, phường Đức Nhuận. Lớp học ngay tại quầy bar của trung tâm, nên bạn tập trên đúng dụng cụ và quầy như ở quán."
+      },
+      {
+        "question": "Học bartender mất bao lâu?",
+        "answer": "Lớp cơ bản 2 tháng. Nâng cao thêm 6 tuần. Bar Skill và Flair mỗi khóa 8 buổi. Học 1 kèm 1 thì nhanh hay chậm tùy lịch và mục tiêu của bạn."
+      },
+      {
+        "question": "Chưa biết gì về pha chế có học được không?",
+        "answer": "Được. Lớp cơ bản làm ra cho đúng những người như vậy, bắt đầu từ chuyện cầm dụng cụ cho đúng."
+      },
+      {
+        "question": "Học phí khóa học bartender là bao nhiêu?",
+        "answer": "Tùy khóa, và tùy bạn học nhóm hay 1 kèm 1. Nhắn cho Skill & Mix để nhận học phí và ngày khai giảng gần nhất, hỏi thì không mất phí."
+      },
+      {
+        "question": "Học xong có được giới thiệu việc làm không?",
+        "answer": "Có. Học xong, trung tâm giúp kết nối bạn với chỗ làm trong ngành."
+      }
+    ],
+    "eyebrow": "Hỏi đáp",
+    "title": "Mọi người hay hỏi gì khi muốn học bartender"
+  }
+}

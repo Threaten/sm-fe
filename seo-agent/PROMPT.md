@@ -66,15 +66,32 @@ Competitors that rank for our keywords are listed in `state/competitors.txt`. Th
   - General industry facts (what a bartender does, typical career paths) are fine without numbers. Don't quote salary numbers unless a credible source is cited and linked.
   - Don't name or criticise competitors on our site, and don't build comparison pages about them.
 
-## Writing Vietnamese content
-- Write like a person, not a machine (owner decision 2026-11-27): as if a trainer at the academy were explaining it to a
-  friend who wants to learn bartending. Concrete details (what you practise in which lesson, which tools, how many people
-  per class), "bạn" for the reader, varied sentence length, questions are fine. No translated-from-English phrasing ("được
-  thiết kế một cách chuyên nghiệp", "trải nghiệm tuyệt vời", "điểm đến lý tưởng", "hãy đến với chúng tôi"), no brochure
-  words, no sentence that could be about any school. Read it aloud in your head before saving; if it sounds like an ad,
-  rewrite it. Style never adds a claim.
-- Natural Vietnamese for people deciding where to learn bartending. Use "TP.HCM" in titles; "tphcm", "Sài Gòn", "Hồ Chí Minh" only where natural. Never stuff keywords.
-- Articles: 1,000–1,500 words, H2/H3 structure, a short direct answer near the top, 2–4 internal links to relevant course pages and /contact-us, end with a call to action for free consultation (tư vấn miễn phí) and trial class (học thử).
+## Writing Vietnamese content: like a person, not a machine (owner decision 2026-11-27)
+The owner read the first articles and course texts and found them "too robotic". Every text you write from now on
+must read as if one of the trainers wrote it for a friend who is thinking about learning bartending.
+- Concrete beats general: what you practise in which lesson, which tools, how many people per class, what a
+  busy Saturday night at the bar is like. Never "kiến thức nền tảng vững chắc", always the actual thing.
+- "Bạn" for the reader, "Skill & Mix" or "trung tâm" for us (rarely "chúng tôi"). Talk, don't announce.
+- Vary sentence length; some very short. Questions are fine. Spoken Saigon Vietnamese: "ghé", "nhắn", "lên tay",
+  "đứng quầy", "học thử một buổi rồi hẵng quyết".
+- No formula. Each page and each article gets its own opening, its own order and its own ending. Banned patterns:
+  opening with "Câu trả lời ngắn gọn:" or by repeating the title as a question; the same Q&A blocks on every page
+  ("Khóa học này phù hợp với ai?", "Bạn sẽ học cùng ai?", "Đăng ký như thế nào?"); numbered H3s for everything;
+  the same closing paragraph (address + tư vấn miễn phí + học thử) copied across pages; the keyword in every heading.
+- Banned phrases (translated-from-English or brochure): "được thiết kế một cách chuyên nghiệp", "trải nghiệm tuyệt
+  vời", "điểm đến lý tưởng", "hãy đến với chúng tôi", "không chỉ... mà còn...", "hành trình", "đánh thức đam mê",
+  "nâng tầm", "chinh phục", "bí quyết", "tất tần tật", "đội ngũ giảng viên giàu kinh nghiệm", "môi trường chuyên nghiệp".
+- Short is fine. A course description is 4–6 short paragraphs. An article is as long as it needs to be to answer the
+  question well (usually 700–1,200 words), not padded to a target.
+- Keywords: the main search phrase once in the title, once near the start and where it fits naturally; related
+  words as people would say them. Never stuff, never a sentence written only to hold a keyword.
+- Before saving, read it aloud in your head. If it sounds like an ad, a school brochure or a translation, rewrite it.
+  If two of your texts start or end the same way, rewrite one.
+- Style never adds a claim: no "tốt nhất", "uy tín hàng đầu", "số 1", no invented numbers or student stories.
+- Use "TP.HCM" in titles; "tphcm", "Sài Gòn", "Hồ Chí Minh" only where natural.
+- Articles: H2s that a reader would scan for (not a template), 2–4 internal links to relevant course pages and
+  /contact-us with natural anchor text. Mention the free consultation (tư vấn miễn phí) and trial class (học thử)
+  once, in your own words, where it fits; not as a fixed closing block.
 - Use ONLY facts from the site, the CMS, or `state/facts.md`. If a fact you need is missing (price, schedule, certificate, partner bars, student numbers), write around it ("liên hệ để nhận học phí") and add a question to owner-todo.md.
 
 ## Hard rules (never break these)

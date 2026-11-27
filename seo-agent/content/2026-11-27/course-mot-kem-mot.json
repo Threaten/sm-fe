@@ -1,0 +1,240 @@
+{
+  "description": {
+    "root": {
+      "direction": "ltr",
+      "format": "",
+      "indent": 0,
+      "version": 1,
+      "type": "root",
+      "children": [
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Chỉ có bạn và một giảng viên. Hợp khi lịch làm việc của bạn không cố định, khi bạn muốn đi nhanh hơn lớp nhóm, hoặc khi bạn có một mục tiêu rất cụ thể: sắp mở quán cocktail, chuẩn bị đi làm ở nước ngoài, hay chỉ muốn sửa dứt điểm một thao tác mãi chưa chuẩn.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Buổi đầu, giảng viên xem bạn đang ở mức nào. Từ đó hai bên chốt học gì trước, học gì sau, và học vào lúc nào. Người mới có thể đi theo nội dung của ",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 3,
+              "type": "link",
+              "fields": {
+                "linkType": "custom",
+                "url": "/courses/bartender-co-ban",
+                "newTab": false
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "lớp cơ bản",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": " nhưng với nhịp của riêng mình. Người đã làm nghề có thể chọn phần ",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 3,
+              "type": "link",
+              "fields": {
+                "linkType": "custom",
+                "url": "/courses/bartender-nang-cao",
+                "newTab": false
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "nâng cao",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": ", ",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 3,
+              "type": "link",
+              "fields": {
+                "linkType": "custom",
+                "url": "/courses/flair-bartending",
+                "newTab": false
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "flair",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": ", ",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 3,
+              "type": "link",
+              "fields": {
+                "linkType": "custom",
+                "url": "/courses/bar-skill",
+                "newTab": false
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Bar Skill",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": ", hoặc trộn vài thứ với nhau.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Vì không phải chia giảng viên cho ai khác, bạn được sửa từng động tác ngay lúc làm, và dành nhiều thời gian hơn cho đúng phần mình còn yếu. Lớp nhóm thì tối đa 6 người theo một chương trình chung; ở đây chương trình là của bạn.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 3,
+              "type": "link",
+              "fields": {
+                "linkType": "custom",
+                "url": "/contact-us",
+                "newTab": false
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Nhắn cho Skill & Mix",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": ", kể mục tiêu của bạn, rồi nhận lộ trình, lịch và học phí. Có thể học thử trước khi đăng ký.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,236 @@
+{
+  "description": {
+    "root": {
+      "direction": "ltr",
+      "format": "",
+      "indent": 0,
+      "version": 1,
+      "type": "root",
+      "children": [
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Chưa từng cầm shaker cũng không sao. Phần lớn học viên lớp cơ bản bắt đầu đúng từ chỗ đó: sinh viên, người làm văn phòng muốn đổi nghề, hay chủ quán muốn tự đứng quầy cho quán của mình.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Hai tháng học ngay tại quầy bar của Skill & Mix ở 643 Nguyễn Kiệm. Những buổi đầu là chuyện cầm jigger sao cho đong không lệch, cầm shaker sao cho lắc không đổ. Sau đó tới shake, stir, build, muddle, và cách rượu mạnh, liqueur, syrup, trái cây ghép lại thành một ly cân vị. Tới cuối khóa, bạn tự pha được những ly cocktail classic mà quán bar nào ở Sài Gòn cũng có trong menu.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Lớp tối đa 6 người, nên giảng viên đứng ngay cạnh và sửa tay cho bạn từng lần. Người dạy cũng là bartender đang đi làm, nên bạn học cách một quầy bar chạy thật mỗi tối: mở quầy, nói chuyện với khách, giữ quầy gọn lúc đông, rồi đóng quầy. Cuối khóa có phần thực hành mô phỏng một ca làm để bạn quen với nhịp đó.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Học xong, bạn đủ nền để xin vào làm barback hoặc bartender, và Skill & Mix sẽ giới thiệu việc nếu bạn cần. Muốn đi tiếp thì có ",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 3,
+              "type": "link",
+              "fields": {
+                "linkType": "custom",
+                "url": "/courses/bar-skill",
+                "newTab": false
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Bar Skill",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": ", ",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 3,
+              "type": "link",
+              "fields": {
+                "linkType": "custom",
+                "url": "/courses/bartender-nang-cao",
+                "newTab": false
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Bartender Nâng Cao",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": " và ",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 3,
+              "type": "link",
+              "fields": {
+                "linkType": "custom",
+                "url": "/courses/flair-bartending",
+                "newTab": false
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Flair Bartending",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": ".",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Học phí và ngày khai giảng gần nhất, bạn ",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 3,
+              "type": "link",
+              "fields": {
+                "linkType": "custom",
+                "url": "/contact-us",
+                "newTab": false
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "nhắn cho Skill & Mix",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": " để được báo. Muốn chắc hơn thì ghé học thử một buổi rồi hẵng quyết.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
