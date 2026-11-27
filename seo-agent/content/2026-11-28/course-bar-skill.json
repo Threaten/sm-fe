@@ -1,0 +1,21 @@
+{
+  "seo": {
+    "title": "Khóa Học Bar Skill – Kỹ Năng Quầy Bar tại TP.HCM | Skill & Mix",
+    "description": "Khóa học Bar Skill tại TP.HCM: 8 buổi rèn luyện thao tác với dụng cụ, tốc độ, độ chính xác và quy trình làm việc liền mạch trong giờ cao điểm.",
+    "noIndex": false
+  },
+  "outcomes": [
+    {
+      "id": "6af5fcce613e18315ed60d6e",
+      "title": "Thao tác nhanh và chính xác với dụng cụ quầy bar"
+    },
+    {
+      "id": "6af5fd02613e18315ed60d6f",
+      "title": "Quy trình pha chế liền mạch trong giờ cao điểm"
+    },
+    {
+      "id": "6af5fd09613e18315ed60d70",
+      "title": "Đong chính xác, giảm hao hụt nguyên liệu"
+    }
+  ]
+}

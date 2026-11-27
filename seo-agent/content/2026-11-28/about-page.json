@@ -1,0 +1,48 @@
+{
+  "intro": {
+    "eyebrow": "Về Skill & Mix",
+    "title": "TRUNG TÂM ĐÀO TẠO BARTENDER TẠI TP.HCM",
+    "copy": "Skill & Mix đào tạo bartender theo định hướng thực hành: học viên học trực tiếp tại quầy bar, trong lớp có tối đa 6 học viên, cùng giảng viên là những bartender đang làm việc trong ngành.",
+    "accent": "red"
+  },
+  "story": {
+    "eyebrow": "Cách chúng tôi giảng dạy",
+    "title": "Kỹ năng pha chế được hình thành tại quầy bar.",
+    "copy": "Mỗi khóa học tại Skill & Mix được xây dựng xoay quanh thời gian thực hành của học viên. Kiến thức về rượu, nguyên liệu và công thức được giới thiệu song song với thao tác thực tế, và mỗi thao tác đều được giảng viên quan sát, điều chỉnh ngay trong buổi học. Sau khóa học, trung tâm tiếp tục hỗ trợ kết nối việc làm cho học viên có nhu cầu.",
+    "imageOne": "6a8ad8420542d04bd54cec80",
+    "imageTwo": "6a8ad8420542d04bd54cec85",
+    "imageOneCaption": "Lớp học tại Skill & Mix",
+    "stamp": "Skill & Mix\nTP.HCM"
+  },
+  "values": {
+    "title": "Nguyên tắc đào tạo",
+    "items": [
+      {
+        "title": "Thực hành là trọng tâm",
+        "copy": "Học viên trực tiếp đứng quầy, đong, pha và hoàn thiện đồ uống trong mỗi buổi học, thay vì chỉ quan sát giảng viên làm mẫu.",
+        "id": "6af5a33ebb3db09bee302c34"
+      },
+      {
+        "title": "Lớp học quy mô nhỏ",
+        "copy": "Mỗi lớp có tối đa 6 học viên, giúp giảng viên theo sát và điều chỉnh thao tác cho từng người.",
+        "id": "6af5a33ebb3db09bee302c35"
+      },
+      {
+        "title": "Giảng viên đang làm nghề",
+        "copy": "Giảng viên là những bartender đang làm việc trong ngành Beverage & Hospitality, mang đến lớp học những tiêu chuẩn của quầy bar thực tế.",
+        "id": "6af5a33ebb3db09bee302c36"
+      },
+      {
+        "title": "Đồng hành sau khóa học",
+        "copy": "Skill & Mix hỗ trợ kết nối việc làm và tư vấn lộ trình học tiếp cho học viên sau khi hoàn thành khóa học.",
+        "id": "6af5a33ebb3db09bee302c37"
+      }
+    ]
+  },
+  "marquee": "Thực hành tại quầy / Lớp học nhỏ / Giảng viên đang làm nghề",
+  "seo": {
+    "title": "Về Skill & Mix – Trung Tâm Đào Tạo Bartender TP.HCM",
+    "description": "Skill & Mix đào tạo bartender tại TP.HCM theo định hướng thực hành: lớp tối đa 6 học viên, giảng viên đang làm nghề, hỗ trợ kết nối việc làm.",
+    "noIndex": false
+  }
+}

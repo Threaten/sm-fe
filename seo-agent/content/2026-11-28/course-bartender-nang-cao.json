@@ -1,0 +1,26 @@
+{
+  "seo": {
+    "title": "Khóa Học Bartender Nâng Cao tại TP.HCM | Skill & Mix",
+    "description": "Khóa học bartender nâng cao tại TP.HCM: mixology, kỹ thuật infusion và smoke, xây dựng menu signature và quản lý chi phí quầy bar. Thời lượng 6 tuần.",
+    "noIndex": false
+  },
+  "outcomes": [
+    {
+      "id": "6af5fc15613e18315ed60d67",
+      "title": "Xây dựng một menu cocktail signature hoàn chỉnh"
+    },
+    {
+      "id": "6af5fc19613e18315ed60d68",
+      "title": "Áp dụng các kỹ thuật infusion, smoke và layering"
+    },
+    {
+      "id": "6af5fc2a613e18315ed60d69",
+      "title": "Tính giá vốn và kiểm soát chi phí quầy bar"
+    },
+    {
+      "id": "6af5fc30613e18315ed60d6a",
+      "title": "Kinh nghiệm thực hành tại quầy bar đối tác"
+    }
+  ],
+  "level": "Học viên đã hoàn thành khóa cơ bản, bartender muốn nâng cao tay nghề"
+}

@@ -1,0 +1,21 @@
+{
+  "seo": {
+    "title": "Khóa Học Flair Bartender tại TP.HCM | Skill & Mix",
+    "description": "Khóa học flair bartending tại TP.HCM: 8 buổi luyện tập kỹ thuật biểu diễn, kiểm soát chai và dụng cụ, xây dựng phong cách biểu diễn riêng.",
+    "noIndex": false
+  },
+  "outcomes": [
+    {
+      "id": "6af5fc89613e18315ed60d6b",
+      "title": "Các động tác flair nền tảng với chai và dụng cụ"
+    },
+    {
+      "id": "6af5fc9a613e18315ed60d6c",
+      "title": "Kiểm soát dụng cụ an toàn khi biểu diễn trong ca làm việc"
+    },
+    {
+      "id": "6af5fc9e613e18315ed60d6d",
+      "title": "Một tiết mục biểu diễn ngắn mang phong cách riêng"
+    }
+  ]
+}

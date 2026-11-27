@@ -1,0 +1,27 @@
+{
+  "intro": {
+    "eyebrow": "Liên hệ",
+    "title": "LIÊN HỆ SKILL & MIX",
+    "copy": "Bạn cần tư vấn khóa học, đăng ký học thử, tổ chức lớp học riêng hoặc đào tạo cho đội ngũ quầy bar? Vui lòng để lại thông tin, trung tâm sẽ liên hệ với bạn.",
+    "accent": "red"
+  },
+  "panels": {
+    "visitTitle": "Địa chỉ",
+    "visitLinkLabel": "Xem bản đồ",
+    "emailTitle": "Email",
+    "emailNote": "Trung tâm phản hồi email trong vòng hai ngày làm việc.",
+    "phoneTitle": "Điện thoại"
+  },
+  "form": {
+    "eyebrow": "Đăng ký tư vấn",
+    "title": "Gửi thông tin cho chúng tôi",
+    "nameLabel": "Họ và tên",
+    "phoneLabel": "Số điện thoại",
+    "coursesLabel": "Khóa học quan tâm",
+    "messageLabel": "Nội dung",
+    "messagePlaceholder": "Bạn có thể chia sẻ mục tiêu, kinh nghiệm hiện tại hoặc thời gian học mong muốn.",
+    "submitLabel": "Gửi thông tin",
+    "successTitle": "Đã nhận thông tin",
+    "successCopy": "Cảm ơn bạn. Skill & Mix sẽ liên hệ với bạn trong thời gian sớm nhất."
+  }
+}

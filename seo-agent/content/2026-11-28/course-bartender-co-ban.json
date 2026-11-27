@@ -1,0 +1,33 @@
+{
+  "seo": {
+    "title": "Khóa Học Bartender Cơ Bản tại TP.HCM | Skill & Mix",
+    "description": "Khóa học bartender cơ bản tại TP.HCM dành cho người mới bắt đầu: 2 tháng, lớp tối đa 6 học viên, thực hành trực tiếp tại quầy bar cùng giảng viên đang làm nghề.",
+    "noIndex": false
+  },
+  "outcomes": [
+    {
+      "id": "6af5fb43613e18315ed60d61",
+      "title": "Hiểu các dòng rượu nền và nguyên tắc cân bằng vị trong một ly cocktail"
+    },
+    {
+      "id": "6af5fb51613e18315ed60d62",
+      "title": "Sử dụng thành thạo các dụng cụ quầy bar cơ bản"
+    },
+    {
+      "id": "6af5fb55613e18315ed60d63",
+      "title": "Pha chế các cocktail classic phổ biến"
+    },
+    {
+      "id": "6af5fb5d613e18315ed60d64",
+      "title": "Nắm vững quy trình mở quầy, phục vụ và đóng quầy"
+    },
+    {
+      "id": "6af5fb64613e18315ed60d65",
+      "title": "Tự tin giao tiếp và phục vụ khách"
+    },
+    {
+      "id": "6af5fb69613e18315ed60d66",
+      "title": "Giấy chứng nhận hoàn thành khóa học"
+    }
+  ]
+}
