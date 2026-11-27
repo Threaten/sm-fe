@@ -32,6 +32,11 @@ Keyword → page map (one main keyword per page; never make two pages compete fo
     Write the article as Markdown in the state folder, convert it with `node <tools>/md2lexical.mjs article.md content.json` (no `>` redirects: they need approval nobody can give), then build the body JSON with Write and POST it.
   - Globals: `POST /api/globals/<slug>` with the fields to change, e.g. `home-page` has `guide` and `faq` groups made for keyword text.
   - Courses: `PATCH /api/courses/<id>` (fields `description`, `outcomes`, `seo`, ...).
+  - Instructors: `PATCH /api/staff/<id>` (owner decision 2026-11-28). These are real people, so: only facts already in
+    their profile, the site, the academy's own posts about them (e.g. the "Gặp mặt giảng viên" news posts) or
+    `state/facts.md`; never invent experience, workplaces, awards, years or quotes. Keep their name, photo and role
+    exactly as they are, and keep anything they or the owner wrote unless it is clearly wrong. GET the profile
+    first and send only the fields you change. At most one profile per run, and log the before/after in the journal.
   - The frontend refreshes CMS content within about a minute; no deploy is needed for CMS changes.
 - Live checks: `node <tools>/audit.mjs` (whole sitemap) and `node <tools>/audit.mjs page <url>`.
 - Google data: `node <tools>/gsc.mjs queries`, `gsc.mjs pages`, `gsc.mjs inspect <url>` (only if Search Console is configured). WebSearch is US-based and does NOT show Google Vietnam rankings; never report rankings from it.
