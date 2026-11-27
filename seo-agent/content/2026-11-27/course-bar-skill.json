@@ -17,7 +17,7 @@
           "children": [
             {
               "type": "text",
-              "text": "Biết pha là một chuyện. Pha nhanh, đong chuẩn và quầy vẫn gọn lúc 10 giờ tối thứ Bảy là chuyện khác. Bar Skill là 8 buổi để luyện đúng phần đó.",
+              "text": "Pha chế đúng công thức mới là bước đầu. Trong môi trường làm việc thực tế, bartender còn cần thao tác nhanh, đong chính xác và giữ quầy gọn gàng ngay cả trong giờ cao điểm. Bar Skill là khóa học 8 buổi tập trung rèn luyện chính những kỹ năng này.",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -36,7 +36,7 @@
           "children": [
             {
               "type": "text",
-              "text": "Mỗi buổi tập trung một nhóm thao tác: shaker, jigger, pour, bar spoon, rồi rolling, shaking, chill glass. Bạn lặp lại tại quầy cho tới khi tay tự làm mà không cần nghĩ, còn giảng viên chỉnh từng chi tiết nhỏ như góc rót hay chỗ đặt dụng cụ. Những buổi sau ghép các thao tác lại thành một quy trình liền mạch, để bạn đong chuẩn hơn, ít hao nguyên liệu hơn và không rối khi order dồn tới.",
+              "text": "Mỗi buổi học tập trung vào một nhóm thao tác: sử dụng shaker, jigger, pour và bar spoon, cùng các kỹ thuật rolling, shaking và chill glass. Học viên thực hành lặp lại tại quầy bar cho đến khi thao tác trở nên thuần thục, trong khi giảng viên điều chỉnh những chi tiết như góc rót, tư thế cầm dụng cụ và cách sắp xếp quầy. Ở các buổi sau, những thao tác riêng lẻ được kết hợp thành một quy trình pha chế liền mạch, giúp học viên đong chuẩn hơn, giảm hao hụt nguyên liệu và xử lý tốt khi lượng order tăng cao.",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -55,7 +55,7 @@
           "children": [
             {
               "type": "text",
-              "text": "Khóa hợp với người vừa học xong ",
+              "text": "Khóa học phù hợp với học viên vừa hoàn thành ",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -76,7 +76,7 @@
               "children": [
                 {
                   "type": "text",
-                  "text": "lớp cơ bản",
+                  "text": "khóa Bartender Cơ Bản",
                   "format": 0,
                   "detail": 0,
                   "mode": "normal",
@@ -87,7 +87,7 @@
             },
             {
               "type": "text",
-              "text": ", hoặc bartender đang đi làm thấy mình còn chậm. Người dạy là bartender đang đứng quầy mỗi tuần, nên bài tập đi theo đúng nhịp một ca làm.",
+              "text": " và bartender đang làm việc muốn cải thiện tốc độ cũng như độ chính xác. Giảng viên là những bartender đang làm việc trong ngành Beverage & Hospitality, vì vậy các bài tập được xây dựng theo nhịp độ của một ca làm việc thực tế.",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -106,7 +106,7 @@
           "children": [
             {
               "type": "text",
-              "text": "Nếu bạn muốn học thêm công thức và cách lên menu, xem ",
+              "text": "Nếu bạn muốn mở rộng kiến thức về công thức và xây dựng menu, vui lòng tham khảo ",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -127,7 +127,7 @@
               "children": [
                 {
                   "type": "text",
-                  "text": "Bartender Nâng Cao",
+                  "text": "khóa Bartender Nâng Cao",
                   "format": 0,
                   "detail": 0,
                   "mode": "normal",
@@ -138,7 +138,7 @@
             },
             {
               "type": "text",
-              "text": ". Thích biểu diễn thì xem ",
+              "text": ". Nếu bạn quan tâm đến phong cách biểu diễn, ",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -159,7 +159,7 @@
               "children": [
                 {
                   "type": "text",
-                  "text": "Flair Bartending",
+                  "text": "khóa Flair Bartending",
                   "format": 0,
                   "detail": 0,
                   "mode": "normal",
@@ -170,7 +170,7 @@
             },
             {
               "type": "text",
-              "text": ".",
+              "text": " sẽ là lựa chọn phù hợp.",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -188,6 +188,15 @@
           "textFormat": 0,
           "children": [
             {
+              "type": "text",
+              "text": "Vui lòng ",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            },
+            {
               "direction": "ltr",
               "format": "",
               "indent": 0,
@@ -201,7 +210,7 @@
               "children": [
                 {
                   "type": "text",
-                  "text": "Nhắn cho Skill & Mix",
+                  "text": "liên hệ Skill & Mix",
                   "format": 0,
                   "detail": 0,
                   "mode": "normal",
@@ -212,7 +221,7 @@
             },
             {
               "type": "text",
-              "text": " để hỏi lịch và học phí.",
+              "text": " để nhận thông tin lịch học và học phí.",
               "format": 0,
               "detail": 0,
               "mode": "normal",

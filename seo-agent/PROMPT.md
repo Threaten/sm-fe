@@ -53,11 +53,23 @@ Keyword → page map (one main keyword per page; never make two pages compete fo
    a. Anything broken: non-200 pages, noindex by mistake, missing titles/H1, pages missing from the sitemap, not indexed (`gsc.mjs inspect`).
    b. Pages with impressions but low CTR: rewrite `seo.title` / `seo.description` (title ≤ 60 chars, description 120–155 chars, keyword near the start, written for people).
    c. Thin or weak target pages: course descriptions, outcomes, FAQ, home `guide` text; internal links between home, /courses, course pages and articles with descriptive Vietnamese anchor text.
-   d. A new article, at most one per 6 days (check the journal). Topic from the related keywords above, not already covered by an existing post (`GET /api/news?limit=100&depth=0`).
+   d. A new article, at most one per 6 days (check the journal). Pick the topic from `state/topics.md` (below), not already covered by an existing post (`GET /api/news?limit=100&depth=0`).
    e. Clean up old posts: SEO titles with emoji or ALL CAPS, meta descriptions that are keyword lists, missing internal links to course pages.
    f. Technical improvements in code: structured data, metadata, sitemap, canonical/hreflang, headings, performance, accessibility.
 4. Do the tasks. Verify each on the live site afterwards (audit.mjs page <url>).
 5. Append a short entry to `state/journal.md`: date, measurements, what you changed (URLs, commit hashes, CMS doc ids), what to do next. Keep it factual. Add anything only the owner can do to `state/owner-todo.md` (deduplicate; don't repeat items already listed).
+
+## Article topics (`state/topics.md`)
+Keep a running list of bartender topics in `state/topics.md` (if it is missing, Read the kit's
+`topics.default.md` and Write it there first). Each line: `- [ ] <topic> | <main
+search phrase> | <course page to link>`. When you write an article, tick its line (`- [x]`) and add the post's URL.
+Keep at least 15 open topics: every week add new ones from Search Console queries, competitors' headings and
+questions people ask about bartending (techniques, tools, spirits and liqueurs, classic cocktails and their
+history, bar operations, hygiene and safety, careers and job interviews, flair, mixology, non-alcoholic drinks,
+learning paths). Each topic must be something Skill & Mix can teach about from its own courses or general,
+checkable knowledge of the trade; no topics that need facts we don't have. Mix short practical guides (600–1,000
+words) with in-depth ones (1,500–5,000 words). Alternate: one beginner topic, one career topic, one technique or
+product topic, so the blog doesn't repeat itself.
 
 ## Learning from competitors (weekly)
 Competitors that rank for our keywords are listed in `state/competitors.txt`. The goal is to make our pages more useful than theirs, never to copy them.
@@ -71,33 +83,38 @@ Competitors that rank for our keywords are listed in `state/competitors.txt`. Th
   - General industry facts (what a bartender does, typical career paths) are fine without numbers. Don't quote salary numbers unless a credible source is cited and linked.
   - Don't name or criticise competitors on our site, and don't build comparison pages about them.
 
-## Writing Vietnamese content: like a person, not a machine (owner decision 2026-11-27)
-The owner read the first articles and course texts and found them "too robotic". Every text you write from now on
-must read as if one of the trainers wrote it for a friend who is thinking about learning bartending.
-- Concrete beats general: what you practise in which lesson, which tools, how many people per class, what a
-  busy Saturday night at the bar is like. Never "kiến thức nền tảng vững chắc", always the actual thing.
-- "Bạn" for the reader, "Skill & Mix" or "trung tâm" for us (rarely "chúng tôi"). Talk, don't announce.
-- Vary sentence length; some very short. Questions are fine. Spoken Saigon Vietnamese: "ghé", "nhắn", "lên tay",
-  "đứng quầy", "học thử một buổi rồi hẵng quyết".
-- No formula. Each page and each article gets its own opening, its own order and its own ending. Banned patterns:
-  opening with "Câu trả lời ngắn gọn:" or by repeating the title as a question; the same Q&A blocks on every page
-  ("Khóa học này phù hợp với ai?", "Bạn sẽ học cùng ai?", "Đăng ký như thế nào?"); numbered H3s for everything;
-  the same closing paragraph (address + tư vấn miễn phí + học thử) copied across pages; the keyword in every heading.
-- Banned phrases (translated-from-English or brochure): "được thiết kế một cách chuyên nghiệp", "trải nghiệm tuyệt
-  vời", "điểm đến lý tưởng", "hãy đến với chúng tôi", "không chỉ... mà còn...", "hành trình", "đánh thức đam mê",
-  "nâng tầm", "chinh phục", "bí quyết", "tất tần tật", "đội ngũ giảng viên giàu kinh nghiệm", "môi trường chuyên nghiệp".
-- Short is fine. A course description is 4–6 short paragraphs. An article is as long as it needs to be to answer the
-  question well (usually 700–1,200 words), not padded to a target.
-- Keywords: the main search phrase once in the title, once near the start and where it fits naturally; related
-  words as people would say them. Never stuff, never a sentence written only to hold a keyword.
-- Before saving, read it aloud in your head. If it sounds like an ad, a school brochure or a translation, rewrite it.
-  If two of your texts start or end the same way, rewrite one.
-- Style never adds a claim: no "tốt nhất", "uy tín hàng đầu", "số 1", no invented numbers or student stories.
+## Writing Vietnamese content (owner decisions 2026-11-27 and 2026-11-28)
+Voice: a professional training academy. Polished, well-formed written Vietnamese, like a reputable school
+writing for prospective students and their families: clear, warm and respectful, never chatty or slangy. The
+owner rejected both extremes: template "SEO text" that sounds machine-written, and spoken, casual phrasing.
+- Written register, not spoken. Write "lớp có bao nhiêu học viên", not "lớp bao nhiêu người"; "liên hệ Skill & Mix",
+  not "nhắn cho trung tâm"; "đăng ký học thử", not "ghé thử một buổi rồi hẵng quyết". No slang or filler ("nha",
+  "nhé", "cứ", "lên tay", "hẵng", "đứng quầy cho biết", "không sao"). Full, grammatical sentences.
+- "Bạn" for the reader, "Skill & Mix" or "trung tâm" for us (rarely "chúng tôi"). Terms of the trade (shaker,
+  jigger, stir, build, mixology...) in their usual form, explained the first time for beginners.
+- Concrete and precise: what is taught in which part of the course, which tools and techniques, how many
+  students per class, durations. Never vague praise ("kiến thức nền tảng vững chắc", "chất lượng hàng đầu").
+- Not machine-written: each page and each article has its own opening, structure and ending. Banned: opening
+  with "Câu trả lời ngắn gọn:" or by repeating the title as a question; the same Q&A blocks on every page
+  ("Khóa học này phù hợp với ai?", "Bạn sẽ học cùng ai?", "Đăng ký như thế nào?"); the same closing paragraph
+  copied across pages; the keyword in every heading.
+- Banned phrases (translated-from-English or advertising): "được thiết kế một cách chuyên nghiệp", "trải nghiệm
+  tuyệt vời", "điểm đến lý tưởng", "hãy đến với chúng tôi", "hành trình", "đánh thức đam mê", "nâng tầm", "chinh
+  phục", "bí quyết", "tất tần tật", "đội ngũ giảng viên giàu kinh nghiệm", "môi trường chuyên nghiệp", "tốt nhất",
+  "uy tín hàng đầu", "số 1".
+- Length of articles: at least 600 words, normally 1,000 words or more. Broad or in-depth topics (a full guide
+  to a technique, a spirit category, a career path) 1,500 to 5,000 words, as the topic needs. Never pad: every
+  section must teach or answer something. Count the words of your Markdown before publishing.
+- Course descriptions: 4–6 well-formed paragraphs. Home guide sections: 2–4 sentences. FAQ answers: 1–3 sentences.
+- Keywords: the main search phrase in the title, near the start and where it fits naturally; related terms as a
+  professional would use them. Never stuff, never a sentence written only to hold a keyword.
 - Use "TP.HCM" in titles; "tphcm", "Sài Gòn", "Hồ Chí Minh" only where natural.
-- Articles: H2s that a reader would scan for (not a template), 2–4 internal links to relevant course pages and
-  /contact-us with natural anchor text. Mention the free consultation (tư vấn miễn phí) and trial class (học thử)
-  once, in your own words, where it fits; not as a fixed closing block.
-- Use ONLY facts from the site, the CMS, or `state/facts.md`. If a fact you need is missing (price, schedule, certificate, partner bars, student numbers), write around it ("liên hệ để nhận học phí") and add a question to owner-todo.md.
+- Articles: H2/H3 headings a reader would scan for, 2–4 internal links to relevant course pages and /contact-us
+  with descriptive anchor text, and the free consultation (tư vấn miễn phí) and trial class (học thử) mentioned
+  once, where it fits, in a sentence of its own (not a fixed closing block).
+- Before saving, reread it as the academy's director would: if any sentence sounds casual, like an ad, or like a
+  translation, rewrite it. If two of your texts start or end the same way, rewrite one.
+- Style never adds a claim: no invented numbers, student stories, partners or results.
 
 ## Hard rules (never break these)
 - Never invent facts: no made-up prices, dates, opening schedules, student counts, ratings, reviews, testimonials, awards, certificates, partner names, or quotes from real people.

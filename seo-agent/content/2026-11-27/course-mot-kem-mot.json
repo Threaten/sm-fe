@@ -17,7 +17,7 @@
           "children": [
             {
               "type": "text",
-              "text": "Chỉ có bạn và một giảng viên. Hợp khi lịch làm việc của bạn không cố định, khi bạn muốn đi nhanh hơn lớp nhóm, hoặc khi bạn có một mục tiêu rất cụ thể: sắp mở quán cocktail, chuẩn bị đi làm ở nước ngoài, hay chỉ muốn sửa dứt điểm một thao tác mãi chưa chuẩn.",
+              "text": "Hình thức học 1 kèm 1 dành cho học viên có lịch làm việc không cố định, muốn tiến bộ nhanh hơn so với lớp nhóm, hoặc có mục tiêu cụ thể như chuẩn bị mở quán cocktail, chuẩn bị làm việc ở nước ngoài hay khắc phục một kỹ năng chưa vững.",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -36,7 +36,7 @@
           "children": [
             {
               "type": "text",
-              "text": "Buổi đầu, giảng viên xem bạn đang ở mức nào. Từ đó hai bên chốt học gì trước, học gì sau, và học vào lúc nào. Người mới có thể đi theo nội dung của ",
+              "text": "Ở buổi học đầu tiên, giảng viên đánh giá nền tảng hiện tại của học viên. Dựa trên kết quả đó, giảng viên và học viên cùng thống nhất nội dung, thứ tự học và lịch học phù hợp. Người mới bắt đầu có thể học theo nội dung của ",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -57,7 +57,7 @@
               "children": [
                 {
                   "type": "text",
-                  "text": "lớp cơ bản",
+                  "text": "khóa Bartender Cơ Bản",
                   "format": 0,
                   "detail": 0,
                   "mode": "normal",
@@ -68,7 +68,7 @@
             },
             {
               "type": "text",
-              "text": " nhưng với nhịp của riêng mình. Người đã làm nghề có thể chọn phần ",
+              "text": " với tốc độ riêng. Học viên đã có kinh nghiệm có thể tập trung vào nội dung của ",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -89,7 +89,7 @@
               "children": [
                 {
                   "type": "text",
-                  "text": "nâng cao",
+                  "text": "khóa Bartender Nâng Cao",
                   "format": 0,
                   "detail": 0,
                   "mode": "normal",
@@ -121,7 +121,7 @@
               "children": [
                 {
                   "type": "text",
-                  "text": "flair",
+                  "text": "Flair Bartending",
                   "format": 0,
                   "detail": 0,
                   "mode": "normal",
@@ -132,7 +132,7 @@
             },
             {
               "type": "text",
-              "text": ", ",
+              "text": " hoặc ",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -164,7 +164,7 @@
             },
             {
               "type": "text",
-              "text": ", hoặc trộn vài thứ với nhau.",
+              "text": ", hoặc kết hợp nhiều nội dung trong cùng một lộ trình.",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -183,7 +183,7 @@
           "children": [
             {
               "type": "text",
-              "text": "Vì không phải chia giảng viên cho ai khác, bạn được sửa từng động tác ngay lúc làm, và dành nhiều thời gian hơn cho đúng phần mình còn yếu. Lớp nhóm thì tối đa 6 người theo một chương trình chung; ở đây chương trình là của bạn.",
+              "text": "Khác với lớp nhóm, nơi mỗi lớp có tối đa 6 học viên và học theo chương trình chung, hình thức 1 kèm 1 cho phép giảng viên theo sát toàn bộ quá trình thực hành của học viên. Mỗi thao tác được quan sát và điều chỉnh ngay khi thực hiện, và thời gian học được ưu tiên cho những kỹ năng học viên cần cải thiện nhất.",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -200,6 +200,34 @@
           "type": "paragraph",
           "textFormat": 0,
           "children": [
+            {
+              "type": "text",
+              "text": "Giảng viên là những bartender đang làm việc trong ngành Beverage & Hospitality, vì vậy nội dung học gắn liền với yêu cầu thực tế của công việc tại quầy bar. Sau khóa học, Skill & Mix hỗ trợ kết nối việc làm cho học viên có nhu cầu.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Vui lòng ",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            },
             {
               "direction": "ltr",
               "format": "",
@@ -214,7 +242,7 @@
               "children": [
                 {
                   "type": "text",
-                  "text": "Nhắn cho Skill & Mix",
+                  "text": "liên hệ Skill & Mix",
                   "format": 0,
                   "detail": 0,
                   "mode": "normal",
@@ -225,7 +253,7 @@
             },
             {
               "type": "text",
-              "text": ", kể mục tiêu của bạn, rồi nhận lộ trình, lịch và học phí. Có thể học thử trước khi đăng ký.",
+              "text": " và chia sẻ mục tiêu của bạn để được tư vấn lộ trình, lịch học và học phí. Bạn có thể đăng ký học thử trước khi quyết định.",
               "format": 0,
               "detail": 0,
               "mode": "normal",

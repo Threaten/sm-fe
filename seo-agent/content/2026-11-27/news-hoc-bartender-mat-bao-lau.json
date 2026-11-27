@@ -17,7 +17,7 @@
           "children": [
             {
               "type": "text",
-              "text": "Nếu bắt đầu từ con số 0, lớp cơ bản ở Skill & Mix mất 2 tháng. Nhưng \"học xong\" và \"làm được việc\" là hai mốc khác nhau, và khoảng cách giữa chúng tùy vào bạn muốn đi tới đâu. Dưới đây là thời gian của từng khóa, và vì sao người này mất 2 tháng còn người kia mất nửa năm.",
+              "text": "Với người bắt đầu từ con số 0, khóa Bartender Cơ Bản tại Skill & Mix kéo dài 2 tháng. Tuy nhiên, thời gian để hoàn thành một khóa học và thời gian để làm việc thành thạo tại quầy bar là hai mốc khác nhau. Khoảng cách giữa hai mốc này phụ thuộc vào mục tiêu nghề nghiệp, nền tảng ban đầu và mức độ luyện tập của mỗi người. Bài viết dưới đây giới thiệu thời lượng của từng khóa học và phân tích các yếu tố quyết định thời gian học bartender.",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -36,7 +36,26 @@
           "children": [
             {
               "type": "text",
-              "text": "Mỗi khóa ở Skill & Mix dài bao lâu",
+              "text": "Thời lượng các khóa học tại Skill & Mix",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Mỗi khóa học tại Skill & Mix có thời lượng và đối tượng khác nhau:",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -88,7 +107,7 @@
                 },
                 {
                   "type": "text",
-                  "text": ": 2 tháng (8 tuần), cho người chưa từng pha chế.",
+                  "text": ": 2 tháng (8 tuần), dành cho người chưa có kinh nghiệm pha chế.",
                   "format": 0,
                   "detail": 0,
                   "mode": "normal",
@@ -130,7 +149,7 @@
                 },
                 {
                   "type": "text",
-                  "text": ": 6 tuần, cho người đã có nền.",
+                  "text": ": 6 tuần, dành cho học viên đã có nền tảng.",
                   "format": 0,
                   "detail": 0,
                   "mode": "normal",
@@ -172,7 +191,7 @@
                 },
                 {
                   "type": "text",
-                  "text": ": 8 buổi.",
+                  "text": ": 8 buổi thực hành.",
                   "format": 0,
                   "detail": 0,
                   "mode": "normal",
@@ -214,7 +233,7 @@
                 },
                 {
                   "type": "text",
-                  "text": ": 8 buổi.",
+                  "text": ": 8 buổi thực hành.",
                   "format": 0,
                   "detail": 0,
                   "mode": "normal",
@@ -256,7 +275,7 @@
                 },
                 {
                   "type": "text",
-                  "text": ": không có thời lượng cố định, tùy mục tiêu và lịch của bạn.",
+                  "text": ": thời lượng xây dựng theo mục tiêu và lịch học của từng học viên.",
                   "format": 0,
                   "detail": 0,
                   "mode": "normal",
@@ -277,7 +296,7 @@
           "children": [
             {
               "type": "text",
-              "text": "Người mới thường đi theo thứ tự: cơ bản trước, rồi chọn thêm một hướng.",
+              "text": "Đối với người mới, lộ trình phổ biến là hoàn thành khóa cơ bản trước, sau đó lựa chọn khóa nâng cao hoặc các khóa chuyên đề tùy theo định hướng phát triển.",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -296,110 +315,7 @@
           "children": [
             {
               "type": "text",
-              "text": "Ba thứ quyết định bạn mất bao lâu",
-              "format": 0,
-              "detail": 0,
-              "mode": "normal",
-              "style": "",
-              "version": 1
-            }
-          ]
-        },
-        {
-          "direction": "ltr",
-          "format": "",
-          "indent": 0,
-          "version": 1,
-          "type": "paragraph",
-          "textFormat": 0,
-          "children": [
-            {
-              "type": "text",
-              "text": "Bạn muốn làm gì với nó.",
-              "format": 1,
-              "detail": 0,
-              "mode": "normal",
-              "style": "",
-              "version": 1
-            },
-            {
-              "type": "text",
-              "text": " Pha cho bạn bè cuối tuần hay phụ quầy ở quán nhà thì lớp cơ bản là đủ. Muốn làm bartender toàn thời gian, lên menu, hay một ngày làm head bartender thì cần thêm phần nâng cao và rất nhiều giờ đứng quầy.",
-              "format": 0,
-              "detail": 0,
-              "mode": "normal",
-              "style": "",
-              "version": 1
-            }
-          ]
-        },
-        {
-          "direction": "ltr",
-          "format": "",
-          "indent": 0,
-          "version": 1,
-          "type": "paragraph",
-          "textFormat": 0,
-          "children": [
-            {
-              "type": "text",
-              "text": "Bạn bắt đầu từ đâu.",
-              "format": 1,
-              "detail": 0,
-              "mode": "normal",
-              "style": "",
-              "version": 1
-            },
-            {
-              "type": "text",
-              "text": " Ai từng chạy bàn hay làm quán cà phê sẽ quen nhịp sau quầy nhanh hơn. Ai chưa từng cầm shaker thì mất vài buổi đầu chỉ để tay quen dụng cụ và nhớ tên nguyên liệu. Cả hai đều học được, chỉ là xuất phát ở hai chỗ khác nhau.",
-              "format": 0,
-              "detail": 0,
-              "mode": "normal",
-              "style": "",
-              "version": 1
-            }
-          ]
-        },
-        {
-          "direction": "ltr",
-          "format": "",
-          "indent": 0,
-          "version": 1,
-          "type": "paragraph",
-          "textFormat": 0,
-          "children": [
-            {
-              "type": "text",
-              "text": "Bạn tập bao nhiêu ngoài giờ học.",
-              "format": 1,
-              "detail": 0,
-              "mode": "normal",
-              "style": "",
-              "version": 1
-            },
-            {
-              "type": "text",
-              "text": " Đây là thứ tạo khác biệt lớn nhất. Người về nhà tập đong nước bằng jigger mỗi tối sẽ tiến nhanh hơn hẳn người chỉ cầm dụng cụ trên lớp.",
-              "format": 0,
-              "detail": 0,
-              "mode": "normal",
-              "style": "",
-              "version": 1
-            }
-          ]
-        },
-        {
-          "direction": "ltr",
-          "format": "",
-          "indent": 0,
-          "version": 1,
-          "type": "heading",
-          "tag": "h2",
-          "children": [
-            {
-              "type": "text",
-              "text": "Lộ trình thường thấy",
+              "text": "Các yếu tố quyết định thời gian học",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -418,7 +334,7 @@
           "children": [
             {
               "type": "text",
-              "text": "Hai tháng đầu: lớp cơ bản",
+              "text": "Mục tiêu nghề nghiệp",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -437,7 +353,140 @@
           "children": [
             {
               "type": "text",
-              "text": "Bạn học dụng cụ, các kỹ thuật shake, stir, build, muddle, các dòng rượu nền và cách một quầy bar chạy từ lúc mở tới lúc đóng. Lớp tối đa 6 người nên giảng viên theo sát tay từng người. Xem kỹ hơn ở trang ",
+              "text": "Nếu bạn học pha chế để phục vụ nhu cầu cá nhân hoặc hỗ trợ công việc kinh doanh của gia đình, khóa cơ bản đã cung cấp đủ kiến thức và kỹ năng cần thiết. Nếu bạn hướng đến việc làm bartender chuyên nghiệp, xây dựng menu hoặc phát triển lên vị trí head bartender, bạn sẽ cần thêm thời gian cho các nội dung nâng cao và tích lũy nhiều giờ làm việc thực tế.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "heading",
+          "tag": "h3",
+          "children": [
+            {
+              "type": "text",
+              "text": "Nền tảng ban đầu",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Người đã từng làm phục vụ hoặc làm việc tại quán cà phê thường thích nghi nhanh hơn với nhịp độ làm việc sau quầy. Người chưa từng tiếp xúc với nghề sẽ cần một số buổi đầu để làm quen với dụng cụ, thao tác và tên gọi nguyên liệu. Cả hai nhóm đều có thể đạt được kết quả tốt; điểm khác biệt chỉ nằm ở thời gian thích nghi ban đầu.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "heading",
+          "tag": "h3",
+          "children": [
+            {
+              "type": "text",
+              "text": "Mức độ luyện tập ngoài giờ học",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Đây là yếu tố tạo ra khác biệt lớn nhất. Học viên duy trì luyện tập đều đặn giữa các buổi học, chẳng hạn luyện đong bằng jigger hoặc luyện thao tác lắc với nước, thường tiến bộ nhanh hơn rõ rệt so với học viên chỉ thực hành trong giờ học.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "Lộ trình học bartender theo từng giai đoạn",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "heading",
+          "tag": "h3",
+          "children": [
+            {
+              "type": "text",
+              "text": "Giai đoạn 1: Xây dựng nền tảng (2 tháng)",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Đây là giai đoạn quan trọng nhất. Học viên làm quen với dụng cụ quầy bar, các kỹ thuật shake, stir, build, muddle, kiến thức về các dòng rượu nền và quy trình vận hành một quầy bar từ lúc mở quầy đến khi đóng quầy. Mỗi lớp có tối đa 6 học viên, giúp giảng viên theo sát thao tác của từng người. Thông tin chi tiết được trình bày tại trang ",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -458,7 +507,7 @@
               "children": [
                 {
                   "type": "text",
-                  "text": "khóa học bartender cơ bản",
+                  "text": "khóa học bartender cơ bản TP.HCM",
                   "format": 0,
                   "detail": 0,
                   "mode": "normal",
@@ -488,7 +537,7 @@
           "children": [
             {
               "type": "text",
-              "text": "Sáu tuần tiếp: nâng cao, nếu bạn muốn đi xa",
+              "text": "Giai đoạn 2: Nâng cao chuyên môn (6 tuần)",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -507,7 +556,7 @@
           "children": [
             {
               "type": "text",
-              "text": "Mixology, kỹ thuật như infusion và smoke, cách lên một menu signature, và cả phần tính giá vốn mà người quản quầy nào cũng phải biết.",
+              "text": "Sau khi đã có nền tảng vững vàng, học viên có thể tiếp tục với khóa nâng cao để tìm hiểu sâu hơn về mixology, các kỹ thuật như infusion và smoke, phương pháp xây dựng menu cocktail signature, cùng các kỹ năng quản lý như tính giá vốn và kiểm soát chi phí quầy bar.",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -526,7 +575,7 @@
           "children": [
             {
               "type": "text",
-              "text": "Tám buổi: chọn theo sở thích",
+              "text": "Giai đoạn 3: Chuyên đề theo định hướng (8 buổi)",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -545,7 +594,7 @@
           "children": [
             {
               "type": "text",
-              "text": "Thích biểu diễn thì học Flair. Muốn tay nhanh, đong chuẩn, quầy gọn khi đông khách thì học Bar Skill.",
+              "text": "Tùy theo định hướng phát triển, học viên có thể lựa chọn Flair Bartending nếu quan tâm đến phong cách biểu diễn, hoặc Bar Skill nếu muốn rèn luyện tốc độ, độ chính xác và sự gọn gàng khi làm việc trong giờ cao điểm.",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -564,7 +613,7 @@
           "children": [
             {
               "type": "text",
-              "text": "Lịch bận thì sao?",
+              "text": "Giải pháp cho người có lịch học hạn chế",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -583,7 +632,7 @@
           "children": [
             {
               "type": "text",
-              "text": "Đi làm giờ hành chính, ca xoay, hay chỉ có vài buổi tối một tuần? ",
+              "text": "Không phải học viên nào cũng có thể theo một lịch học cố định, đặc biệt là người đang đi làm theo giờ hành chính hoặc làm việc theo ca. Đối với những trường hợp này, ",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -604,7 +653,7 @@
               "children": [
                 {
                   "type": "text",
-                  "text": "Học 1 kèm 1",
+                  "text": "hình thức học 1 kèm 1",
                   "format": 0,
                   "detail": 0,
                   "mode": "normal",
@@ -615,7 +664,7 @@
             },
             {
               "type": "text",
-              "text": " được làm cho trường hợp đó: buổi đầu giảng viên xem bạn đang ở mức nào, rồi hai bên tự xếp nội dung và lịch học.",
+              "text": " là lựa chọn phù hợp. Ở buổi đầu tiên, giảng viên đánh giá trình độ hiện tại của học viên, sau đó hai bên cùng xây dựng nội dung và lịch học riêng.",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -634,7 +683,7 @@
           "children": [
             {
               "type": "text",
-              "text": "Học xong là đi làm được chưa?",
+              "text": "Hoàn thành khóa học đã có thể đi làm chưa",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -653,7 +702,7 @@
           "children": [
             {
               "type": "text",
-              "text": "Học xong lớp cơ bản, bạn đủ nền để xin vào làm barback hoặc bartender ở nhiều quán. Còn thành thạo thật thì đến từ những ca làm sau đó. Giảng viên ở Skill & Mix là bartender đang đi làm, nên bạn học theo cách quầy bar chạy thật, và học xong trung tâm có hỗ trợ kết nối việc làm.",
+              "text": "Sau khi hoàn thành khóa cơ bản, học viên có đủ kiến thức và kỹ năng để ứng tuyển vị trí barback hoặc bartender tại nhiều quán bar. Tuy nhiên, sự thành thạo thực sự được hình thành qua quá trình làm việc thực tế sau đó. Giảng viên của Skill & Mix là những bartender đang làm việc trong ngành Beverage & Hospitality, vì vậy học viên được tiếp cận với cách vận hành thực tế của một quầy bar ngay trong quá trình học. Sau khóa học, trung tâm hỗ trợ kết nối việc làm cho học viên có nhu cầu.",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -672,7 +721,7 @@
           "children": [
             {
               "type": "text",
-              "text": "Vẫn chưa biết mình cần bao lâu?",
+              "text": "Gợi ý lựa chọn thời lượng học phù hợp",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -686,33 +735,41 @@
           "format": "",
           "indent": 0,
           "version": 1,
-          "type": "paragraph",
-          "textFormat": 0,
+          "type": "list",
+          "listType": "bullet",
+          "tag": "ul",
+          "start": 1,
           "children": [
             {
-              "type": "text",
-              "text": "Cách nhanh nhất là nói chuyện với người dạy. Kể mục tiêu của bạn, họ sẽ nói thẳng bạn nên bắt đầu ở đâu. Bạn có thể ",
-              "format": 0,
-              "detail": 0,
-              "mode": "normal",
-              "style": "",
-              "version": 1
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "type": "listitem",
+              "value": 1,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Chưa có kinh nghiệm pha chế: bắt đầu với khóa cơ bản.",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
             },
             {
               "direction": "ltr",
               "format": "",
               "indent": 0,
-              "version": 3,
-              "type": "link",
-              "fields": {
-                "linkType": "custom",
-                "url": "/contact-us",
-                "newTab": false
-              },
+              "version": 1,
+              "type": "listitem",
+              "value": 2,
               "children": [
                 {
                   "type": "text",
-                  "text": "nhắn cho Skill & Mix",
+                  "text": "Đã có nền tảng và muốn làm việc chuyên nghiệp: cân nhắc khóa nâng cao sau khi đã vững kiến thức cơ bản.",
                   "format": 0,
                   "detail": 0,
                   "mode": "normal",
@@ -722,8 +779,75 @@
               ]
             },
             {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "type": "listitem",
+              "value": 3,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Quan tâm đến biểu diễn: bổ sung khóa Flair Bartending.",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "type": "listitem",
+              "value": 4,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Muốn cải thiện tốc độ phục vụ: bổ sung khóa Bar Skill.",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "type": "listitem",
+              "value": 5,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Có lịch làm việc không cố định hoặc mục tiêu riêng: tìm hiểu hình thức học 1 kèm 1.",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
               "type": "text",
-              "text": " để được tư vấn miễn phí, hoặc xin một buổi học thử để tự thấy mình hợp với nhịp nào. Nếu muốn hình dung lớp học trông ra sao, đọc thêm ",
+              "text": "Để hình dung rõ hơn về không khí lớp học, bạn có thể tham khảo bài viết ",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -763,14 +887,65 @@
               "version": 1
             }
           ]
+        },
+        {
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "type": "paragraph",
+          "textFormat": 0,
+          "children": [
+            {
+              "type": "text",
+              "text": "Nếu bạn vẫn chưa xác định được lộ trình phù hợp, cách hiệu quả nhất là trao đổi trực tiếp với giảng viên. Skill & Mix tư vấn miễn phí và tổ chức buổi học thử, giúp bạn đánh giá nhu cầu của bản thân trước khi đăng ký. Vui lòng ",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            },
+            {
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "version": 3,
+              "type": "link",
+              "fields": {
+                "linkType": "custom",
+                "url": "/contact-us",
+                "newTab": false
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "text": "liên hệ Skill & Mix",
+                  "format": 0,
+                  "detail": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "version": 1
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "text": " để được tư vấn lộ trình, lịch học và học phí.",
+              "format": 0,
+              "detail": 0,
+              "mode": "normal",
+              "style": "",
+              "version": 1
+            }
+          ]
         }
       ]
     }
   },
-  "excerpt": "Lớp cơ bản ở Skill & Mix mất 2 tháng, nâng cao thêm 6 tuần, Flair và Bar Skill mỗi khóa 8 buổi. Còn bạn mất bao lâu thì tùy ba thứ, và bài này nói rõ từng thứ.",
+  "excerpt": "Khóa cơ bản tại Skill & Mix kéo dài 2 tháng, khóa nâng cao 6 tuần, Flair và Bar Skill mỗi khóa 8 buổi. Bài viết phân tích ba yếu tố quyết định thời gian học bartender.",
   "seo": {
     "title": "Học bartender mất bao lâu? Lộ trình | Skill & Mix",
-    "description": "Học bartender mất bao lâu? Lớp cơ bản 2 tháng, nâng cao 6 tuần, Flair và Bar Skill 8 buổi, và vì sao người này nhanh hơn người kia.",
+    "description": "Học bartender mất bao lâu? Khóa cơ bản 2 tháng, nâng cao 6 tuần, Flair và Bar Skill 8 buổi, cùng các yếu tố quyết định thời gian học của bạn.",
     "noIndex": false
   },
   "_status": "published"

@@ -17,7 +17,7 @@
           "children": [
             {
               "type": "text",
-              "text": "Chưa từng cầm shaker cũng không sao. Phần lớn học viên lớp cơ bản bắt đầu đúng từ chỗ đó: sinh viên, người làm văn phòng muốn đổi nghề, hay chủ quán muốn tự đứng quầy cho quán của mình.",
+              "text": "Khóa Bartender Cơ Bản dành cho người chưa có kinh nghiệm pha chế: sinh viên, người đi làm muốn chuyển sang ngành dịch vụ đồ uống, hoặc chủ quán muốn tự đảm nhận quầy bar của mình. Học viên không cần kiến thức nền trước khi vào học.",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -36,7 +36,7 @@
           "children": [
             {
               "type": "text",
-              "text": "Hai tháng học ngay tại quầy bar của Skill & Mix ở 643 Nguyễn Kiệm. Những buổi đầu là chuyện cầm jigger sao cho đong không lệch, cầm shaker sao cho lắc không đổ. Sau đó tới shake, stir, build, muddle, và cách rượu mạnh, liqueur, syrup, trái cây ghép lại thành một ly cân vị. Tới cuối khóa, bạn tự pha được những ly cocktail classic mà quán bar nào ở Sài Gòn cũng có trong menu.",
+              "text": "Khóa học kéo dài 2 tháng (8 tuần) và diễn ra trực tiếp tại quầy bar của Skill & Mix, 643 Nguyễn Kiệm, phường Đức Nhuận. Những buổi đầu tập trung vào cách sử dụng shaker, jigger và bar spoon đúng kỹ thuật, để học viên đong chính xác và thao tác an toàn. Tiếp theo, học viên được hướng dẫn các kỹ thuật shake, stir, build, muddle, cùng kiến thức về rượu mạnh, liqueur, syrup và trái cây, cũng như cách kết hợp chúng để tạo nên một ly cocktail cân bằng. Khi kết thúc khóa học, học viên có thể tự pha chế các cocktail classic phổ biến tại các quầy bar ở TP.HCM.",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -55,7 +55,7 @@
           "children": [
             {
               "type": "text",
-              "text": "Lớp tối đa 6 người, nên giảng viên đứng ngay cạnh và sửa tay cho bạn từng lần. Người dạy cũng là bartender đang đi làm, nên bạn học cách một quầy bar chạy thật mỗi tối: mở quầy, nói chuyện với khách, giữ quầy gọn lúc đông, rồi đóng quầy. Cuối khóa có phần thực hành mô phỏng một ca làm để bạn quen với nhịp đó.",
+              "text": "Mỗi lớp có tối đa 6 học viên, nhờ đó giảng viên có thể quan sát và điều chỉnh thao tác cho từng học viên ngay trong buổi học. Giảng viên của Skill & Mix là những bartender đang làm việc trong ngành Beverage & Hospitality, vì vậy nội dung giảng dạy gắn liền với cách một quầy bar vận hành thực tế: quy trình mở quầy, giao tiếp và phục vụ khách, giữ quầy gọn gàng trong giờ cao điểm và đóng quầy. Cuối khóa, học viên thực hành trong môi trường mô phỏng một ca làm việc để làm quen với nhịp độ và quy trình.",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -74,7 +74,7 @@
           "children": [
             {
               "type": "text",
-              "text": "Học xong, bạn đủ nền để xin vào làm barback hoặc bartender, và Skill & Mix sẽ giới thiệu việc nếu bạn cần. Muốn đi tiếp thì có ",
+              "text": "Sau khóa học, học viên có đủ nền tảng để ứng tuyển vị trí barback hoặc bartender, và được Skill & Mix hỗ trợ kết nối việc làm. Học viên muốn phát triển thêm có thể tiếp tục với các khóa ",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -189,7 +189,7 @@
           "children": [
             {
               "type": "text",
-              "text": "Học phí và ngày khai giảng gần nhất, bạn ",
+              "text": "Để nhận thông tin học phí và lịch khai giảng gần nhất, bạn vui lòng ",
               "format": 0,
               "detail": 0,
               "mode": "normal",
@@ -210,7 +210,7 @@
               "children": [
                 {
                   "type": "text",
-                  "text": "nhắn cho Skill & Mix",
+                  "text": "liên hệ Skill & Mix",
                   "format": 0,
                   "detail": 0,
                   "mode": "normal",
@@ -221,7 +221,7 @@
             },
             {
               "type": "text",
-              "text": " để được báo. Muốn chắc hơn thì ghé học thử một buổi rồi hẵng quyết.",
+              "text": ". Trung tâm tư vấn miễn phí và tổ chức buổi học thử trước khi bạn đăng ký chính thức.",
               "format": 0,
               "detail": 0,
               "mode": "normal",

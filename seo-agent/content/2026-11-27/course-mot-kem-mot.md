@@ -1,7 +1,9 @@
-Chỉ có bạn và một giảng viên. Hợp khi lịch làm việc của bạn không cố định, khi bạn muốn đi nhanh hơn lớp nhóm, hoặc khi bạn có một mục tiêu rất cụ thể: sắp mở quán cocktail, chuẩn bị đi làm ở nước ngoài, hay chỉ muốn sửa dứt điểm một thao tác mãi chưa chuẩn.
+Hình thức học 1 kèm 1 dành cho học viên có lịch làm việc không cố định, muốn tiến bộ nhanh hơn so với lớp nhóm, hoặc có mục tiêu cụ thể như chuẩn bị mở quán cocktail, chuẩn bị làm việc ở nước ngoài hay khắc phục một kỹ năng chưa vững.
 
-Buổi đầu, giảng viên xem bạn đang ở mức nào. Từ đó hai bên chốt học gì trước, học gì sau, và học vào lúc nào. Người mới có thể đi theo nội dung của [lớp cơ bản](/courses/bartender-co-ban) nhưng với nhịp của riêng mình. Người đã làm nghề có thể chọn phần [nâng cao](/courses/bartender-nang-cao), [flair](/courses/flair-bartending), [Bar Skill](/courses/bar-skill), hoặc trộn vài thứ với nhau.
+Ở buổi học đầu tiên, giảng viên đánh giá nền tảng hiện tại của học viên. Dựa trên kết quả đó, giảng viên và học viên cùng thống nhất nội dung, thứ tự học và lịch học phù hợp. Người mới bắt đầu có thể học theo nội dung của [khóa Bartender Cơ Bản](/courses/bartender-co-ban) với tốc độ riêng. Học viên đã có kinh nghiệm có thể tập trung vào nội dung của [khóa Bartender Nâng Cao](/courses/bartender-nang-cao), [Flair Bartending](/courses/flair-bartending) hoặc [Bar Skill](/courses/bar-skill), hoặc kết hợp nhiều nội dung trong cùng một lộ trình.
 
-Vì không phải chia giảng viên cho ai khác, bạn được sửa từng động tác ngay lúc làm, và dành nhiều thời gian hơn cho đúng phần mình còn yếu. Lớp nhóm thì tối đa 6 người theo một chương trình chung; ở đây chương trình là của bạn.
+Khác với lớp nhóm, nơi mỗi lớp có tối đa 6 học viên và học theo chương trình chung, hình thức 1 kèm 1 cho phép giảng viên theo sát toàn bộ quá trình thực hành của học viên. Mỗi thao tác được quan sát và điều chỉnh ngay khi thực hiện, và thời gian học được ưu tiên cho những kỹ năng học viên cần cải thiện nhất.
 
-[Nhắn cho Skill & Mix](/contact-us), kể mục tiêu của bạn, rồi nhận lộ trình, lịch và học phí. Có thể học thử trước khi đăng ký.
+Giảng viên là những bartender đang làm việc trong ngành Beverage & Hospitality, vì vậy nội dung học gắn liền với yêu cầu thực tế của công việc tại quầy bar. Sau khóa học, Skill & Mix hỗ trợ kết nối việc làm cho học viên có nhu cầu.
+
+Vui lòng [liên hệ Skill & Mix](/contact-us) và chia sẻ mục tiêu của bạn để được tư vấn lộ trình, lịch học và học phí. Bạn có thể đăng ký học thử trước khi quyết định.

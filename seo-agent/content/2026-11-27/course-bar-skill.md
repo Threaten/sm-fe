@@ -1,9 +1,9 @@
-Biết pha là một chuyện. Pha nhanh, đong chuẩn và quầy vẫn gọn lúc 10 giờ tối thứ Bảy là chuyện khác. Bar Skill là 8 buổi để luyện đúng phần đó.
+Pha chế đúng công thức mới là bước đầu. Trong môi trường làm việc thực tế, bartender còn cần thao tác nhanh, đong chính xác và giữ quầy gọn gàng ngay cả trong giờ cao điểm. Bar Skill là khóa học 8 buổi tập trung rèn luyện chính những kỹ năng này.
 
-Mỗi buổi tập trung một nhóm thao tác: shaker, jigger, pour, bar spoon, rồi rolling, shaking, chill glass. Bạn lặp lại tại quầy cho tới khi tay tự làm mà không cần nghĩ, còn giảng viên chỉnh từng chi tiết nhỏ như góc rót hay chỗ đặt dụng cụ. Những buổi sau ghép các thao tác lại thành một quy trình liền mạch, để bạn đong chuẩn hơn, ít hao nguyên liệu hơn và không rối khi order dồn tới.
+Mỗi buổi học tập trung vào một nhóm thao tác: sử dụng shaker, jigger, pour và bar spoon, cùng các kỹ thuật rolling, shaking và chill glass. Học viên thực hành lặp lại tại quầy bar cho đến khi thao tác trở nên thuần thục, trong khi giảng viên điều chỉnh những chi tiết như góc rót, tư thế cầm dụng cụ và cách sắp xếp quầy. Ở các buổi sau, những thao tác riêng lẻ được kết hợp thành một quy trình pha chế liền mạch, giúp học viên đong chuẩn hơn, giảm hao hụt nguyên liệu và xử lý tốt khi lượng order tăng cao.
 
-Khóa hợp với người vừa học xong [lớp cơ bản](/courses/bartender-co-ban), hoặc bartender đang đi làm thấy mình còn chậm. Người dạy là bartender đang đứng quầy mỗi tuần, nên bài tập đi theo đúng nhịp một ca làm.
+Khóa học phù hợp với học viên vừa hoàn thành [khóa Bartender Cơ Bản](/courses/bartender-co-ban) và bartender đang làm việc muốn cải thiện tốc độ cũng như độ chính xác. Giảng viên là những bartender đang làm việc trong ngành Beverage & Hospitality, vì vậy các bài tập được xây dựng theo nhịp độ của một ca làm việc thực tế.
 
-Nếu bạn muốn học thêm công thức và cách lên menu, xem [Bartender Nâng Cao](/courses/bartender-nang-cao). Thích biểu diễn thì xem [Flair Bartending](/courses/flair-bartending).
+Nếu bạn muốn mở rộng kiến thức về công thức và xây dựng menu, vui lòng tham khảo [khóa Bartender Nâng Cao](/courses/bartender-nang-cao). Nếu bạn quan tâm đến phong cách biểu diễn, [khóa Flair Bartending](/courses/flair-bartending) sẽ là lựa chọn phù hợp.
 
-[Nhắn cho Skill & Mix](/contact-us) để hỏi lịch và học phí.
+Vui lòng [liên hệ Skill & Mix](/contact-us) để nhận thông tin lịch học và học phí.

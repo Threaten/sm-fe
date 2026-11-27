@@ -1,9 +1,11 @@
-Flair là phần biểu diễn: xoay chai, tung shaker, bắt lại, trong lúc vẫn đang pha ly cho khách. Nó không thay được tay nghề pha chế, nên khóa này dành cho người đã quen thao tác cơ bản.
+Flair bartending là phong cách pha chế kết hợp biểu diễn, trong đó bartender xoay, tung và bắt chai hoặc dụng cụ trong quá trình phục vụ đồ uống. Flair không thay thế kỹ năng pha chế mà bổ sung cho nó, vì vậy khóa học dành cho học viên đã nắm vững các thao tác cơ bản.
 
-Tám buổi, mỗi buổi một chủ đề. Bạn tập từng động tác nền với chai và dụng cụ, giảng viên sửa ngay tại chỗ, rồi tập tiếp cho tới khi tay quen. Chuyện kiểm soát dụng cụ được dạy song song, vì biểu diễn ở một quầy đông khách khác hẳn tập một mình ở nhà.
+Khóa học gồm 8 buổi, mỗi buổi được xây dựng theo một chủ đề và mục tiêu cụ thể. Học viên luyện tập từng động tác nền tảng với chai và dụng cụ, được giảng viên quan sát và điều chỉnh ngay trong buổi học, sau đó luyện tập lặp lại cho đến khi thao tác trở nên ổn định. Song song với đó, học viên được hướng dẫn cách kiểm soát dụng cụ để biểu diễn an toàn trong môi trường quầy bar có khách.
 
-Tới cuối khóa, bạn ghép các động tác lại thành một đoạn biểu diễn ngắn theo kiểu của riêng mình, đủ để dùng trong ca làm. Flair cần tập đều, nên giảng viên cũng chỉ bạn cách tự luyện tiếp sau khi khóa học kết thúc.
+Ở giai đoạn cuối, học viên kết hợp các động tác đã học thành một đoạn biểu diễn ngắn mang phong cách riêng, có thể áp dụng trong ca làm việc. Do kỹ năng flair cần được duy trì bằng luyện tập đều đặn, giảng viên cũng hướng dẫn học viên phương pháp tự luyện tập sau khi kết thúc khóa học.
 
-Mới bắt đầu thì nên học [lớp cơ bản](/courses/bartender-co-ban) trước. Muốn tay nhanh, đong chuẩn hơn thì xem [Bar Skill](/courses/bar-skill). Muốn tập riêng theo lịch của mình thì có [học 1 kèm 1](/courses/mot-kem-mot).
+Giảng viên là những bartender đang làm việc trong ngành, nên nội dung biểu diễn được xây dựng phù hợp với thực tế của một ca làm việc tại quầy bar.
 
-[Nhắn cho Skill & Mix](/contact-us) để hỏi lịch và học phí.
+Học viên chưa có nền tảng pha chế nên bắt đầu với [khóa Bartender Cơ Bản](/courses/bartender-co-ban). Học viên muốn cải thiện tốc độ và độ chính xác có thể tham khảo [khóa Bar Skill](/courses/bar-skill), và học viên cần lịch học riêng có thể lựa chọn [hình thức học 1 kèm 1](/courses/mot-kem-mot).
+
+Vui lòng [liên hệ Skill & Mix](/contact-us) để nhận thông tin lịch học và học phí.
