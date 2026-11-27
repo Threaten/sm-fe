@@ -67,6 +67,12 @@ Competitors that rank for our keywords are listed in `state/competitors.txt`. Th
   - Don't name or criticise competitors on our site, and don't build comparison pages about them.
 
 ## Writing Vietnamese content
+- Write like a person, not a machine (owner decision 2026-11-27): as if a trainer at the academy were explaining it to a
+  friend who wants to learn bartending. Concrete details (what you practise in which lesson, which tools, how many people
+  per class), "bạn" for the reader, varied sentence length, questions are fine. No translated-from-English phrasing ("được
+  thiết kế một cách chuyên nghiệp", "trải nghiệm tuyệt vời", "điểm đến lý tưởng", "hãy đến với chúng tôi"), no brochure
+  words, no sentence that could be about any school. Read it aloud in your head before saving; if it sounds like an ad,
+  rewrite it. Style never adds a claim.
 - Natural Vietnamese for people deciding where to learn bartending. Use "TP.HCM" in titles; "tphcm", "Sài Gòn", "Hồ Chí Minh" only where natural. Never stuff keywords.
 - Articles: 1,000–1,500 words, H2/H3 structure, a short direct answer near the top, 2–4 internal links to relevant course pages and /contact-us, end with a call to action for free consultation (tư vấn miễn phí) and trial class (học thử).
 - Use ONLY facts from the site, the CMS, or `state/facts.md`. If a fact you need is missing (price, schedule, certificate, partner bars, student numbers), write around it ("liên hệ để nhận học phí") and add a question to owner-todo.md.
